@@ -40,7 +40,12 @@
                 <li class="left-menu-title">Navigate</li>
                 <li class="cursor-point"><a href="#">Services</a>
                     <ul class="list-with-ticks">
-                        <li><a href="/companies"><span class="mar-rgh-10"> > </span><span>Company Formation</span></a>
+                        <li>
+                            <router-link :to="{ path: 'companies' }">
+                                <a>
+                                    <span class="mar-rgh-10"> > </span><span>Company Formation</span>
+                                </a>
+
                         </li>
                         <li><a href="/banks"><span class="mar-rgh-10"> > </span><span>Bank Account Opening</span></a>
                         </li>
@@ -76,7 +81,7 @@
                                                               aria-expanded="false">Services<i
                                     class="fa fa-chevron-down" aria-hidden="true" style="margin-left: 10px;"></i></a>
                                 <ul class="dropdown-menu service-menu">
-                                    <li><a href="/companies">Company Formation</a></li>
+                                    <li><a>Company Formation</a></li>
                                     <li><a href="/banks">Bank Account Opening</a></li>
                                     <li><a href="/trademarks">Trademarks</a></li>
                                     <li><a href="/niche-services">Niche Services</a></li>
@@ -161,17 +166,27 @@
                 <li><a href="/terms-of-use">Terms of Use</a></li>
             </ul>
             <div class="logos">
-                <div class="social-links"><a href="#"><img src="/src/assets/images/facebook.png"></a><a href="#"><img src="/src/assets/images/twitter.png"></a><a href="#"><img src="/src/assets/images/google.png"></a></div>
-                <div style="display: none;" class="payment-cards"><a href="#"><img src="/src/assets/images/cards.png"></a></div>
-                <div class="other-logos"><a href="#"><img src="/src/assets/images/trust.png"></a><a href="#"><img src="/src/assets/images/pci.png"></a><a href="#"><img src="/src/assets/images/verified.png"></a><a href="#"><img src="/src/assets/images/paypal.png"></a><a href="#"><img src="/src/assets/images/mastercard.png"></a><a href="#" class="card-dekatop"><img src="/src/assets/images/cards.png"></a></div>
+                <div class="social-links"><a href="#"><img src="/src/assets/images/facebook.png"></a><a href="#"><img
+                        src="/src/assets/images/twitter.png"></a><a href="#"><img
+                        src="/src/assets/images/google.png"></a></div>
+                <div style="display: none;" class="payment-cards"><a href="#"><img
+                        src="/src/assets/images/cards.png"></a></div>
+                <div class="other-logos"><a href="#"><img src="/src/assets/images/trust.png"></a><a href="#"><img
+                        src="/src/assets/images/pci.png"></a><a href="#"><img src="/src/assets/images/verified.png"></a><a
+                        href="#"><img src="/src/assets/images/paypal.png"></a><a href="#"><img
+                        src="/src/assets/images/mastercard.png"></a><a href="#" class="card-dekatop"><img
+                        src="/src/assets/images/cards.png"></a></div>
                 <div
-                        style="display: none;" class="other-logos-samll"><a href="#"><img src="/src/assets/images/verified.png"></a><a href="#"><img src="/src/assets/images/paypal.png"></a><a href="#"><img src="/src/assets/images/mastercard.png"></a><br style="{{'\
+                        style="display: none;" class="other-logos-samll"><a href="#"><img
+                        src="/src/assets/images/verified.png"></a><a href="#"><img src="/src/assets/images/paypal.png"></a><a
+                        href="#"><img src="/src/assets/images/mastercard.png"></a><br style="{{'\
         display: none;\
         '}}"><a href="#"><img src="/src/assets/images/bitcoin.png" style="{{'\
           width: 100px;\
           '}}"></a><a href="#"><img style=" width: 165px;" src="/src/assets/images/pci.png"></a></div>
             </div>
-            <p>© 2017 Agent Legal, LLC. All rights reserved. Agent Legal and AgentLegal are registered trademarks of Agent Legal, LLC.</p>
+            <p>© 2017 Agent Legal, LLC. All rights reserved. Agent Legal and AgentLegal are registered trademarks of
+                Agent Legal, LLC.</p>
         </div>
     </footer>
     <script src="src/assets/js/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
