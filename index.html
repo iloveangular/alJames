@@ -23,7 +23,7 @@
                     <li>
                         <label>Account</label>
                     </li>
-                    <li><a href="/login">Login</a></li>
+                    <li><a href="/#/login">Login</a></li>
                     <li class="brd-bottom-menu" style="padding:10px 8px 5px 10px;">
                         <div class="inl-block width-100"><span class="left mar-top-5">Currency</span>
                             <form id="SelectCurrFormOffCanvas">
@@ -41,22 +41,20 @@
                 <li class="cursor-point"><a href="#">Services</a>
                     <ul class="list-with-ticks">
                         <li>
-                            <router-link :to="{ path: 'companies' }">
-                                <a>
-                                    <span class="mar-rgh-10"> > </span><span>Company Formation</span>
-                                </a>
-
+                            <a href="/#/companies">
+                                <span class="mar-rgh-10"> > </span><span>Company Formation</span>
+                            </a>
                         </li>
-                        <li><a href="/banks"><span class="mar-rgh-10"> > </span><span>Bank Account Opening</span></a>
+                        <li><a href="/#/banks"><span class="mar-rgh-10"> > </span><span>Bank Account Opening</span></a>
                         </li>
-                        <li><a href="/trademarks"><span class="mar-rgh-10"> > </span><span>Trademarks</span></a></li>
-                        <li><a href="/niche-services"><span class="mar-rgh-10"> > </span><span>Niche Services</span></a>
+                        <li><a href="/#/trademarks"><span class="mar-rgh-10"> > </span><span>Trademarks</span></a></li>
+                        <li><a href="/#/niche-services"><span class="mar-rgh-10"> > </span><span>Niche Services</span></a>
                         </li>
                     </ul>
                 </li>
-                <li class="cursor-point"><a href="/packages">Start Up Packs</a></li>
-                <li class="cursor-point"><a href="/documents">Templates</a></li>
-                <li class="cursor-point"><a href="/offers">Offers</a></li>
+                <li class="cursor-point"><a href="/#/packages">Start Up Packs</a></li>
+                <li class="cursor-point"><a href="/#/documents">Templates</a></li>
+                <li class="cursor-point"><a href="/#/offers">Offers</a></li>
             </ul>
         </div>
     </aside>
@@ -68,28 +66,29 @@
             <nav>
                 <div class="dekstop-hide">
                     <button class="menu-bar-home"><span></span><span></span><span></span></button>
-                    <div class="logo-mb"><a href="/"><span><img src="src/assets/img/logo.png"
+                    <div class="logo-mb"><a href="/#/"><span><img src="src/assets/img/logo.png"
                                                                 style="width: 154px;padding-top: 7px;"></span></a></div>
                 </div>
                 <div class="container">
                     <div class="menu">
                         <ul>
                             <li class="logo">
-                                <a href="/"><img src="src/assets/img/logo.png" style="width: 154px;"></a>
+                                <a href="/#/"><img src="src/assets/img/logo.png" style="width: 154px;"></a>
                             </li>
-                            <li class="dropdown div-hover"><a class="dropdown-toggle" href="#" data-toggle="dropdown"
-                                                              aria-expanded="false">Services<i
-                                    class="fa fa-chevron-down" aria-hidden="true" style="margin-left: 10px;"></i></a>
+                            <li class="dropdown div-hover">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Services
+                                    <i class="fa fa-chevron-down" aria-hidden="true" style="margin-left: 10px;"></i>
+                                </a>
                                 <ul class="dropdown-menu service-menu">
-                                    <li><a>Company Formation</a></li>
-                                    <li><a href="/banks">Bank Account Opening</a></li>
-                                    <li><a href="/trademarks">Trademarks</a></li>
-                                    <li><a href="/niche-services">Niche Services</a></li>
+                                    <li><a :href="'/#/package/'">Company Formation</a></li>
+                                    <li><a href="/#/banks">Bank Account Opening</a></li>
+                                    <li><a href="/#/trademarks">Trademarks</a></li>
+                                    <li><a href="/#/niche-services">Niche Services</a></li>
                                 </ul>
                             </li>
-                            <li class="null"><a href="/packages">Start Up Packs</a></li>
-                            <li class="null"><a href="/documents">Templates</a></li>
-                            <li class="null"><a href="/offers">Offers</a></li>
+                            <li class="null"><a href="/#/packages">Start Up Packs</a></li>
+                            <li class="null"><a href="/#/documents">Templates</a></li>
+                            <li class="null"><a href="/#/offers">Offers</a></li>
                         </ul>
                     </div>
                     <div class="shop-header">
@@ -102,10 +101,10 @@
                                     <option value="CNY">CNY</option>
                                 </select>
                             </li>
-                            <li><a href="/cart"><i class="fa fa-shopping-cart">
+                            <li><a href="/#/cart"><i class="fa fa-shopping-cart">
                                 <div id="count">0</div>
                             </i></a></li>
-                            <li><i class="fa fa-user"></i><a href="#"><a href="/login">Login</a></a>
+                            <li><i class="fa fa-user"></i><a href="#"><a href="/#/login">Login</a></a>
                             </li>
                         </ul>
                     </div>
@@ -153,17 +152,17 @@
     <footer>
         <div class="container"><img src="/src/assets/images/logo.png" style="width: 200px;" class="footer-logo">
             <ul>
-                <li><a href="/about">About</a></li>
-                <li><a href="/affiliates">Affiliates</a></li>
+                <li><a href="/#/about">About</a></li>
+                <li><a href="/#/affiliates">Affiliates</a></li>
                 <!--a(href='/login') Author Log In-->
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/disclaimer">Disclaimer</a></li>
-                <li><a href="/partners">Partners</a></li>
-                <li><a href="/faqs">FAQ</a></li>
+                <li><a href="/#/contact">Contact</a></li>
+                <li><a href="/#/disclaimer">Disclaimer</a></li>
+                <li><a href="/#/partners">Partners</a></li>
+                <li><a href="/#/faqs">FAQ</a></li>
                 <!--a(href='/login') Payfor Services-->
-                <li><a href="/privacy-policy">Privacy Policy</a></li>
-                <li><a href="/terms">Terms of Business</a></li>
-                <li><a href="/terms-of-use">Terms of Use</a></li>
+                <li><a href="/#/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/#/terms">Terms of Business</a></li>
+                <li><a href="/#/terms-of-use">Terms of Use</a></li>
             </ul>
             <div class="logos">
                 <div class="social-links"><a href="#"><img src="/src/assets/images/facebook.png"></a><a href="#"><img
