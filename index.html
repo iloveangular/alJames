@@ -80,7 +80,7 @@
                                     <i class="fa fa-chevron-down" aria-hidden="true" style="margin-left: 10px;"></i>
                                 </a>
                                 <ul class="dropdown-menu service-menu">
-                                    <li><a :href="'/#/package/'">Company Formation</a></li>
+                                    <li><a href="/#/companies">Company Formation</a></li>
                                     <li><a href="/#/banks">Bank Account Opening</a></li>
                                     <li><a href="/#/trademarks">Trademarks</a></li>
                                     <li><a href="/#/niche-services">Niche Services</a></li>
@@ -190,6 +190,76 @@
     </footer>
     <script src="src/assets/js/jquery/jquery-2.1.4.min.js" type="text/javascript"></script>
     <script src="src/assets/js/bootstrap/bootstrap-3.3.5.min.js" type="text/javascript"></script>
+    <script src="src/assets/js/signup.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            $('#flash-messages').fadeIn('slow').delay(4000).fadeOut('slow');
+            $(".menu-bar-home").click(function() {
+                $(".left-menu-block").toggleClass("left-menu-left");
+                $(".main-content").toggleClass("main-content-right");
+            });
+        });
+        function navigateTo(sel, target, newWindow) {
+            var url = sel.options[sel.selectedIndex].value;
+            if (newWindow) {
+                window.open(url, target, '--- attributes here, see below ---');
+            } else {
+                window[target].location.href = url;
+            }
+        }
+    </script>
+    <!-- Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="title">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <h5 class="modal-title" id="exampleModalLabel">Sign up to our Newsletter</h5>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <div class="image"><img src="src/assets/images/ccash.png"></div>
+                                    <div class="desc">
+                                        <h5>GET<span> 10% DISCOUNT</span></h5>
+                                        <p>On your next purchase once subscribed</p>
+                                    </div>
+                                </div>
+                                <input id="subscribeEmail" placeholder="Enter email" name="email" type="text">
+                                <input class="form-control" id="activated" name="activated" value="no" type="hidden">
+                                <input class="form-control" id="uuid" name="activationCode" value="fb637f65-0e85-44d3-85a6-c17d9dca6ae3" type="hidden"><img src="src/assets/images/captcha.jpg"><span class="captchaTitle">Enter the code</span>
+                                <input class="captcha" id="captcha" placeholder="" type="text">
+                                <p><span class="red-error"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-green submit-button" type="submit" name="submit" disabled="disabled">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal-->
+    <div class="modal fade secondModal" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="title">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <h5 class="modal-title" id="exampleModalLabel">Check your Mail</h5>
+                    <h6>To activate your subscription to the Starting Business newsletter</h6></div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12"><img src="src/assets/images/subscribe.png"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- built files will be auto injected -->
 </body>
 </html>

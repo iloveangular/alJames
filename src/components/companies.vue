@@ -42,7 +42,7 @@
                                         <select class="no-margin height-45 brd-grey" name="category"
                                                 onchange="navigateTo(this, 'window', false);">
                                             <option value="#">Select a Country</option>
-                                            <option value="" v-for="cp in countries" v-if="cp.country">
+                                            <option v-for="cp in companies" :value="'/#/product/company-formation/' + cp.slug" v-if="cp.kind == 'company-formation' && cp.country">
                                                 {{ cp.country }}
                                             </option>
                                         </select>
@@ -59,7 +59,7 @@
                                         <h6 class="fnt-size-24 mob-fnt-size-21">
                                             Popular Company Formation Locations...</h6></div>
                                     <div class="row">
-                                        <div v-for="cp in countries" v-if="cp.isPopular" class="col-md-6 remove-space"
+                                        <div v-for="cp in companies" v-if="cp.kind == 'company-formation' && cp.isPopular" class="col-md-6 remove-space"
                                              style="padding: 0 8px 0 0;">
                                             <div class="col-md-12 small-panel hidden-xs">
                                                 <div class="col-md-6 lar-width-48">
@@ -72,14 +72,14 @@
                                                         <p class="fnt-size-21 fnt-oswald-medium no-margin mar-top-10 mar-rgh-20 left">
                                                             ${{cp.price}}</p>
                                                         <a class="button green small text-center pad-tb-3-lr-20 left hide-for-small-only"
-                                                           v-bind:href="'product/company-formation/' + cp.slug">Learn
+                                                           v-bind:href="'/#/product/company-formation/' + cp.slug">Learn
                                                             More</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="visible-xs">
                                                 <div class="col-md-12 small-panel"
-                                                     onclick="location.href='/product/company-formation/british-virgin-islands-bc';"
+                                                     onclick="location.href='/#/product/company-formation/british-virgin-islands-bc';"
                                                      style="cursor: pointer; cursor: hand;">
                                                     <div class="col-md-6 lar-width-48">
                                                         <div class="left"><img class="flg-sml"
@@ -92,7 +92,7 @@
                                                             <p class="fnt-size-21 fnt-oswald-medium no-margin mar-top-10 mar-rgh-20 left">
                                                                 $1350</p><a
                                                                 class="button green small text-center pad-tb-3-lr-20 left hide-for-small-only"
-                                                                href="/product/company-formation/british-virgin-islands-bc">Learn
+                                                                href="/#/product/company-formation/british-virgin-islands-bc">Learn
                                                             More</a></div>
                                                     </div>
                                                 </div>
@@ -119,7 +119,7 @@
                                     </div>
                                 </div>
                                 <div class="panel-group" id="accordion">
-                                    <div v-if="this.countries" class="panel panel-default">
+                                    <div v-if="this.companies" class="panel panel-default">
                                         <a href="#1">
                                             <div class="panel-heading accordion-toggle" id="accordion-toggle-1"
                                                  data-toggle="collapse" data-parrent="#accordion"
@@ -131,7 +131,7 @@
                                             <div class="panel-body">
                                                 <table class="width-100 brd-none" style="width: 100%">
                                                     <tbody></tbody>
-                                                    <tr v-for="cp in countries" v-if="cp.region == 'Europe'">
+                                                    <tr v-for="cp in companies" v-if="cp.kind == 'company-formation' && cp.region == 'Europe'">
                                                         <td class="country lar-width-60">
                                                             <div class="hide-for-small-down left mar-top-7">
                                                                 <img class="flg-sml" :src="cp.flagImageUrl">
@@ -146,11 +146,11 @@
                                                                 <div class="left mar-rgh-20 mob-mar-rgh-0">
                                                                     <p class="fnt-size-21 mob-fnt-size-21 fnt-oswald-medium no-margin mar-top-10">${{cp.price}}</p>
                                                                     <div class="mar-top-10 show-for-small-only width-100 text-right">
-                                                                        <a class="clr-green fnt-oswald-light fnt-size-14 text-left" v-bind:href="'product/company-formation/' + cp.slug">Learn More</a>
+                                                                        <a class="clr-green fnt-oswald-light fnt-size-14 text-left" v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="right">
-                                                                    <a class="button fnt-size-21 fnt-oswald-medium green hide-for-small-only width-155 pad-tb-3-lr-15" v-bind:href="'product/company-formation/' + cp.slug">Learn More</a>
+                                                                    <a class="button fnt-size-21 fnt-oswald-medium green hide-for-small-only width-155 pad-tb-3-lr-15" v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -450,7 +450,7 @@
     export default {
         data() {
             return {
-                countries: []
+                companies: []
             }
         },
         mounted() {
@@ -458,7 +458,7 @@
             axios.get('https://milosrest.herokuapp.com/api/companies')
                 .then(function (response) {
                     console.log(response.data);
-                    vm.countries = response.data;
+                    vm.companies = response.data;
                 })
                 .catch(function (error) {
                     console.log(error);

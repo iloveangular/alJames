@@ -8,27 +8,25 @@
                             <h2>HELPING BUSINESSES <strong>GET UP & RUNNING</strong></h2>
                             <div class="row">
                                 <div class="col-md-3 col-xs-3">
-                                    <router-link :to="{ path: 'companies' }">
-                                        <a>
+                                        <a href="/#/companies">
                                             <div class="block"><img src="/src/assets/images/icon.png">
                                                 <h3>Company Formation</h3></div>
                                         </a>
-                                    </router-link>
                                 </div>
                                 <div class="col-md-3 col-xs-3">
-                                    <a>
+                                    <a href="/#/banks">
                                         <div class="block"><img src="/src/assets/images/bank.png">
                                             <h3>Bank Account Opening</h3></div>
                                     </a>
                                 </div>
                                 <div class="col-md-3 col-xs-3">
-                                    <a href="/trademarks">
+                                    <a href="/#/trademarks">
                                         <div class="block"><img src="/src/assets/images/trademark.png">
                                             <h3>Trademark Registration</h3></div>
                                     </a>
                                 </div>
                                 <div class="col-md-3 col-xs-3">
-                                    <a href="/documents">
+                                    <a href="/#/documents">
                                         <div class="block"><img src="/src/assets/images/document.png">
                                             <h3>Document Templates</h3></div>
                                     </a>
@@ -46,17 +44,15 @@
                                     <div class="carousel-inner" role="listbox">
                                         <div class="item active">
                                             <div class="col-md-3 col-xs-3 block-banner">
-                                                <router-link :to="{ path: 'companies' }">
-                                                    <a>
+                                                    <a href="/#/companies">
                                                         <div class="block"><img src="/src/assets/images/icon.png">
                                                             <h3>Company Formation</h3></div>
                                                     </a>
-                                                </router-link>
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="col-md-3 col-xs-3 block-banner">
-                                                <a href="/banks">
+                                                <a href="/#/banks">
                                                     <div class="block"><img src="/src/assets/images/bank.png">
                                                         <h3>Bank Account Opening</h3></div>
                                                 </a>
@@ -64,7 +60,7 @@
                                         </div>
                                         <div class="item">
                                             <div class="col-md-3 col-xs-3 block-banner">
-                                                <a href="/trademarks">
+                                                <a href="/#/trademarks">
                                                     <div class="block"><img src="/src/assets/images/trademark.png">
                                                         <h3>Trademark Registration</h3></div>
                                                 </a>
@@ -72,7 +68,7 @@
                                         </div>
                                         <div class="item">
                                             <div class="col-md-3 col-xs-3 block-banner">
-                                                <a href="/documents">
+                                                <a href="/#/documents">
                                                     <div class="block"><img src="/src/assets/images/document.png">
                                                         <h3>Document Templates</h3></div>
                                                 </a>
@@ -89,15 +85,6 @@
                             </div>
                         </div>
                     </div>
-                    <!--.call-to-actionh3
-| Check out our Special Offers
-a(href="/offers")
-button.btn.btn-green(href="/offers") See Offers-->
-                    <!--section.packages.first.packages-desktop.container
-h2
-span Business Start-Up Packs
-a(href='index.html#') See all Start-Up Packs
-include ../partials/index/packages-->
                 </header>
                 <div class="main">
                     <section class="informations">
@@ -117,11 +104,9 @@ include ../partials/index/packages-->
                                         </ul>
                                     </div>
                                     <div class="col-md-3 col-xs-4 informations-block">
-                                        <router-link :to="{ path: 'companies' }">
-                                            <a>
+                                            <a href="/#/companies">
                                                 <button class="btn btn-primary">Learn More</button>
                                             </a>
-                                        </router-link>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +127,7 @@ include ../partials/index/packages-->
                                         </ul>
                                     </div>
                                     <div class="col-md-3 col-xs-4 informations-block">
-                                        <a href="/banks">
+                                        <a href="/#/banks">
                                             <button class="btn btn-primary">Learn More</button>
                                         </a>
                                     </div>
@@ -164,7 +149,7 @@ include ../partials/index/packages-->
                                         </ul>
                                     </div>
                                     <div class="col-md-3 col-xs-4 informations-block">
-                                        <a href="/trademarks">
+                                        <a href="/#/trademarks">
                                             <button class="btn btn-primary">Learn More</button>
                                         </a>
                                     </div>
@@ -174,7 +159,7 @@ include ../partials/index/packages-->
                     </section>
                     <section class="packages">
                         <div class="container">
-                            <h2><span>Why Choose Us</span><a href="/about">Learn About us</a></h2>
+                            <h2><span>Why Choose Us</span><a href="/#/about">Learn About us</a></h2>
                             <div class="row">
                                 <div class="col-md-3 col-xs-6 about-block">
                                     <div class="package">
@@ -217,7 +202,7 @@ include ../partials/index/packages-->
                                                 <h3>Affiliate Program</h3>
                                                 <p>
                                                     Monetize your audience and drive leads to purchase reliable corporate services.</p>
-                                                <p><a href="/affiliates" title="Affiliate Program"
+                                                <p><a href="/#/affiliates" title="Affiliate Program"
                                                       class="btn btn-primary btn-custom margin-top-20">Learn More</a>
                                                 </p>
                                             </div>
@@ -236,8 +221,8 @@ include ../partials/index/packages-->
                                                 <h3>Partner Program</h3>
                                                 <p>
                                                     We offer global partnership opportunities across a wide range of corporate services</p>
-                                                <p><a href="/partners" title="Partner Program"
-                                                      class="btn btn-primary btn-custom margin-top-20">Learn More</a>
+                                                <p>
+                                                    <a href="/#/partners" title="Partner Program" class="btn btn-primary btn-custom margin-top-20">Learn More</a>
                                                 </p>
                                             </div>
                                             <div class="col-md-5"><img src="/src/assets/images/partner-program1.png"
