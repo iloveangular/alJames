@@ -22,8 +22,8 @@ $(document).ready(function () {
 
     $(".submit-button").click(function () {
         $.ajax({
-            type: "GET",
-            url: 'http://macvueapi.herokuapp.com/api/subscribe',
+            type: "POST",
+            url: 'http://localhost:3000/api/subscribe/',
             data: {
                 "email": $("#subscribeEmail").val(),
                 "activationCode": $("#uuid").val(),

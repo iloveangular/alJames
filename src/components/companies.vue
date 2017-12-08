@@ -42,7 +42,9 @@
                                         <select class="no-margin height-45 brd-grey" name="category"
                                                 onchange="navigateTo(this, 'window', false);">
                                             <option value="#">Select a Country</option>
-                                            <option v-for="cp in companies" :value="'/#/product/company-formation/' + cp.slug" v-if="cp.kind == 'company-formation' && cp.country">
+                                            <option v-for="cp in companies"
+                                                    :value="'/#/product/company-formation/' + cp.slug"
+                                                    v-if="cp.kind == 'company-formation' && cp.country">
                                                 {{ cp.country }}
                                             </option>
                                         </select>
@@ -59,7 +61,9 @@
                                         <h6 class="fnt-size-24 mob-fnt-size-21">
                                             Popular Company Formation Locations...</h6></div>
                                     <div class="row">
-                                        <div v-for="cp in companies" v-if="cp.kind == 'company-formation' && cp.isPopular" class="col-md-6 remove-space"
+                                        <div v-for="cp in companies"
+                                             v-if="cp.kind == 'company-formation' && cp.isPopular"
+                                             class="col-md-6 remove-space"
                                              style="padding: 0 8px 0 0;">
                                             <div class="col-md-12 small-panel hidden-xs">
                                                 <div class="col-md-6 lar-width-48">
@@ -119,38 +123,319 @@
                                     </div>
                                 </div>
                                 <div class="panel-group" id="accordion">
-                                    <div v-if="this.companies" class="panel panel-default">
-                                        <a href="#1">
-                                            <div class="panel-heading accordion-toggle" id="accordion-toggle-1"
-                                                 data-toggle="collapse" data-parrent="#accordion"
-                                                 data-target="#collapse1" aria-expanded="true">
-                                                <h4 class="panel-title">Europe</h4>
-                                            </div>
-                                        </a>
-                                        <div class="panel-collapse collapse in" id="collapse1" aria-expanded="true" style="">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading accordion-toggle" id="accordion-toggle-1"
+                                             data-toggle="collapse" data-parrent="#accordion"
+                                             data-target="#collapse1" aria-expanded="true">
+                                            <h4 class="panel-title">Oceania & Pacific Islands</h4>
+                                        </div>
+                                        <div class="panel-collapse collapse" id="collapse1" aria-expanded="true"
+                                             style="">
                                             <div class="panel-body">
                                                 <table class="width-100 brd-none" style="width: 100%">
                                                     <tbody></tbody>
-                                                    <tr v-for="cp in companies" v-if="cp.kind == 'company-formation' && cp.region == 'Europe'">
+                                                    <tr v-for="cp in companies"
+                                                        v-if="cp.kind == 'company-formation' && cp.region == 'Oceania & Pacific Islands'">
                                                         <td class="country lar-width-60">
                                                             <div class="hide-for-small-down left mar-top-7">
                                                                 <img class="flg-sml" :src="cp.flagImageUrl">
                                                             </div>
                                                             <div class="left pad-lf-20 fnt-cond-light fnt-size-21 mob-pad-0 ln-h-22">
-                                                                <h3 class="fnt-size-21 no-margin ln-h-12"><span>{{cp.country}}</span></h3>
-                                                                <h3 class="fnt-size-19 clr-l-grey no-margin ln-h-12"><span>{{cp.title}}</span></h3>
+                                                                <h3 class="fnt-size-21 no-margin ln-h-12">
+                                                                    <span>{{cp.country}}</span></h3>
+                                                                <h3 class="fnt-size-19 clr-l-grey no-margin ln-h-12">
+                                                                    <span>{{cp.title}}</span></h3>
                                                             </div>
                                                         </td>
                                                         <td class="text-center mob-width-45">
                                                             <div class="inl-block right">
                                                                 <div class="left mar-rgh-20 mob-mar-rgh-0">
-                                                                    <p class="fnt-size-21 mob-fnt-size-21 fnt-oswald-medium no-margin mar-top-10">${{cp.price}}</p>
+                                                                    <p class="fnt-size-21 mob-fnt-size-21 fnt-oswald-medium no-margin mar-top-10">
+                                                                        ${{cp.price}}</p>
                                                                     <div class="mar-top-10 show-for-small-only width-100 text-right">
-                                                                        <a class="clr-green fnt-oswald-light fnt-size-14 text-left" v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                        <a class="clr-green fnt-oswald-light fnt-size-14 text-left"
+                                                                           v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="right">
-                                                                    <a class="button fnt-size-21 fnt-oswald-medium green hide-for-small-only width-155 pad-tb-3-lr-15" v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                    <a class="button fnt-size-21 fnt-oswald-medium green hide-for-small-only width-155 pad-tb-3-lr-15"
+                                                                       v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Carribean -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading accordion-toggle" id="accordion-toggle-2"
+                                             data-toggle="collapse" data-parrent="#accordion2"
+                                             data-target="#collapse2" aria-expanded="true">
+                                            <h4 class="panel-title">Caribbean</h4>
+                                        </div>
+                                        <div class="panel-collapse collapse" id="collapse2" aria-expanded="true"
+                                             style="">
+                                            <div class="panel-body">
+                                                <table class="width-100 brd-none" style="width: 100%">
+                                                    <tbody></tbody>
+                                                    <tr v-for="cp in companies"
+                                                        v-if="cp.kind == 'company-formation' && cp.region == 'Caribbean'">
+                                                        <td class="country lar-width-60">
+                                                            <div class="hide-for-small-down left mar-top-7">
+                                                                <img class="flg-sml" :src="cp.flagImageUrl">
+                                                            </div>
+                                                            <div class="left pad-lf-20 fnt-cond-light fnt-size-21 mob-pad-0 ln-h-22">
+                                                                <h3 class="fnt-size-21 no-margin ln-h-12">
+                                                                    <span>{{cp.country}}</span></h3>
+                                                                <h3 class="fnt-size-19 clr-l-grey no-margin ln-h-12">
+                                                                    <span>{{cp.title}}</span></h3>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center mob-width-45">
+                                                            <div class="inl-block right">
+                                                                <div class="left mar-rgh-20 mob-mar-rgh-0">
+                                                                    <p class="fnt-size-21 mob-fnt-size-21 fnt-oswald-medium no-margin mar-top-10">
+                                                                        ${{cp.price}}</p>
+                                                                    <div class="mar-top-10 show-for-small-only width-100 text-right">
+                                                                        <a class="clr-green fnt-oswald-light fnt-size-14 text-left"
+                                                                           v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <a class="button fnt-size-21 fnt-oswald-medium green hide-for-small-only width-155 pad-tb-3-lr-15"
+                                                                       v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Europe -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading accordion-toggle" id="accordion-toggle-3"
+                                             data-toggle="collapse" data-parrent="#accordion3"
+                                             data-target="#collapse3" aria-expanded="true">
+                                            <h4 class="panel-title">Europe</h4>
+                                        </div>
+                                        <div class="panel-collapse collapse" id="collapse3" aria-expanded="true"
+                                             style="">
+                                            <div class="panel-body">
+                                                <table class="width-100 brd-none" style="width: 100%">
+                                                    <tbody></tbody>
+                                                    <tr v-for="cp in companies"
+                                                        v-if="cp.kind == 'company-formation' && cp.region == 'Europe'">
+                                                        <td class="country lar-width-60">
+                                                            <div class="hide-for-small-down left mar-top-7">
+                                                                <img class="flg-sml" :src="cp.flagImageUrl">
+                                                            </div>
+                                                            <div class="left pad-lf-20 fnt-cond-light fnt-size-21 mob-pad-0 ln-h-22">
+                                                                <h3 class="fnt-size-21 no-margin ln-h-12">
+                                                                    <span>{{cp.country}}</span></h3>
+                                                                <h3 class="fnt-size-19 clr-l-grey no-margin ln-h-12">
+                                                                    <span>{{cp.title}}</span></h3>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center mob-width-45">
+                                                            <div class="inl-block right">
+                                                                <div class="left mar-rgh-20 mob-mar-rgh-0">
+                                                                    <p class="fnt-size-21 mob-fnt-size-21 fnt-oswald-medium no-margin mar-top-10">
+                                                                        ${{cp.price}}</p>
+                                                                    <div class="mar-top-10 show-for-small-only width-100 text-right">
+                                                                        <a class="clr-green fnt-oswald-light fnt-size-14 text-left"
+                                                                           v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <a class="button fnt-size-21 fnt-oswald-medium green hide-for-small-only width-155 pad-tb-3-lr-15"
+                                                                       v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- North & South America -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading accordion-toggle" id="accordion-toggle-4"
+                                             data-toggle="collapse" data-parrent="#accordion4"
+                                             data-target="#collapse4" aria-expanded="true">
+                                            <h4 class="panel-title">North & South America</h4>
+                                        </div>
+                                        <div class="panel-collapse collapse" id="collapse4" aria-expanded="true"
+                                             style="">
+                                            <div class="panel-body">
+                                                <table class="width-100 brd-none" style="width: 100%">
+                                                    <tbody></tbody>
+                                                    <tr v-for="cp in companies"
+                                                        v-if="cp.kind == 'company-formation' && cp.region == 'North & South America'">
+                                                        <td class="country lar-width-60">
+                                                            <div class="hide-for-small-down left mar-top-7">
+                                                                <img class="flg-sml" :src="cp.flagImageUrl">
+                                                            </div>
+                                                            <div class="left pad-lf-20 fnt-cond-light fnt-size-21 mob-pad-0 ln-h-22">
+                                                                <h3 class="fnt-size-21 no-margin ln-h-12">
+                                                                    <span>{{cp.country}}</span></h3>
+                                                                <h3 class="fnt-size-19 clr-l-grey no-margin ln-h-12">
+                                                                    <span>{{cp.title}}</span></h3>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center mob-width-45">
+                                                            <div class="inl-block right">
+                                                                <div class="left mar-rgh-20 mob-mar-rgh-0">
+                                                                    <p class="fnt-size-21 mob-fnt-size-21 fnt-oswald-medium no-margin mar-top-10">
+                                                                        ${{cp.price}}</p>
+                                                                    <div class="mar-top-10 show-for-small-only width-100 text-right">
+                                                                        <a class="clr-green fnt-oswald-light fnt-size-14 text-left"
+                                                                           v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <a class="button fnt-size-21 fnt-oswald-medium green hide-for-small-only width-155 pad-tb-3-lr-15"
+                                                                       v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Asia -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading accordion-toggle" id="accordion-toggle-5"
+                                             data-toggle="collapse" data-parrent="#accordion5"
+                                             data-target="#collapse5" aria-expanded="true">
+                                            <h4 class="panel-title">Asia</h4>
+                                        </div>
+                                        <div class="panel-collapse collapse" id="collapse5" aria-expanded="true"
+                                             style="">
+                                            <div class="panel-body">
+                                                <table class="width-100 brd-none" style="width: 100%">
+                                                    <tbody></tbody>
+                                                    <tr v-for="cp in companies"
+                                                        v-if="cp.kind == 'company-formation' && cp.region == 'Asia'">
+                                                        <td class="country lar-width-60">
+                                                            <div class="hide-for-small-down left mar-top-7">
+                                                                <img class="flg-sml" :src="cp.flagImageUrl">
+                                                            </div>
+                                                            <div class="left pad-lf-20 fnt-cond-light fnt-size-21 mob-pad-0 ln-h-22">
+                                                                <h3 class="fnt-size-21 no-margin ln-h-12">
+                                                                    <span>{{cp.country}}</span></h3>
+                                                                <h3 class="fnt-size-19 clr-l-grey no-margin ln-h-12">
+                                                                    <span>{{cp.title}}</span></h3>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center mob-width-45">
+                                                            <div class="inl-block right">
+                                                                <div class="left mar-rgh-20 mob-mar-rgh-0">
+                                                                    <p class="fnt-size-21 mob-fnt-size-21 fnt-oswald-medium no-margin mar-top-10">
+                                                                        ${{cp.price}}</p>
+                                                                    <div class="mar-top-10 show-for-small-only width-100 text-right">
+                                                                        <a class="clr-green fnt-oswald-light fnt-size-14 text-left"
+                                                                           v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <a class="button fnt-size-21 fnt-oswald-medium green hide-for-small-only width-155 pad-tb-3-lr-15"
+                                                                       v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Africa -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading accordion-toggle" id="accordion-toggle-6"
+                                             data-toggle="collapse" data-parrent="#accordion6"
+                                             data-target="#collapse6" aria-expanded="true">
+                                            <h4 class="panel-title">Africa</h4>
+                                        </div>
+                                        <div class="panel-collapse collapse" id="collapse6" aria-expanded="true"
+                                             style="">
+                                            <div class="panel-body">
+                                                <table class="width-100 brd-none" style="width: 100%">
+                                                    <tbody></tbody>
+                                                    <tr v-for="cp in companies"
+                                                        v-if="cp.kind == 'company-formation' && cp.region == 'Africa'">
+                                                        <td class="country lar-width-60">
+                                                            <div class="hide-for-small-down left mar-top-7">
+                                                                <img class="flg-sml" :src="cp.flagImageUrl">
+                                                            </div>
+                                                            <div class="left pad-lf-20 fnt-cond-light fnt-size-21 mob-pad-0 ln-h-22">
+                                                                <h3 class="fnt-size-21 no-margin ln-h-12">
+                                                                    <span>{{cp.country}}</span></h3>
+                                                                <h3 class="fnt-size-19 clr-l-grey no-margin ln-h-12">
+                                                                    <span>{{cp.title}}</span></h3>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center mob-width-45">
+                                                            <div class="inl-block right">
+                                                                <div class="left mar-rgh-20 mob-mar-rgh-0">
+                                                                    <p class="fnt-size-21 mob-fnt-size-21 fnt-oswald-medium no-margin mar-top-10">
+                                                                        ${{cp.price}}</p>
+                                                                    <div class="mar-top-10 show-for-small-only width-100 text-right">
+                                                                        <a class="clr-green fnt-oswald-light fnt-size-14 text-left"
+                                                                           v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <a class="button fnt-size-21 fnt-oswald-medium green hide-for-small-only width-155 pad-tb-3-lr-15"
+                                                                       v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Middle East -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading accordion-toggle" id="accordion-toggle-7"
+                                             data-toggle="collapse" data-parrent="#accordion7"
+                                             data-target="#collapse7" aria-expanded="true">
+                                            <h4 class="panel-title">Middle East</h4>
+                                        </div>
+                                        <div class="panel-collapse collapse" id="collapse7" aria-expanded="true"
+                                             style="">
+                                            <div class="panel-body">
+                                                <table class="width-100 brd-none" style="width: 100%">
+                                                    <tbody></tbody>
+                                                    <tr v-for="cp in companies"
+                                                        v-if="cp.kind == 'company-formation' && cp.region == 'Middle East'">
+                                                        <td class="country lar-width-60">
+                                                            <div class="hide-for-small-down left mar-top-7">
+                                                                <img class="flg-sml" :src="cp.flagImageUrl">
+                                                            </div>
+                                                            <div class="left pad-lf-20 fnt-cond-light fnt-size-21 mob-pad-0 ln-h-22">
+                                                                <h3 class="fnt-size-21 no-margin ln-h-12">
+                                                                    <span>{{cp.country}}</span></h3>
+                                                                <h3 class="fnt-size-19 clr-l-grey no-margin ln-h-12">
+                                                                    <span>{{cp.title}}</span></h3>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center mob-width-45">
+                                                            <div class="inl-block right">
+                                                                <div class="left mar-rgh-20 mob-mar-rgh-0">
+                                                                    <p class="fnt-size-21 mob-fnt-size-21 fnt-oswald-medium no-margin mar-top-10">
+                                                                        ${{cp.price}}</p>
+                                                                    <div class="mar-top-10 show-for-small-only width-100 text-right">
+                                                                        <a class="clr-green fnt-oswald-light fnt-size-14 text-left"
+                                                                           v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="right">
+                                                                    <a class="button fnt-size-21 fnt-oswald-medium green hide-for-small-only width-155 pad-tb-3-lr-15"
+                                                                       v-bind:href="'/#/product/company-formation/' + cp.slug">Learn More</a>
                                                                 </div>
                                                             </div>
                                                         </td>

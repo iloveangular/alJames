@@ -4,10 +4,14 @@ import home from '@/components/home'
 import about from '@/components/about'
 import companies from '@/components/companies'
 import singleProduct from '@/components/product'
+import banks from '@/components/banks'
+import singleBank from '@/components/singleBank'
 import offers from '@/components/offers'
 import singlePackage from '@/components/package'
 import packages from '@/components/packages'
 import documents from '@/components/documents'
+import singleCategory from '@/components/category'
+import singleDocument from '@/components/document'
 import affiliates from '@/components/affiliates'
 import faqs from '@/components/faqs'
 import partners from '@/components/partners'
@@ -19,6 +23,9 @@ import termsOfPayment from '@/components/termsOfPayment'
 import terms from '@/components/terms'
 import privacyPolicy from '@/components/privacyPolicy'
 import disclaimer from '@/components/disclaimer'
+/* Login Pages */
+import login from '@/components/login'
+
 Vue.use(Router);
 export default new Router({
     routes: [
@@ -43,6 +50,16 @@ export default new Router({
             component: singleProduct
         },
         {
+            path: '/product/company-formation/bank/:bankId',
+            name: 'singleBank',
+            component: singleBank
+        },
+        {
+            path: '/banks',
+            name: 'banks',
+            component: banks
+        },
+        {
             path: '/niche-services',
             name: 'nicheServices',
             component: nicheServices
@@ -58,6 +75,16 @@ export default new Router({
             component: documents
         },
         {
+            path: '/documents/:documentId',
+            name: 'singleCategory',
+            component: singleCategory
+        },
+        {
+            path: '/document/:documentId',
+            name: 'singleDocument',
+            component: singleDocument
+        },
+        {
             path: '/affiliates',
             name: 'affiliates',
             component: affiliates
@@ -66,6 +93,11 @@ export default new Router({
             path: '/faqs',
             name: 'faqs',
             component: faqs
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: login
         },
         {
             path: '/packages',

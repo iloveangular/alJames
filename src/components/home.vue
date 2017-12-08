@@ -202,8 +202,8 @@
                                                 <h3>Affiliate Program</h3>
                                                 <p>
                                                     Monetize your audience and drive leads to purchase reliable corporate services.</p>
-                                                <p><a href="/#/affiliates" title="Affiliate Program"
-                                                      class="btn btn-primary btn-custom margin-top-20">Learn More</a>
+                                                <p><a title="Affiliate Program"
+                                                      class="btn btn-primary btn-custom margin-top-20"><router-link to="companies">Learn More</router-link></a>
                                                 </p>
                                             </div>
                                             <div class="col-md-5 col-sm-6 col-xs-12"><img
