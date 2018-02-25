@@ -738,7 +738,7 @@
         },
         mounted() {
             var vm = this;
-            axios.get('http://localhost:3000/api/companies')
+            axios.get('https://milosrest.herokuapp.com/api/companies')
                 .then(function (response) {
                     console.log(response.data);
                     vm.companies = response.data;
