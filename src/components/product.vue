@@ -30,7 +30,7 @@
                             <input name="action" value="addToCart" type="hidden">
                             <input name="cat_id" value="22" type="hidden">
                             <input name="product_quantity" value="1" type="hidden">
-                            <input id="product_id" name="product_id" value="599a1344bf50847b0972a465" type="hidden">
+                            <input id="product_id" name="product_id" :value="product._id" type="hidden">
                             <input id="amount_product" name="amount_product" v-model="product.price" type="hidden">
                             <table class="table payment-table" id="view_product">
                                 <tbody>
@@ -41,25 +41,7 @@
                                 <tr>
                                     <td class="payment-item">
                                         <div class="payment-item-title"><a data-toggle="collapse" href="#panel-0"><span class="more_info"></span> Formation Fee</a></div>
-                                        <div class="payment-item-info collapse" id="panel-0">
-                                            <ul>
-                                                <li>Name check and approval</li>
-                                                <li>Filling incorporation documents with the Registrar of Companies
-                                                </li>
-                                                <li>Payment of the Government Fee of $350 </li>
-                                                <li>Provision of registered office and registered address for one year</li>
-                                                <li>Provision of company secretary and registered agent for one year</li>
-                                                <li>Metal embossing seal</li>
-                                            </ul>
-                                            A standard set of original corporate documents:
-                                            <ul>
-                                                <li>Certificate of Incorporation</li>
-                                                <li>Memorandum &amp; Articles of Association</li>
-                                                <li>Appointment of First Directors</li>
-                                                <li>Consent Actions of the Board of Directors</li>
-                                                <li>Share Certificates</li>
-                                                <li>Register of Directors and Members</li>
-                                            </ul>
+                                        <div class="payment-item-info collapse" id="panel-0" v-html="product.formationFee">
                                         </div>
                                     </td>
                                     <td class="payment-price mandatory-price">
@@ -69,91 +51,80 @@
                                     <td class="payment-table-head" colspan="2">
                                         <h2>ADDITIONAL SERVICES</h2></td>
                                 </tr>
-                                <tr class="form-group">
+                                <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'nominee-service'">
                                     <td class="payment-table-sub-head" colspan="2">
-                                        <h3 style="text-transform: uppercase;">nominee-services</h3></td>
+                                        <h3 style="text-transform: uppercase;">nominee-services</h3>
+                                    </td>
                                 </tr>
-                                <tr>
+                                <tr v-for="service in services" v-if="service.type == 'nominee-service'">
                                     <td class="payment-item">
-                                        <div class="payment-item-title"><a data-toggle="collapse" href="#panel-2"><span class="more_info"></span><span>Nominee Shareholder</span></a></div>
-                                        <div class="payment-item-info collapse" id="panel-2">Provision of corporate Nominee Shareholder (per annum)</div>
+                                        <div class="payment-item-title">
+                                            <a data-toggle="collapse" :href="'#' + service.key">
+                                                <span class="more_info"></span>
+                                                <span>{{service.name}}</span>
+                                            </a>
+                                        </div>
+                                        <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
-                                    <td class="payment-price">$<span>300</span>
-                                        <input class="checkbox" name="services" value="599a1344bf50847b0972a45d" data-price="300" type="checkbox">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="payment-item">
-                                        <div class="payment-item-title"><a data-toggle="collapse" href="#panel-3"><span class="more_info"></span><span>Nominee Director &amp; General Power of Attorney (Apostilled)</span></a></div>
-                                        <div class="payment-item-info collapse" id="panel-3">Provision of corporate Nominee Director (per annum) and General Power of Attorney (valid for one year) under Apostille.</div>
-                                    </td>
-                                    <td class="payment-price">$<span>650</span>
-                                        <input class="checkbox" name="services" value="599a1344bf50847b0972a45e" data-price="650" type="checkbox">
+                                    <td class="payment-price">$<span>{{service.price}}</span>
+                                        <input class="checkbox" name="services" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="payment-item">
-                                        <div class="payment-item-title"><a data-toggle="collapse" href="#panel-4"><span class="more_info"></span><span>Special Power of Attorney (Apostilled)</span></a></div>
-                                        <div class="payment-item-info collapse" id="panel-4">Special Power of Attorney issued by a Nominee Director, under Apostille</div>
-                                    </td>
-                                    <td class="payment-price">$<span>290</span>
-                                        <input class="checkbox" name="services" value="599a1344bf50847b0972a45f" data-price="290" type="checkbox">
-                                    </td>
-                                </tr>
-                                <tr class="form-group">
+                                <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'corporate-certificate'">
                                     <td class="payment-table-sub-head" colspan="2">
                                         <h3 style="text-transform: uppercase;">corporate-certificates</h3></td>
                                 </tr>
-                                <tr>
+                                <tr v-for="service in services" v-if="service.type == 'corporate-certificate'">
                                     <td class="payment-item">
-                                        <div class="payment-item-title"><a data-toggle="collapse" href="#panel-5"><span class="more_info"></span><span>Certificate of Good Standing (Apostilled)</span></a></div>
-                                        <div class="payment-item-info collapse" id="panel-5">Provision of Certificate of Good Standing under Apostille</div>
+                                        <div class="payment-item-title">
+                                            <a data-toggle="collapse" :href="'#' + service.key">
+                                                <span class="more_info"></span>
+                                                <span>{{service.name}}</span>
+                                            </a>
+                                        </div>
+                                        <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
-                                    <td class="payment-price">$<span>550</span>
-                                        <input class="checkbox" name="services" value="599a1344bf50847b0972a460" data-price="550" type="checkbox">
+                                    <td class="payment-price">$<span>{{service.price}}</span>
+                                        <input class="checkbox" name="services" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="payment-item">
-                                        <div class="payment-item-title"><a data-toggle="collapse" href="#panel-6"><span class="more_info"></span><span>Certificate of Incumbency (Apostilled)</span></a></div>
-                                        <div class="payment-item-info collapse" id="panel-6">Provision of Certificate of Incumbency under Apostille</div>
-                                    </td>
-                                    <td class="payment-price">$<span>480</span>
-                                        <input class="checkbox" name="services" value="599a1344bf50847b0972a461" data-price="480" type="checkbox">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="payment-item">
-                                        <div class="payment-item-title"><a data-toggle="collapse" href="#panel-7"><span class="more_info"></span><span>Set of Corporate Documents (Apostilled)</span></a></div>
-                                        <div class="payment-item-info collapse" id="panel-7">Copies of corporate documents in one Apostilled bundle.
-                                            <br> Please note: If applying for a corporate bank account you will need to order a full set of apostilled company documents when the account is opened outside of British Virgin Islands.</div>
-                                    </td>
-                                    <td class="payment-price">$<span>480</span>
-                                        <input class="checkbox" name="services" value="599a1344bf50847b0972a462" data-price="480" type="checkbox">
-                                    </td>
-                                </tr>
-                                <tr class="form-group">
+                                <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'other-service'">
                                     <td class="payment-table-sub-head" colspan="2">
                                         <h3 style="text-transform: uppercase;">other-services</h3></td>
                                 </tr>
-                                <tr>
+                                <tr v-for="service in services" v-if="service.type == 'other-service'">
                                     <td class="payment-item">
-                                        <div class="payment-item-title"><a data-toggle="collapse" href="#panel-8"><span class="more_info"></span><span>Metal Embossing Seal</span></a></div>
-                                        <div class="payment-item-info collapse" id="panel-8">Provision of embossed metal seal</div>
+                                        <div class="payment-item-title">
+                                            <a data-toggle="collapse" :href="'#' + service.key">
+                                                <span class="more_info"></span>
+                                                <span>{{service.name}}</span>
+                                            </a>
+                                        </div>
+                                        <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
-                                    <td class="payment-price">$<span>100</span>
-                                        <input class="checkbox" name="services" value="599a1344bf50847b0972a463" data-price="100" type="checkbox">
+                                    <td class="payment-price">$<span>{{service.price}}</span>
+                                        <input class="checkbox" name="services" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'bank-products-and-service'" v-if="service.type == 'bank-products-and-service'">
+                                    <td class="payment-table-sub-head" colspan="2">
+                                        <h3 style="text-transform: uppercase;">bank-products-and-services</h3></td>
+                                </tr>
+                                <tr v-for="service in services" v-if="service.type == 'bank-products-and-service'">
                                     <td class="payment-item">
-                                        <div class="payment-item-title"><a data-toggle="collapse" href="#panel-9"><span class="more_info"></span><span>Additional rubber stamp</span></a></div>
-                                        <div class="payment-item-info collapse" id="panel-9">Provision of additional rubber stamp.</div>
+                                        <div class="payment-item-title">
+                                            <a data-toggle="collapse" :href="'#' + service.key">
+                                                <span class="more_info"></span>
+                                                <span>{{service.name}}</span>
+                                            </a>
+                                        </div>
+                                        <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
-                                    <td class="payment-price">$<span>40</span>
-                                        <input class="checkbox" name="services" value="599a1344bf50847b0972a464" data-price="40" type="checkbox">
+                                    <td class="payment-price">$<span>{{service.price}}</span>
+                                        <input class="checkbox" name="services" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
+
                                 <tr class="hidden payment-calculation">
                                     <td class="payment-item">
                                         <div class="payment-item-title">Package Price:</div>
@@ -208,7 +179,7 @@
                 <div class="row" id="about_prod">
                     <div class="col-lg-12">
                         <!-- Accordions-->
-                        <h2>Facts &amp; Info for British Virgin Islands BC</h2>
+                        <h2>Facts &amp; Info for {{product.title}}</h2>
                         <div class="panel-group" id="accordion-about">
                             <div class="panel">
                                 <h3><a class="clearfix" data-toggle="collapse" data-parent="#accordion-about" href="#about-1"><span class="corporate-info-icon panel-title-icon"></span><span class="panel-title">Corporate Information</span><span class="accordion-arrow"></span></a></h3>
@@ -242,18 +213,46 @@
     export default {
         data() {
             return {
-                product: ''
+                product: '',
+                services: [],
+                test: []
             }
         },
         mounted() {
             var vm = this;
             axios.post('https://milosrest.herokuapp.com/api/companies/' + this.$route.params.productId)
                 .then(function (response) {
-                    vm.product = response.data[0];
-                    console.log(vm.product);
+                    vm.product = response.data.product[0];
+                    vm.services = response.data.file;
+                    vm.test = response.data.file;
                 })
                 .catch(function (error) {
                     console.log(error);
+                })
+            var productId = $("#product_id").val();
+            var serviceList = [];
+            $("#payment").on("click",".checkbox", function(){
+                 var total = Number($("#total").text());
+                    var add = Number($(this).data("price"));
+                    var service = $(this).attr('name');
+                    var productId = $("#product_id").val();
+
+                    if (this.checked) {
+                        var totalText = $("#total").text();
+                        var finalTotal = total + add;
+                        serviceList.push(service);
+                        var json = JSON.stringify(serviceList);
+
+                        $('#total_input').val(finalTotal);
+                        $('#total').html(finalTotal);
+                    }
+                    ;
+                    if (!this.checked) {
+                        var totalText = $("#total").text();
+                        var finalTotal = total - add;
+                        $("#total_input").val(finalTotal);
+                        $("#total").html(finalTotal);
+                    }
                 })
         }
 

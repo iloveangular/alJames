@@ -63,7 +63,7 @@
                                                 Corporate packages to start your business right away</p>
                                             <p class="fnt-size-13 mob-fnt-size-13 clr-l-grey fnt-sans-semi-bold mar-btm-10">
                                                 Company administration and expert legal support</p>
-                                        </a><a href="/companies"
+                                        </a><a href="/#/companies"
                                                class="clr-green fnt-size-16 text-center fnt-oswald-light">Learn more</a>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                                                 Assistance with international bank account opening</p>
                                             <p class="fnt-size-13 mob-fnt-size-13 clr-l-grey fnt-sans-semi-bold mar-btm-10">
                                                 Banking solutions for your personal and business needs</p>
-                                        </a><a href="/banks" class="clr-green fnt-size-16 text-center fnt-oswald-light">Learn more</a>
+                                        </a><a href="/#/banks" class="clr-green fnt-size-16 text-center fnt-oswald-light">Learn more</a>
                                     </div>
                                 </div>
                             </figcaption>
@@ -122,7 +122,7 @@
                                                 Global trademark search, registration, monitoring and maintenance.</p>
                                             <p class="fnt-size-13 mob-fnt-size-13 clr-l-grey fnt-sans-semi-bold mar-btm-10">
                                                 Brand & intellectual property expert support.</p>
-                                        </a><a href="/trademarks"
+                                        </a><a href="/#/trademarks"
                                                class="clr-green fnt-size-16 text-center fnt-oswald-light">Learn more</a>
                                     </div>
                                 </div>
@@ -177,7 +177,7 @@
                                                         We offer quick and affordable access to more than 1000 downloadable and ready-to-complete business forms and legal documents suited for both business and personal use.</p>
                                                 </div>
                                             </div>
-                                        </a><a href="/documents"
+                                        </a><a href="/#/documents"
                                                class="clr-green fnt-size-16 text-center fnt-oswald-light">Learn more</a>
                                     </div>
                                 </div>

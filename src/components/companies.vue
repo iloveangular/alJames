@@ -82,21 +82,19 @@
                                                 </div>
                                             </div>
                                             <div class="visible-xs">
-                                                <div class="col-md-12 small-panel"
-                                                     onclick="location.href='/#/product/company-formation/british-virgin-islands-bc';"
-                                                     style="cursor: pointer; cursor: hand;">
+                                                <div class="col-md-12 small-panel" style="cursor: pointer; cursor: hand;">
                                                     <div class="col-md-6 lar-width-48">
-                                                        <div class="left"><img class="flg-sml"
-                                                                               src="http://res.cloudinary.com/agentlegal/image/upload/c_limit,f_auto,h_150,w_150/v1503269699/ce3ldv743kbu943wzotp.png">
+                                                        <div class="left">
+                                                            <img class="flg-sml" :src="cp.flagImageUrl">
                                                         </div>
-                                                        <span class="left pad-lf-10 fnt-cond-light fnt-size-21 company-span">British Virgin Islands BC</span>
+                                                        <span class="left pad-lf-10 fnt-cond-light fnt-size-21 company-span">{{cp.country}}</span>
                                                     </div>
                                                     <div class="col-md-6 lar-width-48">
                                                         <div class="inl-block">
                                                             <p class="fnt-size-21 fnt-oswald-medium no-margin mar-top-10 mar-rgh-20 left">
-                                                                $1350</p><a
+                                                                ${{cp.price}}</p><a
                                                                 class="button green small text-center pad-tb-3-lr-20 left hide-for-small-only"
-                                                                href="/#/product/company-formation/british-virgin-islands-bc">Learn
+                                                                :href="'/#/product/company-formation/' + cp.slug">Learn
                                                             More</a></div>
                                                     </div>
                                                 </div>
@@ -740,7 +738,7 @@
         },
         mounted() {
             var vm = this;
-            axios.get('https://milosrest.herokuapp.com/api/companies')
+            axios.get('http://localhost:3000/api/companies')
                 .then(function (response) {
                     console.log(response.data);
                     vm.companies = response.data;

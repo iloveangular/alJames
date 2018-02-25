@@ -34,19 +34,19 @@
                     <div class="box-me col-sm-4 col-xs-12 .bg-grey">
                         <div>
                             <h6>Trademark Registration</h6><span>Protect your trademark and enhance your rights through trademark registration worldwide</span>
-                            <div class="button"><a href="/trademarks/registration" class="btn btn-green">Start</a></div>
+                            <div class="button"><router-link to="/trademarks/registration" class="btn btn-green">Start</router-link></div>
                         </div>
                     </div>
                     <div class="box-me col-sm-4 col-xs-12 .bg-grey">
                         <div>
                             <h6>Trademark Search</h6><span>Eliminate any possibilities of plagiarisms by conducting a search</span>
-                            <div class="button"><a href="/trademarks/search" class="btn btn-green">Start</a></div>
+                            <div class="button"><router-link to="/trademarks/search" class="btn btn-green">Start</router-link></div>
                         </div>
                     </div>
                     <div class="box-me col-sm-4 col-xs-12 .bg-grey">
                         <div>
                             <h6>Trademark Watch</h6><span>Safeguard your brand and get a trademark watching service</span>
-                            <div class="button"><a href="/trademarks/watch" class="btn btn-green">Start</a></div>
+                            <div class="button"><router-link to="/trademarks/watch" class="btn btn-green">Start</router-link></div>
                         </div>
                     </div>
                 </div>
@@ -60,12 +60,10 @@
                     </div>
                     <div id="accordion" class="panel-group">
                         <div class="panel panel-default">
-                            <a href="#1">
                                 <div id="accordion-toggle-1" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" aria-expanded="false" class="panel-heading accordion-toggle collapsed">
                                     <div class="sprite1 about_tm-01"></div>
                                     <h4 class="panel-title">About</h4>
                                 </div>
-                            </a>
                             <div id="collapseOne" aria-expanded="false" style="height: 0px;" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <p>A Trademark is a symbol, phrase, design or word that helps distinguish one manufacturer of goods from another. It is a key identifier of a company used all over the world. An example of a famous trademark is Apple, which is represented
@@ -98,12 +96,10 @@
                         </div>
                         <!-- start-->
                         <div class="panel panel-default">
-                            <a href="#2">
                                 <div id="accordion-toggle-2" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" aria-expanded="false" class="panel-heading accordion-toggle collapsed">
                                     <div class="sprite1 about_tm-02"></div>
                                     <h4 class="panel-title">Registration</h4>
                                 </div>
-                            </a>
                             <div id="collapseTwo" aria-expanded="false" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <p>A Trademark is the key identifier of a business so it is only normal to want to protect it from unauthorized users. Using a trademark without registration will not come with many benefits. The main concern is that there will always be
@@ -115,12 +111,10 @@
                         <!-- end-->
                         <!-- start-->
                         <div class="panel panel-default">
-                            <a href="#3">
                                 <div id="accordion-toggle-3" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree" aria-expanded="false" class="panel-heading accordion-toggle collapsed">
                                     <div class="sprite1 about_tm-03"></div>
                                     <h4 class="panel-title">Our Pricelist</h4>
                                 </div>
-                            </a>
                             <div id="collapseThree" aria-expanded="false" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <p>At Agent Legal, we make sure that our customers receive the best prices possible for their trademark registration. Please keep in mind that each jurisdiction will have a trademark authority, used to protect your trademark for a small
@@ -131,12 +125,10 @@
                         <!-- end-->
                         <!-- start-->
                         <div class="panel panel-default">
-                            <a href="#4">
                                 <div id="accordion-toggle-4" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour" aria-expanded="false" class="panel-heading accordion-toggle collapsed">
                                     <div class="sprite1 about_tm-04"></div>
                                     <h4 class="panel-title">Search</h4>
                                 </div>
-                            </a>
                             <div id="collapseFour" aria-expanded="false" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <p>Before registering, it is recommended to check the availability of your suggested trademark. You can do this by simply conducting a search using our 'Trademark Search' section. By doing a thorough search, you eliminate any possibilities
@@ -147,12 +139,10 @@
                         <!-- end-->
                         <!-- start-->
                         <div class="panel panel-default">
-                            <a href="#5">
                                 <div id="accordion-toggle-5" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFive" aria-expanded="false" class="panel-heading accordion-toggle collapsed">
                                     <div class="sprite1 about_tm-05"></div>
                                     <h4 class="panel-title">Watch</h4>
                                 </div>
-                            </a>
                             <div id="collapseFive" aria-expanded="false" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <p>Still not convinced to perform a Trademark search? You will be shocked to find out that not all trademark authorities go through the process of investigating whether or not a trademark already exists. This can accumulate chaos as authorities
@@ -164,12 +154,10 @@
                         <!-- end-->
                         <!-- start-->
                         <div class="panel panel-default">
-                            <a href="#6">
                                 <div id="accordion-toggle-6" data-toggle="collapse" data-parent="#accordion" data-target="#collapseSix" aria-expanded="false" class="panel-heading accordion-toggle collapsed">
                                     <div class="sprite1 about_tm-06"></div>
                                     <h4 class="panel-title">WorkFlow</h4>
                                 </div>
-                            </a>
                             <div id="collapseSix" aria-expanded="false" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <p>Registering your trademark at Agent Legal is simple, and we understand that you may want to know the process. So, for your acknowledgement, we have created a workflow showing the whole registration process.</p>

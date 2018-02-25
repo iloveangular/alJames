@@ -22,19 +22,20 @@ $(document).ready(function () {
 
     $(".submit-button").click(function () {
         $.ajax({
-            type: "POST",
-            url: 'http://localhost:3000/api/subscribe/',
+            type: "GET",
+            url: 'https://milosrest.herokuapp.com/api/subscribe',
             data: {
                 "email": $("#subscribeEmail").val(),
                 "activationCode": $("#uuid").val(),
                 "activated": $("#activated").val()
             },
             success: function (msg) {
-                if(msg == 'error' ) {
+                console.log(msg);
+                if (msg == 'error') {
                     $(".red-error").text("");
                     $(".red-error").text('This user is already subscribed.');
                 } else {
-                    if(msg == 'success') {
+                    if (msg == 'success') {
                         $('#exampleModal').modal('hide');
                         $('#exampleModal2').modal('show');
                     }
@@ -44,5 +45,45 @@ $(document).ready(function () {
                 console.log('greska' + msg);
             }
         });
-    })
+    });
+    $(".submit-affiliate").click(function () {
+        $.ajax({
+            type: "GET",
+            url: 'https://milosrest.herokuapp.com/api/affiliates',
+            data: {
+                "name": $("#name").val(),
+                "email": $("#email").val(),
+                "phone": $("#phone").val(),
+                "linkedInUrl": $("#linkedInUrl").val(),
+                "twitterUrl": $("#twitterUrl").val(),
+                "facebookUrl": $("#facebookUrl").val(),
+                "companyWebsite": $("#companyWebsite").val(),
+                "services": $("#services").val(),
+                "packages": $("#packages").val(),
+                "documents": $("#documents").val(),
+                "speciality": $("#speciality").val()
+            },
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        })
+    });
+
+    $(".margin").click(function () {
+        $(this).children(".a").toggle()
+    });
+    $("#view_product").on("click", ".payment-item-title a", function () {
+        $(this).addClass('testiramo');
+        $(this).children('.more_info').addClass('expanded_info');
+    });
+    $("#view_product").on("click", ".testiramo", function () {
+        $(this).removeClass('testiramo');
+        $(this).children('.expanded_info').removeClass('expanded_info');
+    });
+
+
+
 });

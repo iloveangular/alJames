@@ -10090,6 +10090,7 @@ h4.sign {
 
 .payment-table .payment-item {
     padding: 14px 10px 14px 30px;
+    width: 90%;
 }
 
 .more_info {
@@ -10100,11 +10101,21 @@ h4.sign {
     margin-top: 5px;
     float: left;
 }
+.packageItem:nth-child(-n+5){
+    display:table-row !important;
+}
+.packageItem {
+    display: none;
+}
 
 .more_info:hover {
     opacity: 0.8;
     -moz-opacity: 0.8;
     cursor: pointer;
+}
+
+.expanded_info {
+    background: url(../images/sprite1.png) repeat scroll 450px -348px transparent;
 }
 
 .payment-table .payment-item .payment-item-title {

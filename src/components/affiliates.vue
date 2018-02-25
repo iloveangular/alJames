@@ -6,8 +6,8 @@
                 <div class="col-md-6 col-lg-5 col-sm-6 text-left sec-1-l col-xs-12">
                     <p class="text-2 text-green">Unlimited Earning Potential</p>
                     <h1 class="text-6">5% Commission</h1>
-                    <h2 class="text-4">for all sales generated</h2><a href="/affiliates/signup" class="hh-btn green large">Sign Up</a><br>
-                    <p class="text-grey text-left">Already registered? <a href="/login" class="text-green">Login</a></p>
+                    <h2 class="text-4">for all sales generated</h2><a :href="'/#/affiliates/signup'" class="hh-btn green large">Sign Up</a><br>
+                    <p class="text-grey text-left">Already registered? <a :href="'/#/login'" class="text-green">Login</a></p>
                 </div>
                 <div class="col-md-6 col-lg-7 col-sm-6 text-right sec-1-r hidden-xs"><img src="src/assets/images/starting-business-affiliates-program.png" alt="Agent Legal Affiliates Program" class="mob-mar-btm-10"></div>
             </div>
@@ -113,7 +113,7 @@
         <section class="special-offers">
             <div class="container">
                 <div class="dot dot-grey">
-                    <h3><span>Apply now to join our affiliate program</span><button class="btn btn-green">Sign Up</button></h3>
+                    <h3><span>Apply now to join our affiliate program</span><a :href="'/#/affiliates/signup'"><button class="btn btn-green">Sign Up</button></a></h3>
                 </div>
             </div>
         </section>

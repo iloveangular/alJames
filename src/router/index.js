@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/components/home'
 import about from '@/components/about'
+import contact from '@/components/contact'
 import companies from '@/components/companies'
 import singleProduct from '@/components/product'
 import banks from '@/components/banks'
@@ -13,19 +14,31 @@ import documents from '@/components/documents'
 import singleCategory from '@/components/category'
 import singleDocument from '@/components/document'
 import affiliates from '@/components/affiliates'
-import faqs from '@/components/faqs'
+import affiliatesSignup from '@/components/affiliatesSignup'
+// import faqs from '@/components/faqs'
 import partners from '@/components/partners'
+/* Trademarks */
 import trademarks from '@/components/trademarks'
+import trademarksRegistration from '@/components/trademarksRegistration'
+import trademarksSearch from '@/components/trademarksSearch'
+import trademarksWatch from '@/components/trademarksWatch'
+/* Niche Services */
 import nicheServices from '@/components/additionalServices'
 import nicheSingle from '@/components/nicheSingle'
-import termsOfUse from '@/components/termsOfUse'
+// import termsOfUse from '@/components/termsOfUse'
 import termsOfPayment from '@/components/termsOfPayment'
 import terms from '@/components/terms'
 import privacyPolicy from '@/components/privacyPolicy'
 import disclaimer from '@/components/disclaimer'
 /* Login Pages */
 import login from '@/components/login'
+/* Exclusive Credit Card */
+import exclusiveCreditCard from '@/components/exclusivecc'
 
+/* Directives */
+Vue.component("my-fancy-component",{
+    template: "<div>My Fancy Stuff:</div>"
+})
 Vue.use(Router);
 export default new Router({
     routes: [
@@ -38,6 +51,11 @@ export default new Router({
             path:'/about',
             name: 'about',
             component: about
+        },
+        {
+            path: '/contact',
+            name: 'contact',
+            component: contact
         },
         {
             path: '/companies',
@@ -53,6 +71,11 @@ export default new Router({
             path: '/product/company-formation/bank/:bankId',
             name: 'singleBank',
             component: singleBank
+        },
+        {
+            path: '/product/exclusive-credit-card/:cardId',
+            name: 'exclusiveCreditCard',
+            component: exclusiveCreditCard
         },
         {
             path: '/banks',
@@ -90,10 +113,15 @@ export default new Router({
             component: affiliates
         },
         {
-            path: '/faqs',
-            name: 'faqs',
-            component: faqs
+            path: '/affiliates/signup',
+            name: 'affiliatesSignup',
+            component: affiliatesSignup
         },
+        // {
+        //     path: '/faqs',
+        //     name: 'faqs',
+        //     component: faqs
+        // },
         {
             path: '/login',
             name: 'login',
@@ -114,11 +142,11 @@ export default new Router({
             name: 'partners',
             component: partners
         },
-        {
-            path: '/terms-of-use',
-            name: 'termsOfUse',
-            component: termsOfUse
-        },
+        // {
+        //     path: '/terms-of-use',
+        //     name: 'termsOfUse',
+        //     component: termsOfUse
+        // },
         {
             path: '/terms-of-payment',
             name: 'termsOfPayment',
@@ -148,6 +176,28 @@ export default new Router({
             path: '/trademarks',
             name: 'trademarks',
             component: trademarks
+        },
+        {
+            path: '/trademarks/registration/',
+            name: trademarksRegistration,
+            component: trademarksRegistration
+        },
+        {
+            path: '/trademarks/search/',
+            name: trademarksSearch,
+            component: trademarksSearch
+        },
+        {
+            path: '/trademarks/watch/',
+            name: trademarksWatch,
+            component: trademarksWatch
         }
-    ]
+    ],
+    scrollBehavior (to, from, savedPosition) {
+        if (savedPosition) {
+            return { x: 0, y: 0}
+        } else {
+            return { x: 0, y: 0 }
+        }
+    }
 })
