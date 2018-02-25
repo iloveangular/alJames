@@ -30,6 +30,7 @@ $(document).ready(function () {
                 "activated": $("#activated").val()
             },
             success: function (msg) {
+                console.log(msg);
                 if (msg == 'error') {
                     $(".red-error").text("");
                     $(".red-error").text('This user is already subscribed.');
@@ -42,36 +43,6 @@ $(document).ready(function () {
             },
             error: function (msg) {
                 console.log('greska' + msg);
-            }
-        });
-    });
-    $(".submit-form").click(function () {
-        $.ajax({
-            type: "GET",
-            url: 'https://milosrest.herokuapp.com/api/contact',
-            data: {
-                "title": $("#title").val(),
-                "name": $("#name").val(),
-                "email": $("#email").val(),
-                "phone": $("#phone").val(),
-                "country": $("#country").val(),
-                "subject": $("#subject").val(),
-                "message": $("#message").val()
-            },
-            success: function (data) {
-                if (data == 'error') {
-                    $(".contact-form-error").text("");
-                    $(".contact-form-error").text('Error, please try again.');
-                } else {
-                    if (data == 'success') {
-                        $('.contact-form').hide();
-                        $('.success-message').text('');
-                        $('.success-message').text('Your enquiry has been sent. Thank you.');
-                    }
-                }
-            },
-            error: function (data) {
-                console.log(data);
             }
         });
     });
@@ -103,5 +74,16 @@ $(document).ready(function () {
 
     $(".margin").click(function () {
         $(this).children(".a").toggle()
-    })
+    });
+    $("#view_product").on("click", ".payment-item-title a", function () {
+        $(this).addClass('testiramo');
+        $(this).children('.more_info').addClass('expanded_info');
+    });
+    $("#view_product").on("click", ".testiramo", function () {
+        $(this).removeClass('testiramo');
+        $(this).children('.expanded_info').removeClass('expanded_info');
+    });
+
+
+
 });
