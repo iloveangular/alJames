@@ -50,8 +50,9 @@
                     });
                     return uuid;
                 };
+                $("#uuid").val(generateUUID());
+
             });
-            $("#uuid").val(generateUUID());
             $(".login").on("click",".loginButton", function(){
                 console.log('hello');
                 $.ajax({
