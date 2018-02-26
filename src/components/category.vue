@@ -4,7 +4,7 @@
             <section class="document-div">
                 <div class="container">
                     <div class="col-xs-12" style="padding: 0; border-bottom: 1px dashed #dddddd;">
-                        <h1 style="text-transform:capitalize;">{{this.$route.params.documentId}} Documents</h1><a class="back-link" href="/#/documents">&lt; Back to Documents</a></div>
+                        <h1 style="text-transform:capitalize;">{{title}} Documents</h1><a class="back-link" href="/#/documents">&lt; Back to Documents</a></div>
                     <div class="search-div">
                         <input class="no-margin" id="query" name="search" value="" autocomplete="off" placeholder="Search for Documents" type="text">
                         <button class="button green no-brd pad-tb-2-lr-15" id="search_doc" type="submit" name="submit" style="height:37px;">
@@ -72,7 +72,9 @@
             var vm = this;
             axios.post('https://milosrest.herokuapp.com/api/documents/' + this.$route.params.documentId)
                 .then(function (response) {
-                    vm.document = response.data;
+                    vm.document = response.data.documents;
+                    vm.title = response.data.title;
+                    console.log(response);
                 })
                 .catch(function (error) {
                     console.log(error);

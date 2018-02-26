@@ -83,17 +83,17 @@
                             <ul>
                                 <li>
                                     <select id="changeCurrency">
-                                        <option value="USD" selected>USD</option>
-                                        <option value="EUR">EUR</option>
-                                        <option value="GBP">GBP</option>
-                                        <option value="CNY">CNY</option>
+                                        <option class="usd" value="USD">USD</option>
+                                        <option class="eur" value="EUR">EUR</option>
+                                        <option class="gbp" value="GBP">GBP</option>
+                                        <option class="cny" value="CNY">CNY</option>
                                     </select>
                                 </li>
                                 <li><a href="/#/cart"><i class="fa fa-shopping-cart">
                                     <div id="count">0</div>
                                 </i></a></li>
-                                <li><i class="fa fa-user"></i><a href="#"><a href="/#/login">Login</a></a>
-                                </li>
+                                <li v-if="!username"><i class="fa fa-user"></i><a href="#"><a href="/#/login">Login</a></a></li>
+                                <li v-else><i class="fa fa-user"><a v-on:click="signOut" style="top:0;margin-left:8px;">{{username}}</a></i></li>
                             </ul>
                         </div>
                     </div>
@@ -102,3 +102,51 @@
         </div>
     </div>
 </template>
+<script>
+    import axios from 'axios'
+    export default {
+        data() {
+            return {
+                username: '',
+                signOut: function() {
+                    var vm = this;
+                    localStorage.removeItem('token');
+                    location.reload();
+                }
+            }
+        },
+        mounted() {
+            var vm = this;
+            $("#changeCurrency").change(function() {
+                localStorage.setItem('currency', $(this).val());
+            });
+            $('#changeCurrency').find('option').each( function() {
+                var currency = localStorage.getItem('currency');
+                var $this = $(this);
+                if ($this.text() == currency) {
+                    $this.attr('selected','selected');
+                    return false;
+                }
+            });
+            if (localStorage.getItem('token')) {
+                $.ajax({
+                    url: 'https://milosrest.herokuapp.com/api/token',
+                    type: 'POST',
+                    data: {
+                        'token': localStorage.getItem('token'),
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if(data.session == true) {
+                            vm.username = 'Logout';
+                        } else {
+                            vm.username = false;
+                        }
+                    }
+                })
+            } else {
+                console.log('nije logovan');
+            }
+        }
+    }
+</script>

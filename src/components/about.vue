@@ -196,51 +196,51 @@
                         <h2 class="text-center">Why Choose Us</h2>
                         <ul class="faq">
                             <div class="margin">
-                                <li class="q">
+                                <li class="q" data-toggle="collapse" data-parent="#accordion-about" href="#about-1">
                                     <div class="sprite1 secure left"></div>
                                     <i aria-hidden="true" class="fa fa-chevron-down"></i> Secure & Trustworthy
                                 </li>
-                                <li class="a">
+                                <li class="a panel-collapse collapse" id="about-1">
                                     Protection of your security data and personal confidential information are of vital importance to Agent Legal. We ensure that your data is secure and that we meet the highest security standards and confidentiality principals. Your personal
                                     data will not be disclosed by us, nor will it be shared, sold or announced to any third party.
                                 </li>
                             </div>
                             <div class="margin">
-                                <li class="q">
+                                <li class="q" data-toggle="collapse" data-parent="#accordion-about" href="#about-2">
                                     <div class="sprite1 expert_advice left"></div>
                                     <i aria-hidden="true" class="fa fa-chevron-down"></i> Expert Advice
                                 </li>
-                                <li class="a">
+                                <li class="a panel-collapse collapse" id="about-2">
                                     Agent Legal is committed to the highest degree of professionalism and integrity. Our team of experienced advisors is well positioned to offer guidance regarding company formation and structuring, tax optimization, administration services
                                     and bank account opening, so you can make wise business decisions. Our Live Support allows our clients to use instant messaging to contact our team via the Agent Legal website in order to receive immediate assistance.
                                 </li>
                             </div>
                             <div class="margin">
-                                <li class="q">
+                                <li class="q" data-toggle="collapse" data-parent="#accordion-about" href="#about-3">
                                     <div class="sprite1 continous_support left"></div>
                                     <i aria-hidden="true" class="fa fa-chevron-down"></i>Continuous Support
                                 </li>
-                                <li class="a">
+                                <li class="a panel-collapse collapse" id="about-3">
                                     Once you have submitted your order we will continue to support you with any updates that arise and provide consultation to ensure that you get the highest quality service. We will monitor your case until your business package is received.
                                     Our Live Support allows you to quickly locate a customer support representative that will assist with any questions and information regarding our products and services.
                                 </li>
                             </div>
                             <div class="margin">
-                                <li class="q">
+                                <li class="q" data-toggle="collapse" data-parent="#accordion-about" href="#about-4">
                                     <div class="sprite1 quick_easy left"></div>
                                     <i aria-hidden="true" class="fa fa-chevron-down"></i>Quick & Easy Procedure
                                 </li>
-                                <li class="a">
+                                <li class="a panel-collapse collapse" id="about-4">
                                     We make the process of company formation or bank account opening as simple and quick as possible. Agent Legal provides all kinds of tools and services to get you started. Not sure what to choose? You can talk to a member of our support staff
                                     in real time with live chat. Our Customer support team will be glad to assist you.
                                 </li>
                             </div>
                             <div class="margin">
-                                <li class="q">
+                                <li class="q" data-toggle="collapse" data-parent="#accordion-about" href="#about-5">
                                     <div class="sprite1 competitive left"></div>
                                     <i aria-hidden="true" class="fa fa-chevron-down"></i>Competitive Pricing
                                 </li>
-                                <li class="a">
+                                <li class="a panel-collapse collapse" id="about-4">
                                     Our goal is to provide you with the best customer service at the best possible price. Agent Legal clearly displays pricing and there are no hidden fees. When choosing Agent Legal, you can be sure that our packages will include all that you
                                     need to establish and operate your company or open a bank account with no hidden costs. We do not try to sell products or services that you do not need.
                                 </li>
