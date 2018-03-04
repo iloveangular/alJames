@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </section>
-            <section class="browse-companies">
+            <section class="browse-companies" style="margin-bottom: 0;">
                 <div class="container">
                     <div class="panel-two">
                         <div class="col-md-12 col-sm-12" style="padding: 0;">

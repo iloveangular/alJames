@@ -32,6 +32,9 @@ import privacyPolicy from '@/components/privacyPolicy'
 import disclaimer from '@/components/disclaimer'
 /* Login Pages */
 import login from '@/components/login'
+import orders from '@/components/orders'
+import cart from '@/components/cart'
+import forgotPassword from '@/components/forgotPassword'
 /* Exclusive Credit Card */
 import exclusiveCreditCard from '@/components/exclusivecc'
 
@@ -126,6 +129,21 @@ export default new Router({
             path: '/login',
             name: 'login',
             component: login
+        },
+        {
+            path: '/orders',
+            name: 'orders',
+            component: orders
+        },
+        {
+            path: '/cart',
+            name: 'cart',
+            component: cart
+        },
+        {
+            path: '/forgot-password',
+            name: 'forgotPassword',
+            component: forgotPassword
         },
         {
             path: '/packages',

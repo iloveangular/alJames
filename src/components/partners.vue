@@ -124,29 +124,31 @@
                 <div class="container">
                     <h2>Apply to Join our Partner Program</h2>
                     <p>Complete the form below to find out if you're eligible for our partner program. Once we approve your application, you will receive an email with your Agent Legal partner code that will allow you to place orders at your discounted rate.</p>
-                    <div class="row">
+                    <div class="row" v-if="!sent">
                         <div class="col-md-6 col-md-push-3">
-                            <form method="post">
-                                <input id="contact" name="action" value="submit-application" type="hidden">
                                 <div class="form-group"><span>Full Name *</span>
-                                    <input class="form-control" name="name.full" placeholder="" type="text">
+                                    <input class="form-control partnerName" name="name.full" placeholder="" type="text">
                                 </div>
                                 <div class="form-group"><span>Company Name</span>
-                                    <input class="form-control" name="companyName" placeholder="" type="text">
+                                    <input class="form-control partnerCompany" name="companyName" placeholder="" type="text">
                                 </div>
                                 <div class="form-group"><span>Company Website</span>
-                                    <input class="form-control" name="companyWebsite" placeholder="" type="text">
+                                    <input class="form-control partnerWebsite" name="companyWebsite" placeholder="" type="text">
                                 </div>
                                 <div class="form-group"><span>Email *</span>
-                                    <input class="form-control" name="email" placeholder="" type="text">
+                                    <input class="form-control partnerEmail" name="email" placeholder="" type="text">
                                 </div>
                                 <div class="form-group"><span>Telephone *</span>
-                                    <input class="form-control" name="phone" placeholder="" type="text">
+                                    <input class="form-control partnerPhone" name="phone" placeholder="" type="text">
                                 </div>
                                 <div class="form-actions">
-                                    <button class="btn btn-green">Submit</button>
+                                    <button class="btn btn-green submitPartner">Submit</button>
                                 </div>
-                            </form>
+                        </div>
+                    </div>
+                    <div class="row" v-if="sent">
+                        <div class="col-lg-12">
+                            <h3 style="text-align: center;">Thanks for your signing up on our Partners list!</h3>
                         </div>
                     </div>
                 </div>
@@ -154,3 +156,47 @@
         </main>
     </main>
 </template>
+<script>
+    import axios from 'axios'
+
+    export default {
+        data() {
+            return {
+                sent: ''
+            }
+        },
+        mounted() {
+            var vm = this;
+            console.log(vm.sent);
+            $(document).ready(function () {
+                if(localStorage.getItem('partnerSigned')) {
+                    vm.sent = true;
+                }
+                $(".submitPartner").click(function () {
+                    console.log('hey there');
+                    $.ajax({
+                        type: "GET",
+                        url: 'https://milosrest.herokuapp.com/api/partners',
+                        data: {
+                            "name": $(".partnerName").val(),
+                            "companyName": $(".partnerCompany").val(),
+                            "companyWebsite": $(".partnerWebsite").val(),
+                            "email": $(".partnerEmail").val(),
+                            "phone": $(".partnerPhone").val()
+                        },
+                        success: function (data) {
+                            vm.sent = true;
+                            location.href = '/#/partners#';
+                            localStorage.setItem('partnerSigned', true);
+                        },
+                        error: function (data) {
+                            console.log(data);
+                            vm.sent = false;
+                        }
+                    })
+                });
+            })
+        }
+
+    }
+</script>

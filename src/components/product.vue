@@ -12,6 +12,7 @@
                         <div class="product-head clearfix">
                             <div class="pull-left product-logo"><img :src="product.flagImageUrl"></div>
                             <div class="pull-left">
+                                <input type="hidden" id="pageTitle" :name="product.title">
                                 <h1>{{product.title}}<span class="description" v-html="product.description"></span></h1>
                                 <input name="category_id" value="22" type="hidden">
                             </div>
@@ -26,12 +27,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form method="post">
                             <input name="action" value="addToCart" type="hidden">
                             <input name="cat_id" value="22" type="hidden">
                             <input name="product_quantity" value="1" type="hidden">
-                            <input id="product_id" name="product_id" :value="product._id" type="hidden">
-                            <input id="amount_product" name="amount_product" v-model="product.price" type="hidden">
+                            <input id="product_id" :name="product._id" :value="product._id" type="hidden">
+                            <input id="amount_product" name="amount_product" :value="product.price" type="hidden">
                             <table class="table payment-table" id="view_product">
                                 <tbody>
                                 <tr>
@@ -45,7 +45,7 @@
                                         </div>
                                     </td>
                                     <td class="payment-price mandatory-price">
-                                        <input class="hidden" style="height:12px;margin-top:3px;" name="options[29780]" v-model="product.price" checked="checked" type="checkbox"> $<span v-html="product.price"></span></td>
+                                        <input class="hidden" style="height:12px;margin-top:3px;" :name="'options[' + product._id + ']'" v-model="product.price" checked="checked" type="checkbox"> $<span v-html="product.price"></span></td>
                                 </tr>
                                 <tr>
                                     <td class="payment-table-head" colspan="2">
@@ -67,7 +67,7 @@
                                         <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
                                     <td class="payment-price">$<span>{{service.price}}</span>
-                                        <input class="checkbox" name="services" :value="service._id" :data-price="service.price" type="checkbox">
+                                        <input class="checkbox" :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
                                 <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'corporate-certificate'">
@@ -85,7 +85,7 @@
                                         <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
                                     <td class="payment-price">$<span>{{service.price}}</span>
-                                        <input class="checkbox" name="services" :value="service._id" :data-price="service.price" type="checkbox">
+                                        <input class="checkbox" :data-title="service.name" data-service="corporate-certificate" :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
                                 <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'other-service'">
@@ -103,7 +103,7 @@
                                         <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
                                     <td class="payment-price">$<span>{{service.price}}</span>
-                                        <input class="checkbox" name="services" :value="service._id" :data-price="service.price" type="checkbox">
+                                        <input class="checkbox" :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
                                 <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'bank-products-and-service'" v-if="service.type == 'bank-products-and-service'">
@@ -121,7 +121,7 @@
                                         <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
                                     <td class="payment-price">$<span>{{service.price}}</span>
-                                        <input class="checkbox" name="services" :value="service._id" :data-price="service.price" type="checkbox">
+                                        <input class="checkbox" :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
 
@@ -164,12 +164,11 @@
                                 <tr>
                                     <td class="text-right" colspan="2">
                                         <div class="form-actions">
-                                            <button class="btn btn-default btn-add-to-cart" id="add-to-cart" type="submit">Add to Cart</button><span class="cart-icon"></span></div>
+                                            <button class="btn btn-default btn-add-to-cart addToCart" id="add-to-cart">Add to Cart</button><span class="cart-icon"></span></div>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -236,7 +235,6 @@
                     var add = Number($(this).data("price"));
                     var service = $(this).attr('name');
                     var productId = $("#product_id").val();
-
                     if (this.checked) {
                         var totalText = $("#total").text();
                         var finalTotal = total + add;
@@ -246,7 +244,7 @@
                         $('#total_input').val(finalTotal);
                         $('#total').html(finalTotal);
                     }
-                    ;
+                ;
                     if (!this.checked) {
                         var totalText = $("#total").text();
                         var finalTotal = total - add;
@@ -254,6 +252,41 @@
                         $("#total").html(finalTotal);
                     }
                 })
+            var testLista = [];
+            $("#payment").on("click",".checkbox", function(){
+                var dataId = $(this).attr('name');
+                var dataTitle = $(this).attr('data-title');
+                var dataService = $(this).attr('data-service');
+                var dataPrice = $(this).attr('data-price');
+                var testBroj = {
+                    _id: dataId,
+                    title: dataTitle,
+                    service: dataService,
+                    price: dataPrice
+                }
+                testLista.push(testBroj)
+            })
+
+            $("#payment").on("click", ".addToCart", function() {
+                var ceoBroj = $("#product_id").val();
+                var pageTitle = $("#pageTitle").attr('name');
+                var productPrice = $("#amount_product").val();
+                var celaLista = {
+                        _id: ceoBroj,
+                        title: pageTitle,
+                        list: testLista,
+                        price: productPrice
+                };
+                if(!localStorage.getItem('cartItems')) {
+                    localStorage.setItem('cartItems', '[]');
+                }
+                var a = [];
+                a = JSON.parse(localStorage.getItem('cartItems'));
+                a.push(celaLista);
+                localStorage.setItem('cartItems', JSON.stringify(a));
+                location.reload();
+            })
+
         }
 
     }

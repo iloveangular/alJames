@@ -77,6 +77,7 @@
                                 <li class="null"><a href="/#/packages">Start Up Packs</a></li>
                                 <li class="null"><a href="/#/documents">Templates</a></li>
                                 <li class="null"><a href="/#/offers">Offers</a></li>
+                                <li v-if="username"><a href="/#/orders">My Orders</a></li>
                             </ul>
                         </div>
                         <div class="shop-header">
@@ -90,10 +91,10 @@
                                     </select>
                                 </li>
                                 <li><a href="/#/cart"><i class="fa fa-shopping-cart">
-                                    <div id="count">0</div>
+                                    <div id="count">{{cartItems}}</div>
                                 </i></a></li>
-                                <li v-if="!username"><i class="fa fa-user"></i><a href="#"><a href="/#/login">Login</a></a></li>
-                                <li v-else><i class="fa fa-user"><a v-on:click="signOut" style="top:0;margin-left:8px;">{{username}}</a></i></li>
+                                <li v-if="username"><i class="fa fa-user"><a v-on:click="signOut" style="top:0;margin-left:8px;">Hi {{username}}</a></i></li>
+                                <li v-else><i class="fa fa-user"></i><a href="#"><a href="/#/login">Login</a></a></li>
                             </ul>
                         </div>
                     </div>
@@ -108,15 +109,22 @@
         data() {
             return {
                 username: '',
+                cartItems: '',
                 signOut: function() {
                     var vm = this;
                     localStorage.removeItem('token');
                     location.reload();
+                    location.href('/#/');
                 }
             }
         },
         mounted() {
             var vm = this;
+            if(localStorage.getItem('cartItems')) {
+                vm.cartItems = JSON.parse(localStorage.getItem('cartItems')).length;
+            } else {
+                vm.cartItems = 0;
+            }
             $("#changeCurrency").change(function() {
                 localStorage.setItem('currency', $(this).val());
             });
@@ -138,7 +146,7 @@
                     success: function(data) {
                         console.log(data);
                         if(data.session == true) {
-                            vm.username = 'Logout';
+                            vm.username = data.username;
                         } else {
                             vm.username = false;
                         }
