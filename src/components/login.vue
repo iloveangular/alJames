@@ -45,7 +45,7 @@
             $(".login").on("click", ".loginButton", function () {
                 console.log('hello');
                 $.ajax({
-                    url: 'http://localhost:3000/api/login',
+                    url: 'https://milosrest.herokuapp.com/api/login',
                     type: 'POST',
                     data: {
                         'email': $("#email").val(),
@@ -68,7 +68,7 @@
             });
             if (localStorage.getItem('token')) {
                 $.ajax({
-                    url: 'https://milosrest.herokuapp.com//api/token',
+                    url: 'https://milosrest.herokuapp.com/api/token',
                     type: 'POST',
                     data: {
                         'token': localStorage.getItem('token'),
