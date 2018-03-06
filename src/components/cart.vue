@@ -41,6 +41,7 @@
                                 </td>
                                 <td>$ <span class="price" :value="item.price" style="font-size:21px !important;">{{item.price}}</span></td>
                                 <td>$ <span class="total" style="font-size:21px !important;">{{item.price}}</span></td>
+                                <input type="hidden" class="itemPrice" :value="item.price">
                             </tr>
                             <tr v-for="subItem in item.list" :data-product="subItem._id" :data-price="subItem.price">
                                 <td>
@@ -64,11 +65,13 @@
                                 <td>$ <span class="price" :value="subItem.price" style="font-size:21px !important;">{{subItem.price}}</span>
                                 </td>
                                 <td>$ <span class="total" style="font-size:21px !important;">{{subItem.price}}</span>
+                                    <input type="hidden" class="itemPrice" :value="subItem.price">
+
                                 </td>
                             </tr>
                             </tbody>
                             <tr class="bg-gray">
-                                <td class="text-right" colspan="4">Total : $<span id="the-total"
+                                <td class="text-right" colspan="4" style="padding:10px;font-size:24px !important;">Total : $<span id="the-total"
                                                                                   style="font-family: 'Oswald', sans-serif;">6080</span>
                                 </td>
                             </tr>
@@ -76,8 +79,7 @@
                     </div>
                     <div class="col-xs-12 pay-btn" style="margin-bottom: 50px;">
                         <div class="col-md-6 check-out button text-right col-md-push-6 col-sm-12"><a
-                                class="btn btn-gray" href="/">Continue Shopping</a><a class="btn btn-green"
-                                                                                      href="/checkout/login">Check Out <i
+                                class="btn btn-gray" href="/">Continue Shopping</a><a class="btn btn-green" href="/#/checkout/payment">Check Out <i
                                 class="fa fa-shopping-cart" aria-hidden="true"></i></a></div>
                         <div class="col-md-6 payment-methods col-md-pull-6 col-sm-12 text-left">
                             <span>Payment methods </span>
@@ -287,6 +289,11 @@
                 });
                 $("#the-total").val(sum);
                 console.log(sum);
+                var totalPoints = 0;
+                $('.itemPrice').each(function(){
+                    totalPoints = parseFloat($(this).val()) + totalPoints;
+                    $("#the-total").html(totalPoints);
+                });
             });
         }
 

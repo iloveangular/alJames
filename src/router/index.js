@@ -34,6 +34,7 @@ import disclaimer from '@/components/disclaimer'
 import login from '@/components/login'
 import orders from '@/components/orders'
 import cart from '@/components/cart'
+import checkout from '@/components/checkout'
 import forgotPassword from '@/components/forgotPassword'
 /* Exclusive Credit Card */
 import exclusiveCreditCard from '@/components/exclusivecc'
@@ -139,6 +140,11 @@ export default new Router({
             path: '/cart',
             name: 'cart',
             component: cart
+        },
+        {
+            path: '/checkout/payment',
+            name: 'checkout',
+            component: checkout
         },
         {
             path: '/forgot-password',
