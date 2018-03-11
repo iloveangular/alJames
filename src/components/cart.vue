@@ -293,33 +293,48 @@
         });
         $("#the-total").val(sum);
         var totalPrice = 0;
-        if(totalPrice < 1) {
+        if (totalPrice < 1) {
           $("#the-total").html(0);
         }
         $('.itemPrice').each(function () {
           totalPrice = parseFloat($(this).val()) + totalPrice;
           $("#the-total").html(totalPrice);
-          if(totalPrice < 1) {
+          if (totalPrice < 1) {
             $("#the-total").html(0);
           }
         });
 
         var inventory = JSON.parse(localStorage.getItem('cartItems'));
-        $('.delete-product').click(function() {
+        $('.delete-product').click(function () {
           var deleteProductById = $(this).val();
           var itemPrice = $(this).attr('data-price');
-          var updatedList = inventory.filter(function(el) {
+          var updatedList = inventory.filter(function (el) {
             return el._id !== deleteProductById;
           });
-          for(var i = 0; i < inventory.length; i++) {
-            if(inventory[i]._id == deleteProductById) {
+          for (var i = 0; i < inventory.length; i++) {
+            if (inventory[i]._id == deleteProductById) {
               vm.items.splice(i, 1);
               break;
             }
           }
+          // find and remove vanila js
+          function findAndRemove(data, id) {
+            data.forEach(function (obj) {                    // Loop through each object in outer array
+              obj.list = obj.list.filter(function (o) {// Filter out the object with unwanted id, in inner array
+                return o._id != id;
+              });
+            });
+          };
+
+          findAndRemove(updatedList, deleteProductById);
+          location.reload();
+
           var updatedPrice = totalPrice - itemPrice;
           $("#the-total").html(updatedPrice);
           localStorage.setItem('cartItems', JSON.stringify(updatedList));
+
+
+
         });
         console.log(vm.items);
       });
