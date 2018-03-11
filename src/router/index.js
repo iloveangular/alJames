@@ -15,7 +15,7 @@ import singleCategory from '@/components/category'
 import singleDocument from '@/components/document'
 import affiliates from '@/components/affiliates'
 import affiliatesSignup from '@/components/affiliatesSignup'
-// import faqs from '@/components/faqs'
+import faqs from '@/components/faqs'
 import partners from '@/components/partners'
 /* Trademarks */
 import trademarks from '@/components/trademarks'
@@ -25,7 +25,7 @@ import trademarksWatch from '@/components/trademarksWatch'
 /* Niche Services */
 import nicheServices from '@/components/additionalServices'
 import nicheSingle from '@/components/nicheSingle'
-// import termsOfUse from '@/components/termsOfUse'
+import termsOfUse from '@/components/termsOfUse'
 import termsOfPayment from '@/components/termsOfPayment'
 import terms from '@/components/terms'
 import privacyPolicy from '@/components/privacyPolicy'
@@ -121,11 +121,11 @@ export default new Router({
             name: 'affiliatesSignup',
             component: affiliatesSignup
         },
-        // {
-        //     path: '/faqs',
-        //     name: 'faqs',
-        //     component: faqs
-        // },
+        {
+            path: '/faqs',
+            name: 'faqs',
+            component: faqs
+        },
         {
             path: '/login',
             name: 'login',
@@ -166,11 +166,11 @@ export default new Router({
             name: 'partners',
             component: partners
         },
-        // {
-        //     path: '/terms-of-use',
-        //     name: 'termsOfUse',
-        //     component: termsOfUse
-        // },
+        {
+            path: '/terms-of-use',
+            name: 'termsOfUse',
+            component: termsOfUse
+        },
         {
             path: '/terms-of-payment',
             name: 'termsOfPayment',

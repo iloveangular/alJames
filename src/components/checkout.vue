@@ -144,7 +144,7 @@
         },
         mounted() {
             var vm = this;
-
+            // Checking for items in storage
             if (localStorage.getItem('cartItems')) {
                 vm.items = JSON.parse(localStorage.getItem('cartItems'));
             } else {

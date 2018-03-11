@@ -67,7 +67,7 @@
                                         <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
                                     <td class="payment-price">$<span>{{service.price}}</span>
-                                        <input class="checkbox" :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
+                                        <input class="checkbox" :data-title="service.name" data-service="nominee-service" :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
                                 <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'corporate-certificate'">
@@ -103,7 +103,7 @@
                                         <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
                                     <td class="payment-price">$<span>{{service.price}}</span>
-                                        <input class="checkbox" :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
+                                      <input class="checkbox" :data-title="service.name" data-service="other-service" :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
                                 <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'bank-products-and-service'" v-if="service.type == 'bank-products-and-service'">
@@ -121,7 +121,7 @@
                                         <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                                     </td>
                                     <td class="payment-price">$<span>{{service.price}}</span>
-                                        <input class="checkbox" :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
+                                      <input class="checkbox" :data-title="service.name" data-service="bank-products-and-service" :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
 
