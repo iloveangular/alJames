@@ -22,7 +22,7 @@
                             <tbody v-for="item in items" :class="item.title" :data-product="item._id">
                             <tr :value="item._id">
                                 <td>
-                                    <button class="delete-product" name="button_id" :value="item._id" type="submit">
+                                    <button class="delete-product" name="button_id" :value="item._id" :data-price="item.price">
                                         <i class="fa fa-times" aria-hidden="true"></i></button>
                                     <a class="product-name" href="#" style="font-weight: bold;">{{item.title}}</a></td>
                                 <td>
@@ -47,7 +47,7 @@
                             </tr>
                             <tr v-for="subItem in item.list" :data-product="subItem._id" :data-price="subItem.price">
                                 <td>
-                                    <button class="delete-product" name="button_id" :value="subItem._id" type="submit">
+                                    <button class="delete-product" name="button_id" :value="subItem._id" :data-price="subItem.price">
                                         <i class="fa fa-times" aria-hidden="true"></i></button>
                                     <a class="service-name" href="#">{{subItem.title}}</a></td>
                                 <td>
@@ -252,6 +252,33 @@
                     };
                     stripe.createToken(card, extraDetails).then(setOutcome);
                 });
+              var inventory = JSON.parse(localStorage.getItem('cartItems'));
+              $('.delete-product').click(function () {
+                var deleteProductById = $(this).val();
+                var updatedList = inventory.filter(function (el) {
+                  return el._id !== deleteProductById;
+                });
+                for (var i = 0; i < inventory.length; i++) {
+                  if (inventory[i]._id == deleteProductById) {
+                    vm.items.splice(i, 1);
+                    break;
+                  }
+                }
+                // find and remove vanila js
+                function findAndRemove(data, id) {
+                  data.forEach(function (obj) {                    // Loop through each object in outer array
+                    obj.list = obj.list.filter(function (o) {// Filter out the object with unwanted id, in inner array
+                      return o._id != id;
+                    });
+                  });
+                };
+
+                findAndRemove(updatedList, deleteProductById);
+                location.reload();
+
+                localStorage.setItem('cartItems', JSON.stringify(updatedList));
+
+              });
             });
 
             // Here we are calling a Stripe Form
