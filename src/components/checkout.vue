@@ -266,8 +266,8 @@
                 }
                 // find and remove vanila js
                 function findAndRemove(data, id) {
-                  data.forEach(function (obj) {                    // Loop through each object in outer array
-                    obj.list = obj.list.filter(function (o) {// Filter out the object with unwanted id, in inner array
+                  data.forEach(function (obj) {
+                    obj.list = obj.list.filter(function (o) {
                       return o._id != id;
                     });
                   });

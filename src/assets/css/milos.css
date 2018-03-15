@@ -10929,6 +10929,7 @@ p.p-solve-affilates {
     line-height: 39px;
     outline: none;
 }
+.contactFormPartners label.error {text-align:center !important;}
 
 form label.error {
     color: red !important;

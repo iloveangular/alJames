@@ -11,13 +11,14 @@
                         <div class="contact-form contact-section clearfix">
                             <div class="contact-section-head">
                                 <h2>Contact Information</h2></div>
+                          <form id="contactForm">
                             <input id="contact" name="action" value="submit-application" type="hidden">
                             <div class="row form-group">
                                 <div class="col-md-3">
                                     <label for="name">Full Name</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input class="form-control" id="name" name="name.full" type="text">
+                                    <input class="form-control" id="name" name="name" type="text" required>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -25,7 +26,7 @@
                                     <label for="email">Email</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input class="form-control" id="email" name="email" type="email">
+                                    <input class="form-control" id="email" name="email" type="email" required>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -33,7 +34,7 @@
                                     <label for="phone">Telephone Number</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input class="form-control" id="phone" name="phone" type="text">
+                                    <input class="form-control" id="phone" name="phone" type="text" required>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -41,7 +42,7 @@
                                     <label for="linkedInUrl">LinkedIn Url</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input class="form-control" id="linkedInUrl" name="linkedInUrl" type="text">
+                                    <input class="form-control" id="linkedInUrl" name="linkedInUrl" type="text" required>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -49,7 +50,7 @@
                                     <label for="twitterUrl">Twitter Url</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input class="form-control" id="twitterUrl" name="twitterUrl" type="text">
+                                    <input class="form-control" id="twitterUrl" name="twitterUrl" type="text" required>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -57,7 +58,7 @@
                                     <label for="facebookUrl">Facebook Url</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input class="form-control" id="facebookUrl" name="facebookUrl" type="text">
+                                    <input class="form-control" id="facebookUrl" name="facebookUrl" type="text" required>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -65,7 +66,7 @@
                                     <label for="companyWebsite">Company Website</label>
                                 </div>
                                 <div class="col-md-9">
-                                    <input class="form-control" id="companyWebsite" name="companyWebsite" type="text">
+                                    <input class="form-control" id="companyWebsite" name="companyWebsite" type="text" required>
                                 </div>
                             </div>
                             <hr>
@@ -117,6 +118,7 @@
                                 <input class="btn btn-green submit-affiliate" name="submit" value="Submit"
                                        type="submit">
                             </div>
+                          </form>
                         </div>
                     </div>
                     <div class="thing" style="width: 80%; margin: 0 auto;" v-if="sent">
@@ -187,7 +189,7 @@
                         localStorage.setItem('affiliateSpeciality', false);
                     }
                 });
-                $(".submit-affiliate").click(function () {
+                function submitForm() {
                     console.log('hey there');
                     $.ajax({
                         type: "GET",
@@ -216,7 +218,39 @@
                             vm.sent = false;
                         }
                     })
-                });
+                };
+              $("#contactForm").validate({
+                rules: {
+                  "name": {
+                    required: true,
+                    minlength: 5
+                  },
+                  "phone": {
+                    required: true,
+                    digits: true
+                  },
+                  "email": {
+                    required: true,
+                    email: true
+                  }
+                },
+                messages: {
+                  "name": {
+                    required: "Please, enter a name"
+                  },
+                  "phone": {
+                    required: "Please, enter a phone"
+                  },
+                  "email": {
+                    required: "Please, enter an email",
+                    email: "Email is invalid"
+                  }
+                },
+                submitHandler: function (form) { // for demo
+                  submitForm();
+                  return false; // for demo
+                }
+              });
             })
         }
 

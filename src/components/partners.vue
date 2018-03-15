@@ -126,8 +126,9 @@
                     <p>Complete the form below to find out if you're eligible for our partner program. Once we approve your application, you will receive an email with your Agent Legal partner code that will allow you to place orders at your discounted rate.</p>
                     <div class="row" v-if="!sent">
                         <div class="col-md-6 col-md-push-3">
-                                <div class="form-group"><span>Full Name *</span>
-                                    <input class="form-control partnerName" name="name.full" placeholder="" type="text">
+                          <form id="contactForm" class="contactFormPartners">
+                          <div class="form-group"><span>Full Name *</span>
+                                    <input class="form-control partnerName" name="name" placeholder="" type="text" required>
                                 </div>
                                 <div class="form-group"><span>Company Name</span>
                                     <input class="form-control partnerCompany" name="companyName" placeholder="" type="text">
@@ -136,14 +137,15 @@
                                     <input class="form-control partnerWebsite" name="companyWebsite" placeholder="" type="text">
                                 </div>
                                 <div class="form-group"><span>Email *</span>
-                                    <input class="form-control partnerEmail" name="email" placeholder="" type="text">
+                                    <input class="form-control partnerEmail" name="email" placeholder="" type="text" required>
                                 </div>
                                 <div class="form-group"><span>Telephone *</span>
-                                    <input class="form-control partnerPhone" name="phone" placeholder="" type="text">
+                                    <input class="form-control partnerPhone" name="phone" placeholder="" type="text" required>
                                 </div>
                                 <div class="form-actions">
                                     <button class="btn btn-green submitPartner">Submit</button>
                                 </div>
+                          </form>
                         </div>
                     </div>
                     <div class="row" v-if="sent">
@@ -172,7 +174,7 @@
                 if(localStorage.getItem('partnerSigned')) {
                     vm.sent = true;
                 }
-                $(".submitPartner").click(function () {
+                function submitForm() {
                     console.log('hey there');
                     $.ajax({
                         type: "GET",
@@ -194,7 +196,40 @@
                             vm.sent = false;
                         }
                     })
-                });
+                }
+                // Validation
+              $("#contactForm").validate({
+                rules: {
+                  "name": {
+                    required: true,
+                    minlength: 5
+                  },
+                  "phone": {
+                    required: true,
+                    digits: true
+                  },
+                  "email": {
+                    required: true,
+                    email: true
+                  }
+                },
+                messages: {
+                  "name": {
+                    required: "Please, enter a name"
+                  },
+                  "phone": {
+                    required: "Please, enter a phone"
+                  },
+                  "email": {
+                    required: "Please, enter an email",
+                    email: "Email is invalid"
+                  }
+                },
+                submitHandler: function (form) { // for demo
+                  submitForm();
+                  return false; // for demo
+                }
+              });
             })
         }
 
