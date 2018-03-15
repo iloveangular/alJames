@@ -94,7 +94,7 @@ header nav.desktop {
   left: 0;
   right: 0;
   background: #8F101C;
-  boxgit -shadow: 0 0 8px #333333;
+  box-shadow: 0 0 8px #333333;
   -webkit-box-shadow: 0 0 8px #333333;
   -moz-box-shadow: 0 0 8px #333333;
   z-index: 9999; }
@@ -9451,7 +9451,6 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     border-style: none solid solid;
     border-width: medium 1px 1px;
     color: rgb(143, 16, 28);
-    display: none;
 }
 
 .rotate {
@@ -10931,6 +10930,11 @@ p.p-solve-affilates {
     outline: none;
 }
 
+form label.error {
+    color: red !important;
+    font-weight: bold;
+}
+
 .box-bottom button:focus {
     background: #555ABF;
 }
@@ -10948,7 +10952,7 @@ p.p-solve-affilates {
 }
 
 .box-bottom .success, .error {
-    display: none;
+    display: block;
     font-size: 13px;
 }
 
