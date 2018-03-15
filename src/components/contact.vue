@@ -411,20 +411,20 @@
     export default {
         data() {
             return {
-                sendMessage: function () {
-                    message = 'sent';
-                    if (message) {
-                        var xxxx = document.getElementById("contact-head");
-                        var successMessage = document.getElementById("success-message");
-                        successMessage.style.display = "block";
-                        xxxx.style.display = "none";
-                        console.log(message);
-                    }
-                }
+                message: '',
             }
         },
         mounted() {
             var vm = this;
+            function saveFormToLS() {
+              vm.message = 'sent';
+              if (message) {
+                var xxxx = document.getElementById("contact-head");
+                var successMessage = document.getElementById("success-message");
+                successMessage.style.display = "block";
+                xxxx.style.display = "none";
+              }
+            }
             function submitForm() {
                 $.ajax({
                     type: "GET",
@@ -439,6 +439,7 @@
                         "message": $("#message").val()
                     },
                     success: function (msg) {
+                        saveFormToLS();
                         console.log(msg);
                     },
                     error: function (msg) {
