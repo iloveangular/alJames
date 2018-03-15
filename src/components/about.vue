@@ -194,8 +194,8 @@
                 <div class="row">
                     <div class="tab_main">
                         <h2 class="text-center">Why Choose Us</h2>
-                        <ul class="faq">
-                            <div class="margin">
+                        <ul class="faq panel-group" id="accordion-about">
+                            <div class="margin panel">
                                 <li class="q" data-toggle="collapse" data-parent="#accordion-about" href="#about-1">
                                     <div class="sprite1 secure left"></div>
                                     <i aria-hidden="true" class="fa fa-chevron-down"></i> Secure & Trustworthy

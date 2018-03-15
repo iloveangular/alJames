@@ -13,8 +13,9 @@
                     <div class="col-sm-6 col-md-8">
                         <div class="contact-form contact-section clearfix" id="contact-form">
                             <div v-if="!message" id="contact-head" class="contact-section-head">
-                                <h2>Contact Form <span>All fields are mandatory</span></h2>
-                                <input id="contact" name="action" value="contact" type="hidden">
+                                <h2 style="margin-bottom:20px;">Contact Form <span>All fields are mandatory</span></h2>
+                              <form id="contactForm">
+                              <input id="contact" name="action" value="contact" type="hidden">
                                 <div class="row form-group">
                                     <div class="col-md-3">
                                         <label for="title">Title</label>
@@ -35,7 +36,7 @@
                                         <label for="name">Full Name</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control" id="name" name="name.full" type="text">
+                                        <input class="form-control" id="name" name="name" type="text" required>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -43,7 +44,7 @@
                                         <label for="email">Email</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control" id="email" name="email" type="email">
+                                        <input class="form-control" id="email" name="email" type="email" required>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -51,7 +52,7 @@
                                         <label for="phone">Telephone Number</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control" id="phone" name="phone" type="text">
+                                        <input class="form-control" id="phone" name="phone" type="text" required>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -59,7 +60,7 @@
                                         <label for="country">Country of Residence</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <select class="form-control" id="country" name="country">
+                                        <select class="form-control" id="country" name="country" required>
                                             <option value="">Please Select Country</option>
                                             <option value="Afghanistan">Afghanistan</option>
                                             <option value="Åland Islands">Åland Islands</option>
@@ -350,7 +351,7 @@
                                         <label for="subject">Subject of Interest</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input class="form-control" id="subject" name="subject" type="text">
+                                        <input class="form-control" id="subject" name="subject" type="text" required>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -358,15 +359,14 @@
                                         <label for="message">Message of Enquiry</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <textarea class="form-control" id="message" name="message" rows="9"
-                                                  cols="39"></textarea>
+                                        <textarea class="form-control" id="message" name="message" rows="9" cols="39" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-right form-actions">
-                                    <input v-on:click="sendMessage" class="btn btn-green submit-form" name="submit"
-                                           value="Submit" type="submit">
+                                    <input class="btn btn-green submit-form" name="submit" value="Submit" type="submit">
                                 </div>
                                 <p class="contact-form-error" style="color: red; font-weight:bold;font-size:18px;"></p>
+                              </form>
                             </div>
                             <div id="success-message" class="contact-section-head" style="display: none;"><h2>Your enquiry has been sent. Thank you.</h2></div>
                         </div>
@@ -425,7 +425,7 @@
         },
         mounted() {
             var vm = this;
-            $(".submit-form").click(function () {
+            function submitForm() {
                 $.ajax({
                     type: "GET",
                     url: 'https://milosrest.herokuapp.com/api/contact',
@@ -445,7 +445,66 @@
                         console.log('greska' + msg);
                     }
                 });
+            };
+          $(document).ready(function () {
+            $("#contactForm").validate({
+              rules: {
+                "name": {
+                  required: true,
+                  minlength: 5
+                },
+                "title": {
+                  required: true,
+                },
+                "phone": {
+                  required: true,
+                  digits: true
+                },
+                "country": {
+                  required: true
+                },
+                "subject": {
+                  required: true,
+                  minlength: 5
+                },
+                "message": {
+                  required: true,
+                  minlength: 10
+                },
+                "email": {
+                  required: true,
+                  email: true
+                }
+              },
+              messages: {
+                "name": {
+                  required: "Please, enter a name"
+                },
+                "phone": {
+                  required: "Please, enter a phone"
+                },
+                "country": {
+                  required: "Please, choose your country"
+                },
+                "subject":{
+                  required: "Please, enter a subject"
+                },
+                "message": {
+                  required: "Please, enter a message"
+                },
+                "email": {
+                  required: "Please, enter an email",
+                  email: "Email is invalid"
+                }
+              },
+              submitHandler: function (form) { // for demo
+                submitForm();
+                return false; // for demo
+              }
             });
+
+
+          });
         }
     }
 </script>

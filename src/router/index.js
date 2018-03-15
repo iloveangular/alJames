@@ -17,6 +17,7 @@ import affiliates from '@/components/affiliates'
 import affiliatesSignup from '@/components/affiliatesSignup'
 import faqs from '@/components/faqs'
 import partners from '@/components/partners'
+import confirmation from '@/components/confirmation'
 /* Trademarks */
 import trademarks from '@/components/trademarks'
 import trademarksRegistration from '@/components/trademarksRegistration'
@@ -40,188 +41,193 @@ import forgotPassword from '@/components/forgotPassword'
 import exclusiveCreditCard from '@/components/exclusivecc'
 
 /* Directives */
-Vue.component("my-fancy-component",{
-    template: "<div>My Fancy Stuff:</div>"
+Vue.component("my-fancy-component", {
+  template: "<div>My Fancy Stuff:</div>"
 })
 Vue.use(Router);
 export default new Router({
-    routes: [
-        {
-            path: '/',
-            name: 'home',
-            component: home
-        },
-        {
-            path:'/about',
-            name: 'about',
-            component: about
-        },
-        {
-            path: '/contact',
-            name: 'contact',
-            component: contact
-        },
-        {
-            path: '/companies',
-            name: 'companies',
-            component: companies
-        },
-        {
-            path: '/product/company-formation/:productId',
-            name: 'singleProduct',
-            component: singleProduct
-        },
-        {
-            path: '/product/company-formation/bank/:bankId',
-            name: 'singleBank',
-            component: singleBank
-        },
-        {
-            path: '/product/exclusive-credit-card/:cardId',
-            name: 'exclusiveCreditCard',
-            component: exclusiveCreditCard
-        },
-        {
-            path: '/banks',
-            name: 'banks',
-            component: banks
-        },
-        {
-            path: '/niche-services',
-            name: 'nicheServices',
-            component: nicheServices
-        },
-        {
-            path:'/niche-service/:nicheId',
-            name: 'nicheSingle',
-            component: nicheSingle
-        },
-        {
-            path: '/documents',
-            name: 'documents',
-            component: documents
-        },
-        {
-            path: '/documents/:documentId',
-            name: 'singleCategory',
-            component: singleCategory
-        },
-        {
-            path: '/document/:documentId',
-            name: 'singleDocument',
-            component: singleDocument
-        },
-        {
-            path: '/affiliates',
-            name: 'affiliates',
-            component: affiliates
-        },
-        {
-            path: '/affiliates/signup',
-            name: 'affiliatesSignup',
-            component: affiliatesSignup
-        },
-        {
-            path: '/faqs',
-            name: 'faqs',
-            component: faqs
-        },
-        {
-            path: '/login',
-            name: 'login',
-            component: login
-        },
-        {
-            path: '/orders',
-            name: 'orders',
-            component: orders
-        },
-        {
-            path: '/cart',
-            name: 'cart',
-            component: cart
-        },
-        {
-            path: '/checkout/payment',
-            name: 'checkout',
-            component: checkout
-        },
-        {
-            path: '/forgot-password',
-            name: 'forgotPassword',
-            component: forgotPassword
-        },
-        {
-            path: '/packages',
-            name: 'packages',
-            component: packages
-        },
-        {
-            path: '/package/:packageId',
-            name: 'singlePackage',
-            component: singlePackage
-        },
-        {
-            path: '/partners',
-            name: 'partners',
-            component: partners
-        },
-        {
-            path: '/terms-of-use',
-            name: 'termsOfUse',
-            component: termsOfUse
-        },
-        {
-            path: '/terms-of-payment',
-            name: 'termsOfPayment',
-            component: termsOfPayment
-        },
-        {
-            path: '/terms',
-            name: 'terms',
-            component: terms
-        },
-        {
-            path: '/privacy-policy',
-            name: 'privacyPolicy',
-            component: privacyPolicy
-        },
-        {
-            path: '/disclaimer',
-            name: 'disclaimer',
-            component: disclaimer
-        },
-        {
-            path: '/offers',
-            name: 'offers',
-            component: offers
-        },
-        {
-            path: '/trademarks',
-            name: 'trademarks',
-            component: trademarks
-        },
-        {
-            path: '/trademarks/registration/',
-            name: trademarksRegistration,
-            component: trademarksRegistration
-        },
-        {
-            path: '/trademarks/search/',
-            name: trademarksSearch,
-            component: trademarksSearch
-        },
-        {
-            path: '/trademarks/watch/',
-            name: trademarksWatch,
-            component: trademarksWatch
-        }
-    ],
-    scrollBehavior (to, from, savedPosition) {
-        if (savedPosition) {
-            return { x: 0, y: 0}
-        } else {
-            return { x: 0, y: 0 }
-        }
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: home
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: about
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: contact
+    },
+    {
+      path: '/companies',
+      name: 'companies',
+      component: companies
+    },
+    {
+      path: '/product/company-formation/:productId',
+      name: 'singleProduct',
+      component: singleProduct
+    },
+    {
+      path: '/product/company-formation/bank/:bankId',
+      name: 'singleBank',
+      component: singleBank
+    },
+    {
+      path: '/product/exclusive-credit-card/:cardId',
+      name: 'exclusiveCreditCard',
+      component: exclusiveCreditCard
+    },
+    {
+      path: '/banks',
+      name: 'banks',
+      component: banks
+    },
+    {
+      path: '/niche-services',
+      name: 'nicheServices',
+      component: nicheServices
+    },
+    {
+      path: '/niche-service/:nicheId',
+      name: 'nicheSingle',
+      component: nicheSingle
+    },
+    {
+      path: '/documents',
+      name: 'documents',
+      component: documents
+    },
+    {
+      path: '/documents/:documentId',
+      name: 'singleCategory',
+      component: singleCategory
+    },
+    {
+      path: '/document/:documentId',
+      name: 'singleDocument',
+      component: singleDocument
+    },
+    {
+      path: '/affiliates',
+      name: 'affiliates',
+      component: affiliates
+    },
+    {
+      path: '/affiliates/signup',
+      name: 'affiliatesSignup',
+      component: affiliatesSignup
+    },
+    {
+      path: '/faqs',
+      name: 'faqs',
+      component: faqs
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/orders',
+      name: 'orders',
+      component: orders
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: cart
+    },
+    {
+      path: '/checkout/payment',
+      name: 'checkout',
+      component: checkout
+    },
+    {
+      path: '/forgot-password',
+      name: 'forgotPassword',
+      component: forgotPassword
+    },
+    {
+      path: '/packages',
+      name: 'packages',
+      component: packages
+    },
+    {
+      path: '/package/:packageId',
+      name: 'singlePackage',
+      component: singlePackage
+    },
+    {
+      path: '/partners',
+      name: 'partners',
+      component: partners
+    },
+    {
+      path: '/confirmation/:confirmationCode',
+      name: confirmation,
+      component: confirmation
+    },
+    {
+      path: '/terms-of-use',
+      name: 'termsOfUse',
+      component: termsOfUse
+    },
+    {
+      path: '/terms-of-payment',
+      name: 'termsOfPayment',
+      component: termsOfPayment
+    },
+    {
+      path: '/terms',
+      name: 'terms',
+      component: terms
+    },
+    {
+      path: '/privacy-policy',
+      name: 'privacyPolicy',
+      component: privacyPolicy
+    },
+    {
+      path: '/disclaimer',
+      name: 'disclaimer',
+      component: disclaimer
+    },
+    {
+      path: '/offers',
+      name: 'offers',
+      component: offers
+    },
+    {
+      path: '/trademarks',
+      name: 'trademarks',
+      component: trademarks
+    },
+    {
+      path: '/trademarks/registration/',
+      name: trademarksRegistration,
+      component: trademarksRegistration
+    },
+    {
+      path: '/trademarks/search/',
+      name: trademarksSearch,
+      component: trademarksSearch
+    },
+    {
+      path: '/trademarks/watch/',
+      name: trademarksWatch,
+      component: trademarksWatch
     }
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return {x: 0, y: 0}
+    } else {
+      return {x: 0, y: 0}
+    }
+  }
 })

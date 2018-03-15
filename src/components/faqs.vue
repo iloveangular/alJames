@@ -1182,7 +1182,7 @@
                     <section class="contact_us_faq">
                         <h3>Didn't find what you were looking for ?</h3>
                         <div class="button">
-                            <a href="/contact">
+                            <a href="/#/contact">
                                 <button class="btn btn-green">Contact Us</button>
                             </a>
                         </div>
