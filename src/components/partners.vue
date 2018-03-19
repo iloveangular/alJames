@@ -114,7 +114,7 @@
                                         <h3>Trade Associations</h3></div>
                                     <div class="col-md-1"></div>
                                 </div>
-                                <p>If you are a regular customer you might be eligible for discounts and benefits at Starting Business. <a href="#">Contact us</a> today to find out more.</p>
+                                <p>If you are a regular customer you might be eligible for discounts and benefits at Starting Business. <a href="/#/contact">Contact us</a> today to find out more.</p>
                             </div>
                         </div>
                     </div>

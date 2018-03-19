@@ -11,7 +11,7 @@
                     src="src/assets/images/info.png"></div>
                   <div class="col-md-6 col-xs-8 informations-block">
                     <h2>Company Formation Worldwide</h2>
-                    <h4>Starting from $560</h4>
+                    <h4>Starting from {{value}}{{companyFormation * rate | fixPrice}}</h4>
                     <ul>
                       <li>Available across 5 continents, in 50+ countries</li>
                       <li>Corporate packages to start your business right away</li>
@@ -92,10 +92,10 @@
                           <div class="col-md-6 lar-width-48">
                             <div class="inl-block">
                               <p class="fnt-size-21 fnt-oswald-medium no-margin mar-top-10 mar-rgh-20 left">
-                                {{value}}{{cp.price * rate | fixPrice }}</p><a
-                              class="button green small text-center pad-tb-3-lr-20 left hide-for-small-only"
-                              :href="'/#/product/company-formation/' + cp.slug">Learn
-                              More</a></div>
+                                {{value}}{{cp.price * rate | fixPrice }}</p></div>
+                          </div>
+                          <div class="col-sm-12 col-md-12">
+                            <a style="display:block !important;width:100%;margin: 10px auto 0 !important" class="button green small text-center pad-tb-3-lr-20 left hide-for-small-only" :href="'/#/product/company-formation/' + cp.slug">Learn More</a>
                           </div>
                         </div>
                       </div>
@@ -805,11 +805,13 @@
       return {
         companies: [],
         value: '',
-        rate: ''
+        rate: '',
+        companyFormation: '',
       }
     },
     mounted() {
       var vm = this;
+      vm.companyFormation = 560;
       axios.get('https://milosrest.herokuapp.com/api/companies')
         .then(function (response) {
           console.log(response.data);
@@ -817,7 +819,7 @@
         })
         .catch(function (error) {
           console.log(error);
-        })
+        });
       $(document).ready(function() {
         if(localStorage.getItem('currency') == 'USD') {
           vm.value = '$';
