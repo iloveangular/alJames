@@ -11,15 +11,12 @@
             <li><a href="/#/login">Login</a></li>
             <li class="brd-bottom-menu" style="padding:10px 8px 5px 10px;">
               <div class="inl-block width-100"><span class="left mar-top-5">Currency</span>
-                <select style="position:relative;top:-5px;">
-                  <form id="SelectCurrFormOffCanvas" class="fnt-cond-light no-margin width-18 right brd-none"
-                        name="changeCurrency">
-                    <option class="usd" value="USD" name="$">USD</option>
-                    <option class="eur" value="EUR" name="€">EUR</option>
-                    <option class="gbp" value="GBP" name="£">GBP</option>
-                    <option class="cny" value="CNY" name="¥">CNY</option>
-                  </form>
-                </select>
+              <select class="changeCurrency">
+                <option class="usd" value="USD" name="$">USD</option>
+                <option class="eur" value="EUR" name="€">EUR</option>
+                <option class="gbp" value="GBP" name="£">GBP</option>
+                <option class="cny" value="CNY" name="¥">CNY</option>
+              </select>
               </div>
             </li>
           </div>
@@ -84,7 +81,7 @@
             <div class="shop-header">
               <ul>
                 <li>
-                  <select id="changeCurrency">
+                  <select class="changeCurrency">
                     <option class="usd" value="USD" name="$">USD</option>
                     <option class="eur" value="EUR" name="€">EUR</option>
                     <option class="gbp" value="GBP" name="£">GBP</option>
@@ -142,7 +139,7 @@
       } else {
         vm.cartItems = 0;
       }
-      $("#changeCurrency").change(function () {
+      $(".changeCurrency").change(function () {
         localStorage.setItem('currency', $(this).val());
         if ($(this).val() == 'USD') {
           localStorage.setItem('currencySign', '$');
@@ -157,7 +154,7 @@
         }
         location.reload();
       });
-      $('#changeCurrency').find('option').each(function () {
+      $('.changeCurrency').find('option').each(function () {
         var currency = localStorage.getItem('currency');
         var $this = $(this);
         if ($this.text() == currency) {
