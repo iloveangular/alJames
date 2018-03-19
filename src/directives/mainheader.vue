@@ -11,7 +11,7 @@
             <li><a href="/#/login">Login</a></li>
             <li class="brd-bottom-menu" style="padding:10px 8px 5px 10px;">
               <div class="inl-block width-100"><span class="left mar-top-5">Currency</span>
-              <select class="changeCurrency">
+              <select class="changeCurrency2">
                 <option class="usd" value="USD" name="$">USD</option>
                 <option class="eur" value="EUR" name="€">EUR</option>
                 <option class="gbp" value="GBP" name="£">GBP</option>
@@ -161,6 +161,29 @@
           $this.attr('selected', 'selected');
           return false;
         }
+      });
+      $('.changeCurrency2').find('option').each(function () {
+        var currency = localStorage.getItem('currency');
+        var $this = $(this);
+        if ($this.text() == currency) {
+          $this.attr('selected', 'selected');
+          return false;
+        }
+      });
+      $(".changeCurrency2").change(function () {
+        localStorage.setItem('currency', $(this).val());
+        if ($(this).val() == 'USD') {
+          localStorage.setItem('currencySign', '$');
+        } else if ($(this).val() == 'EUR') {
+          localStorage.setItem('currencySign', '€');
+        } else if ($(this).val() == 'GBP') {
+          localStorage.setItem('currencySign', '£');
+        } else if ($(this).val() == 'CNY') {
+          localStorage.setItem('currencySign', '¥');
+        } else {
+          console.log('hi');
+        }
+        location.reload();
       });
       if (localStorage.getItem('token')) {
         $.ajax({
