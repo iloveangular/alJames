@@ -125,7 +125,6 @@
         url: "https://api.fixer.io/latest?base=USD",
         data: {},
         success: function(result) {
-          console.log(result);
           localStorage.setItem('euroValue', result.rates.EUR);
           localStorage.setItem('gbpValue', result.rates.GBP);
           localStorage.setItem('cnyValue', result.rates.CNY);
@@ -193,7 +192,6 @@
             'token': localStorage.getItem('token'),
           },
           success: function (data) {
-            console.log(data);
             if (data.session == true) {
               vm.username = data.username;
             } else {

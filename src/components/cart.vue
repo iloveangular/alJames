@@ -357,7 +357,6 @@
 
 
         });
-        console.log(vm.items);
       });
     },
     filters: {
