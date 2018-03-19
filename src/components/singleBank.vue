@@ -57,7 +57,7 @@
                                     </td>
                                 </tr>
                                 <tr v-for="service in services" v-if="service.type == 'nominee-service'">
-                                    <td class="payment-item">
+                                    <td class="payment-item" >
                                         <div class="payment-item-title">
                                             <a data-toggle="collapse" :href="'#' + service.key">
                                                 <span class="more_info"></span>
@@ -75,7 +75,7 @@
                                         <h3 style="text-transform: uppercase;">corporate-certificates</h3></td>
                                 </tr>
                                 <tr v-for="service in services" v-if="service.type == 'corporate-certificate'">
-                                    <td class="payment-item">
+                                    <td class="payment-item" :class="service.type">
                                         <div class="payment-item-title">
                                             <a data-toggle="collapse" :href="'#' + service.key">
                                                 <span class="more_info"></span>
@@ -93,7 +93,7 @@
                                         <h3 style="text-transform: uppercase;">other-services</h3></td>
                                 </tr>
                                 <tr v-for="service in services" v-if="service.type == 'other-service'">
-                                    <td class="payment-item">
+                                    <td class="payment-item" :class="service.type">
                                         <div class="payment-item-title">
                                             <a data-toggle="collapse" :href="'#' + service.key">
                                                 <span class="more_info"></span>
@@ -106,12 +106,13 @@
                                         <input class="checkbox" name="services" :value="service._id" :data-price="service.price" type="checkbox">
                                     </td>
                                 </tr>
-                                <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'bank-products-and-service'">
+                                <tr class="form-group" v-for="service in services.slice(0, 2) " :key="service.type == 'bank-products-and-service'" v-if="service.type == 'bank-products-and-service'">
                                     <td class="payment-table-sub-head" colspan="2">
-                                        <h3 style="text-transform: uppercase;">bank-products-and-services</h3></td>
+                                        <h3 style="text-transform: uppercase;">bank-products-and-services</h3>
+                                    </td>
                                 </tr>
                                 <tr v-for="service in services" v-if="service.type == 'bank-products-and-service'">
-                                    <td class="payment-item">
+                                    <td class="payment-item" :class="service.type">
                                         <div class="payment-item-title">
                                             <a data-toggle="collapse" :href="'#' + service.key">
                                                 <span class="more_info"></span>

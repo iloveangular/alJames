@@ -18,7 +18,8 @@
                             <h4>{{packages.description}}</h4>
                             <div v-html="packages.features">
                             </div>
-                            <a class="packages-link" href="#">About this Package &gt;</a></div>
+                            <!--<a class="packages-link" href="#">About this Package &gt;</a>-->
+                        </div>
                     </div>
                 </div>
             </section>

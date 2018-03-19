@@ -39,9 +39,9 @@
                     <option value="10" name="quantity-change">10</option>
                   </select>
                 </td>
-                <td>$ <span class="price" :value="item.price" style="font-size:21px !important;">{{item.price}}</span>
+                <td>{{value}} <span class="price" :value="item.price" style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span>
                 </td>
-                <td>$ <span class="total" style="font-size:21px !important;">{{item.price}}</span></td>
+                <td>{{value}} <span class="total" style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span></td>
                 <input type="hidden" class="itemPrice" :value="item.price">
               </tr>
               <tr v-for="subItem in item.list" :data-product="subItem._id" :data-price="subItem.price">
@@ -63,18 +63,18 @@
                     <option value="10" name="quantity-change">10</option>
                   </select>
                 </td>
-                <td>$ <span class="price" :value="subItem.price"
-                            style="font-size:21px !important;">{{subItem.price}}</span>
+                <td>{{value}} <span class="price" :value="subItem.price"
+                            style="font-size:21px !important;">{{subItem.price * rate | fixPrice}}</span>
                 </td>
-                <td>$ <span class="total" style="font-size:21px !important;">{{subItem.price}}</span>
+                <td>{{value}} <span class="total" style="font-size:21px !important;">{{subItem.price * rate | fixPrice}}</span>
                   <input type="hidden" class="itemPrice" :value="subItem.price">
 
                 </td>
               </tr>
               </tbody>
               <tr class="bg-gray">
-                <td class="text-right" colspan="4" style="padding:10px;font-size:24px !important;">Total : $<span
-                  id="the-total"
+                <td class="text-right" colspan="4" style="padding:10px;font-size:24px !important;">Total : {{value}}<span
+                  id="the-total" data-price=""
                   style="font-family: 'Oswald', sans-serif;"></span>
                 </td>
               </tr>
@@ -271,12 +271,13 @@
   </main>
 </template>
 <script>
-  import axios from 'axios'
 
   export default {
     data() {
       return {
-        items: []
+        items: [],
+        value: '',
+        rate: ''
       }
     },
     mounted() {
@@ -287,20 +288,40 @@
         vm.items = false;
       }
       $(document).ready(function () {
+
+        // currency change //
+        if(localStorage.getItem('currency') == 'USD') {
+          vm.value = '$';
+          vm.rate = 1;
+        } else if(localStorage.getItem('currency') == 'EUR') {
+          vm.value = '€';
+          vm.rate = localStorage.getItem('euroValue');
+        } else if(localStorage.getItem('currency') == 'GBP') {
+          vm.value = '£';
+          vm.rate = localStorage.getItem('gbpValue');
+        } else if(localStorage.getItem('currency') == 'CNY') {
+          vm.value = '¥';
+          vm.rate = localStorage.getItem('cnyValue');
+        }
+        //
         var sum = 0;
         $(".price").each(function () {
           sum += +$(this).val();
         });
-        $("#the-total").val(sum);
+        $("#the-total").val(Math.trunc(sum * vm.rate));
+        $("#the-total").attr('data-price', sum);
         var totalPrice = 0;
         if (totalPrice < 1) {
           $("#the-total").html(0);
+          $("#the-total").attr('data-price', 0);
         }
         $('.itemPrice').each(function () {
           totalPrice = parseFloat($(this).val()) + totalPrice;
-          $("#the-total").html(totalPrice);
+          $("#the-total").html(Math.trunc(totalPrice * vm.rate));
+          $("#the-total").attr('data-price', totalPrice);
           if (totalPrice < 1) {
             $("#the-total").html(0);
+            $("#total").attr('data-price', 0);
           }
         });
 
@@ -338,6 +359,12 @@
         });
         console.log(vm.items);
       });
+    },
+    filters: {
+      fixPrice: function(value)  {
+        var price = Math.trunc(value);
+        return price
+      },
     }
 
   }
