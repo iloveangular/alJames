@@ -154,6 +154,9 @@
         location.reload();
       });
       $('.changeCurrency').find('option').each(function () {
+        if (!localStorage.getItem('currency')) {
+          localStorage.setItem('currency', 'USD')
+        };
         var currency = localStorage.getItem('currency');
         var $this = $(this);
         if ($this.text() == currency) {
@@ -162,6 +165,9 @@
         }
       });
       $('.changeCurrency2').find('option').each(function () {
+        if (!localStorage.getItem('currency')) {
+          localStorage.setItem('currency', 'USD')
+        };
         var currency = localStorage.getItem('currency');
         var $this = $(this);
         if ($this.text() == currency) {

@@ -12,6 +12,7 @@
             <div class="product-head clearfix">
               <div class="pull-left product-logo"><img :src="product.flagImageUrl"></div>
               <div class="pull-left">
+                <input type="hidden" id="pageTitle" :name="product.title">
                 <h1>{{product.title}}<span class="description" v-html="product.description"></span></h1>
                 <input name="category_id" value="22" type="hidden">
               </div>
@@ -26,12 +27,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <form method="post">
               <input name="action" value="addToCart" type="hidden">
               <input name="cat_id" value="22" type="hidden">
               <input name="product_quantity" value="1" type="hidden">
-              <input id="product_id" name="product_id" value="599a1344bf50847b0972a465" type="hidden">
-              <input id="amount_product" name="amount_product" v-model="product.price" type="hidden">
+              <input id="product_id" :name="product._id" :value="product._id" type="hidden">
+              <input id="amount_product" name="amount_product" :value="product.price" type="hidden">
               <table class="table payment-table" id="view_product">
                 <tbody>
                 <tr>
@@ -46,7 +46,7 @@
                     </div>
                   </td>
                   <td class="payment-price mandatory-price">
-                    <input class="hidden" style="height:12px;margin-top:3px;" name="options[29780]" v-model="product.price" checked="checked" type="checkbox">
+                    <input class="hidden" style="height:12px;margin-top:3px;" :name="'options[' + product._id + ']'" v-model="product.price" checked="checked" type="checkbox">
                     {{value}}<span>{{product.price * rate | fixPrice}}</span></td>
                 </tr>
                 <tr>
@@ -70,8 +70,7 @@
                     <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                   </td>
                   <td class="payment-price">{{value}}<span>{{service.price * rate | fixPrice}}</span>
-                    <input class="checkbox" name="services" :value="service._id" :data-price="service.price"
-                           type="checkbox">
+                    <input class="checkbox" :data-title="service.name" data-service="nominee-service" :name="services._id" :value="service._id" :data-price="service.price" type="checkbox">
                   </td>
                 </tr>
                 <tr class="form-group" v-for="service in services.slice(0, 1) "
@@ -90,8 +89,7 @@
                     <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                   </td>
                   <td class="payment-price">{{value}}<span>{{service.price * rate | fixPrice}}</span>
-                    <input class="checkbox" name="services" :value="service._id" :data-price="service.price"
-                           type="checkbox">
+                    <input class="checkbox" :data-title="service.name" data-service="corporate-certificate" :name="service._id" :data-price="service.price" type="checkbox">
                   </td>
                 </tr>
                 <tr class="form-group" v-for="service in services.slice(0, 1) " :key="service.type == 'other-service'"
@@ -110,19 +108,17 @@
                     <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                   </td>
                   <td class="payment-price">{{value}}<span>{{service.price * rate | fixPrice}}</span>
-                    <input class="checkbox" name="services" :value="service._id" :data-price="service.price"
-                           type="checkbox">
+                    <input class="checkbox" :data-title="service.name" data-service="other-service" :name="service._id"
+                           :value="service._id" :data-price="service.price" type="checkbox">
                   </td>
                 </tr>
-                <tr class="form-group" v-for="service in services.slice(0, 2) "
-                    :key="service.type == 'bank-products-and-service'"
-                    v-if="service.type == 'bank-products-and-service'">
-                  <td class="payment-table-sub-head" colspan="2">
-                    <h3 style="text-transform: uppercase;">bank-products-and-services</h3>
-                  </td>
+                <tr class="form-group" v-for="service in services.slice(0, 1) "
+                :key="service.type == 'bank-products-and-service'" v-if="service.type == 'bank-products-and-service'">
+                <td class="payment-table-sub-head" colspan="2">
+                  <h3 style="text-transform: uppercase;">bank-products-and-services</h3></td>
                 </tr>
                 <tr v-for="service in services" v-if="service.type == 'bank-products-and-service'">
-                  <td class="payment-item" :class="service.type">
+                  <td class="payment-item">
                     <div class="payment-item-title">
                       <a data-toggle="collapse" :href="'#' + service.key">
                         <span class="more_info"></span>
@@ -132,8 +128,8 @@
                     <div class="payment-item-info collapse" :id="service.key">{{service.description}}</div>
                   </td>
                   <td class="payment-price">{{value}}<span>{{service.price * rate | fixPrice}}</span>
-                    <input class="checkbox" name="services" :value="service._id" :data-price="service.price"
-                           type="checkbox">
+                    <input class="checkbox" :data-title="service.name" data-service="bank-products-and-service"
+                           :name="service._id" :value="service._id" :data-price="service.price" type="checkbox">
                   </td>
                 </tr>
 
@@ -168,7 +164,7 @@
                     <p>Payment methods</p>
                     <div class="payment-methods"></div>
                   </td>
-                  <td class="no-pad-left total-price">TOTAL: {{value}}<span id="total">{{product.price * rate | fixPrice}}</span>
+                  <td class="no-pad-left total-price">TOTAL: {{value}}<span id="total" :data-price="product.price">{{product.price * rate | fixPrice}}</span>
                     <input id="product_id" name="id" value="599a1344bf50847b0972a465" type="hidden">
                     <input id="total_input" name="total" v-model="product.price" type="hidden">
                   </td>
@@ -176,14 +172,13 @@
                 <tr>
                   <td class="text-right" colspan="2">
                     <div class="form-actions">
-                      <button class="btn btn-default btn-add-to-cart" id="add-to-cart" type="submit">Add to Cart
+                      <button class="btn btn-default btn-add-to-cart addToCart" id="add-to-cart">Add to Cart
                       </button>
                       <span class="cart-icon"></span></div>
                   </td>
                 </tr>
                 </tbody>
               </table>
-            </form>
           </div>
         </div>
       </div>
@@ -273,27 +268,61 @@
       var productId = $("#product_id").val();
       var serviceList = [];
       $("#payment").on("click", ".checkbox", function () {
-        var total = Number($("#total").text());
+        var total = Number($("#total").attr('data-price'));
         var add = Number($(this).data("price"));
         var service = $(this).attr('name');
         var productId = $("#product_id").val();
-
         if (this.checked) {
-          var totalText = $("#total").text();
+          var totalText = Number($("#total").attr('data-price'));
           var finalTotal = total + add;
           serviceList.push(service);
           var json = JSON.stringify(serviceList);
 
           $('#total_input').val(finalTotal);
-          $('#total').html(finalTotal);
+          $("#total").html(Math.trunc(finalTotal * vm.rate));
+          $("#total").attr('data-price', finalTotal);
         }
-        ;
         if (!this.checked) {
-          var totalText = $("#total").text();
+          var totalText = Number($("#total").attr('data-price'));
           var finalTotal = total - add;
           $("#total_input").val(finalTotal);
-          $("#total").html(finalTotal);
+          $("#total").html(Math.trunc(finalTotal * vm.rate));
+          $("#total").attr('data-price', finalTotal);
         }
+      });
+      var testLista = [];
+      $("#payment").on("click", ".checkbox", function () {
+        var dataId = $(this).attr('name');
+        var dataTitle = $(this).attr('data-title');
+        var dataService = $(this).attr('data-service');
+        var dataPrice = $(this).attr('data-price');
+        var testBroj = {
+          _id: dataId,
+          title: dataTitle,
+          service: dataService,
+          price: dataPrice
+        };
+        testLista.push(testBroj)
+      });
+
+      $("#payment").on("click", ".addToCart", function () {
+        var ceoBroj = $("#product_id").val();
+        var pageTitle = $("#pageTitle").attr('name');
+        var productPrice = $("#amount_product").val();
+        var celaLista = {
+          _id: ceoBroj,
+          title: pageTitle,
+          list: testLista,
+          price: productPrice
+        };
+        if (!localStorage.getItem('cartItems')) {
+          localStorage.setItem('cartItems', '[]');
+        }
+        var a = [];
+        a = JSON.parse(localStorage.getItem('cartItems'));
+        a.push(celaLista);
+        localStorage.setItem('cartItems', JSON.stringify(a));
+        location.reload();
       })
     },
     filters: {

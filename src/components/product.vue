@@ -304,9 +304,6 @@
         var ceoBroj = $("#product_id").val();
         var pageTitle = $("#pageTitle").attr('name');
         var productPrice = $("#amount_product").val();
-        if(vm.value = '£') {
-
-        }
         var celaLista = {
           _id: ceoBroj,
           title: pageTitle,
