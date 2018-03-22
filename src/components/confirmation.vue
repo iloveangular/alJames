@@ -1,34 +1,37 @@
 <template>
   <main>
-    <h1 style="padding-top:300px;">Hello there</h1>
+    <div class="container" v-if="activated">
+      <h3 style="padding-top:80px;text-align:center;line-height:35px;">Thanks for your Subscribe on our list!<br/>You're activation code is : <strong><u> {{$route.params.confirmationCode}}</u></strong></h3>
+    </div>
+    <div class="container" v-else>
+      <h3 style="color:red;font-weight:bold;padding-top:80px;text-align:center;">WRONG CODE, PLEASE CHECK YOUR E-MAIL AGAIN.</h3>
+    </div>
   </main>
 </template>
 <script>
-  import axios from 'axios'
 
   export default {
     data() {
       return {
-        items: [],
-        username: ''
+        activated: '',
       }
     },
     mounted() {
       var vm = this;
-      // Checking for items in storage
-      var hey = this.$route.params.confirmationCode;
-      console.log(hey);
-      function getParameterByName(name, url) {
-        if (!url) url = hey;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-          results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-      }
-      var key = getParameterByName('key');
-      console.log(key);
+      $.ajax({
+        url: 'https://milosrest.herokuapp.com/api/confirmation',
+        type: 'GET',
+        data: {
+          'code': this.$route.params.confirmationCode,
+          'email': this.$route.params.email,
+        },
+        success: function (data) {
+          vm.activated = true;
+        },
+        error: function (error) {
+          vm.activated = false;
+        }
+      })
     }
 
   }

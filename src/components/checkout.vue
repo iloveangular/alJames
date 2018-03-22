@@ -26,23 +26,15 @@
                     <i class="fa fa-times" aria-hidden="true"></i></button>
                   <a class="product-name" href="#" style="font-weight: bold;">{{item.title}}</a></td>
                 <td>
-                  <select class="quantityUpdate num-items">
-                    <option value="1" name="quantity-change" selected="1">1</option>
-                    <option value="2" name="quantity-change">2</option>
-                    <option value="3" name="quantity-change">3</option>
-                    <option value="4" name="quantity-change">4</option>
-                    <option value="5" name="quantity-change">5</option>
-                    <option value="6" name="quantity-change">6</option>
-                    <option value="7" name="quantity-change">7</option>
-                    <option value="8" name="quantity-change">8</option>
-                    <option value="9" name="quantity-change">9</option>
-                    <option value="10" name="quantity-change">10</option>
+                  <select class="quantityUpdate num-items" disabled>
+                    <option :value="item.qty" :selected="item.qty">{{item.qty}}</option>
                   </select>
                 </td>
-                <td>{{value}} <span class="price" :value="item.price"
-                            style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span></td>
-                <td>{{value}} <span class="total" style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span></td>
-                <input type="hidden" class="itemPrice" :value="item.price">
+                <td>{{value}} <span class="price" :value="item.price" style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span>
+                </td>
+                <td>{{value}} <span class="total" style="font-size:21px !important;">{{item.price * item.qty * rate | fixPrice}}</span>
+                </td>
+                <input type="hidden" class="itemPrice" :value="item.price * item.qty">
 
               </tr>
               <tr v-for="subItem in item.list" :data-product="subItem._id" :data-price="subItem.price">
@@ -51,24 +43,15 @@
                     <i class="fa fa-times" aria-hidden="true"></i></button>
                   <a class="service-name" href="#">{{subItem.title}}</a></td>
                 <td>
-                  <select class="quantityUpdate num-items">
-                    <option value="1" name="quantity-change" selected="1">1</option>
-                    <option value="2" name="quantity-change">2</option>
-                    <option value="3" name="quantity-change">3</option>
-                    <option value="4" name="quantity-change">4</option>
-                    <option value="5" name="quantity-change">5</option>
-                    <option value="6" name="quantity-change">6</option>
-                    <option value="7" name="quantity-change">7</option>
-                    <option value="8" name="quantity-change">8</option>
-                    <option value="9" name="quantity-change">9</option>
-                    <option value="10" name="quantity-change">10</option>
+                  <select class="quantityUpdate num-items" disabled>
+                    <option :value="subItem.qty" :selected="subItem.qty">{{subItem.qty}}</option>
+
                   </select>
                 </td>
-                <td>{{value}} <span class="price" :value="subItem.price"
-                            style="font-size:21px !important;">{{subItem.price * rate | fixPrice}}</span>
+                <td>{{value}} <span class="price" :value="subItem.price" style="font-size:21px !important;">{{subItem.price * rate | fixPrice}}</span>
                 </td>
-                <td>{{value}} <span class="total" style="font-size:21px !important;">{{subItem.price * rate | fixPrice}}</span>
-                  <input type="hidden" class="itemPrice" :value="subItem.price">
+                <td>{{value}} <span class="total" style="font-size:21px !important;">{{subItem.price * subItem.qty * rate | fixPrice}}</span>
+                  <input type="hidden" class="itemPrice" :value="subItem.price * subItem.qty">
 
                 </td>
               </tr>
@@ -239,17 +222,25 @@
               type: 'POST',
               data: {
                 amount: Math.trunc($("#the-total").attr('data-price') * vm.rate),
+                username: localStorage.getItem('userid'),
                 email: vm.username,
                 token: result.token,
-                currency: localStorage.getItem('currency')
+                currency: localStorage.getItem('currency'),
+                products: products,
+                services: services,
+                packages: packages,
+                documents: documents,
               },
               success: function (data) {
-                console.log(data);
+                console.log(data[0]._id);
+                if(data[0]._id) {
+                  window.location.href = '/#/order/' + data[0]._id;
+                }
               },
               error: function (error) {
                 console.log(error);
               }
-            })
+            });
             $('.success').show();
           } else if (result.error) {
             errorElement.textContent = result.error.message;
@@ -298,6 +289,42 @@
           localStorage.setItem('cartItems', JSON.stringify(updatedList));
 
         });
+
+        // Find Products
+        var allItems = JSON.parse(localStorage.getItem('cartItems'));
+        var products = [];
+        var packages = [];
+        var documents = [];
+        // Find Products //
+        for (var i = 0; i < inventory.length; i++) {
+          if (inventory[i]['type'] === 'products') {
+            products.push(inventory[i]._id);
+          }
+        }
+        // Find Packages //
+        for (var i = 0; i < inventory.length; i++) {
+          if (inventory[i]['type'] === 'packages') {
+            packages.push(inventory[i]._id);
+          }
+        }
+        // Find Documents //
+        for (var i = 0; i < inventory.length; i++) {
+          if (inventory[i]['type'] === 'documents') {
+            documents.push(inventory[i]._id);
+          }
+        }
+        // Find Services
+        var services = [];
+
+        inventory.forEach(function (obj) {
+          obj.list = obj.list.filter(function (o) {
+            if (o.type == 'services') {
+              services.push(o);
+            }
+          });
+        });
+
+
       });
 
       // Here we are calling a Stripe Form

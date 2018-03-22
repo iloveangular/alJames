@@ -26,8 +26,9 @@
                     <i class="fa fa-times" aria-hidden="true"></i></button>
                   <a class="product-name" href="#" style="font-weight: bold;">{{item.title}}</a></td>
                 <td>
-                  <select class="quantityUpdate num-items">
-                    <option value="1" name="quantity-change" selected="1">1</option>
+                  <select class="quantityUpdate num-items updateItem" :data-id="item._id">
+                    <option :value="item.qty" name="quantity-change" :selected="item.qty" disabled>{{item.qty}}</option>
+                    <option value="1" name="quantity-change">1</option>
                     <option value="2" name="quantity-change">2</option>
                     <option value="3" name="quantity-change">3</option>
                     <option value="4" name="quantity-change">4</option>
@@ -41,8 +42,8 @@
                 </td>
                 <td>{{value}} <span class="price" :value="item.price" style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span>
                 </td>
-                <td>{{value}} <span class="total" style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span></td>
-                <input type="hidden" class="itemPrice" :value="item.price">
+                <td>{{value}} <span class="total" style="font-size:21px !important;">{{item.price * item.qty * rate | fixPrice}}</span></td>
+                <input type="hidden" class="itemPrice" :value="item.price * item.qty">
               </tr>
               <tr v-for="subItem in item.list" :data-product="subItem._id" :data-price="subItem.price">
                 <td>
@@ -50,8 +51,9 @@
                     <i class="fa fa-times" aria-hidden="true"></i></button>
                   <a class="service-name" href="#">{{subItem.title}}</a></td>
                 <td>
-                  <select class="quantityUpdate num-items">
-                    <option value="1" name="quantity-change" selected="1">1</option>
+                  <select class="quantityUpdate num-items updateChild" :data-parrent="item._id" :data-id="subItem._id">
+                    <option :value="subItem.qty" :selected="subItem.qty" name="quantity-change" disabled>{{subItem.qty}}</option>
+                    <option value="1" name="quantity-change">1</option>
                     <option value="2" name="quantity-change">2</option>
                     <option value="3" name="quantity-change">3</option>
                     <option value="4" name="quantity-change">4</option>
@@ -63,19 +65,19 @@
                     <option value="10" name="quantity-change">10</option>
                   </select>
                 </td>
-                <td>{{value}} <span class="price" :value="subItem.price"
-                            style="font-size:21px !important;">{{subItem.price * rate | fixPrice}}</span>
+                <td>{{value}} <span class="price" :value="subItem.price" style="font-size:21px !important;">{{subItem.price * rate | fixPrice}}</span>
                 </td>
-                <td>{{value}} <span class="total" style="font-size:21px !important;">{{subItem.price * rate | fixPrice}}</span>
-                  <input type="hidden" class="itemPrice" :value="subItem.price">
+                <td>{{value}} <span class="total" style="font-size:21px !important;">{{subItem.price * subItem.qty * rate | fixPrice}}</span>
+                  <input type="hidden" class="itemPrice" :value="subItem.price * subItem.qty">
 
                 </td>
               </tr>
               </tbody>
               <tr class="bg-gray">
-                <td class="text-right" colspan="4" style="padding:10px;font-size:24px !important;">Total : {{value}}<span
-                  id="the-total" data-price=""
-                  style="font-family: 'Oswald', sans-serif;"></span>
+                <td class="text-right" colspan="4" style="padding:10px;font-size:24px !important;">Total :
+                  {{value}}<span
+                    id="the-total" data-price=""
+                    style="font-family: 'Oswald', sans-serif;"></span>
                 </td>
               </tr>
             </table>
@@ -290,16 +292,16 @@
       $(document).ready(function () {
 
         // currency change //
-        if(localStorage.getItem('currency') == 'USD') {
+        if (localStorage.getItem('currency') == 'USD') {
           vm.value = '$';
           vm.rate = 1;
-        } else if(localStorage.getItem('currency') == 'EUR') {
+        } else if (localStorage.getItem('currency') == 'EUR') {
           vm.value = '€';
           vm.rate = localStorage.getItem('euroValue');
-        } else if(localStorage.getItem('currency') == 'GBP') {
+        } else if (localStorage.getItem('currency') == 'GBP') {
           vm.value = '£';
           vm.rate = localStorage.getItem('gbpValue');
-        } else if(localStorage.getItem('currency') == 'CNY') {
+        } else if (localStorage.getItem('currency') == 'CNY') {
           vm.value = '¥';
           vm.rate = localStorage.getItem('cnyValue');
         }
@@ -338,6 +340,7 @@
               break;
             }
           }
+
           // find and remove vanila js
           function findAndRemove(data, id) {
             data.forEach(function (obj) {                    // Loop through each object in outer array
@@ -354,13 +357,41 @@
           $("#the-total").html(updatedPrice);
           localStorage.setItem('cartItems', JSON.stringify(updatedList));
 
-
-
         });
+
+        // update value //
+        $(".updateItem").click(function() {
+          for (var i = 0; i < inventory.length; i++) {
+            if (inventory[i]['_id'] === $(this).attr('data-id')) {
+              inventory[i]['qty'] = Number($(this).val());
+            }
+            localStorage.setItem('cartItems', JSON.stringify(inventory));
+            console.log('done');
+          }
+        });
+
+        $(".updateChild").click(function() {
+          for (var i = 0; i < inventory.length; i++) {
+            if(inventory[i]['_id'] === $(this).attr('data-parrent')) {
+              var findChild = inventory[i].list;
+              for (var j = 0; j < findChild.length; j++) {
+                if (findChild[j]['_id'] === $(this).attr('data-id')) {
+                  findChild[j]['qty'] = Number($(this).val());
+                  inventory[i].list = findChild;
+                  localStorage.setItem('cartItems', JSON.stringify(inventory));
+                  console.log(inventory);
+                  break;
+                }
+              }
+              break;
+            }
+          }
+        });
+
       });
     },
     filters: {
-      fixPrice: function(value)  {
+      fixPrice: function (value) {
         var price = Math.trunc(value);
         return price
       },

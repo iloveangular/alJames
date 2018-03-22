@@ -33,6 +33,7 @@ import privacyPolicy from '@/components/privacyPolicy'
 import disclaimer from '@/components/disclaimer'
 /* Login Pages */
 import login from '@/components/login'
+import order from '@/components/order'
 import orders from '@/components/orders'
 import cart from '@/components/cart'
 import checkout from '@/components/checkout'
@@ -133,6 +134,11 @@ export default new Router({
       component: login
     },
     {
+      path: '/order/:orderID',
+      name: 'order',
+      component: order
+    },
+    {
       path: '/orders',
       name: 'orders',
       component: orders
@@ -168,7 +174,7 @@ export default new Router({
       component: partners
     },
     {
-      path: '/confirmation/:confirmationCode',
+      path: '/confirmation/:confirmationCode/email/:email',
       name: confirmation,
       component: confirmation
     },

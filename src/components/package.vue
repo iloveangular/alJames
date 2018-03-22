@@ -161,9 +161,10 @@
         var celaLista = {
           _id: ceoBroj,
           title: pageTitle,
-          type: 'package',
+          qty: 1,
+          type: 'packages',
           list: testLista,
-          price: productPrice
+          price: Number(productPrice)
         };
         if (!localStorage.getItem('cartItems')) {
           localStorage.setItem('cartItems', '[]');

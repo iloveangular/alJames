@@ -1,18 +1,20 @@
 <template>
   <div class="affidavits-verification-body">
     <main class="affidavits-verification-page">
-      <section class="document-div">
+      <section class="document-div" id="payment">
         <div class="container">
+          <input type="hidden" id="product_id" :value="document._id">
+          <input type="hidden" id="pageTitle" :name="document.title">
+          <input type="hidden" id="amount_product" :value="document.price">
           <div class="col-xs-12" style="padding: 0; border-bottom: 1px dashed #dddddd;"><a class="back-link"
                                                                                            href="/#/documents">&lt; Back
             to Documents</a></div>
           <div class="document-content">
             <div class="row">
-              <div class="col-xs-12 col-sm-4 col-md-2"><img :src="document.image.url">
-                <button class="button-grey" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"
-                                                                                          style="margin-right: 5px;"></i>Full
-                  View
-                </button>
+              <div class="col-xs-12 col-sm-4 col-md-2">
+                <img src="http://www.agentlegal.com/images/company-img.jpg">
+                <button class="button-grey" data-toggle="modal" data-target="#myModal">
+                  <i class="fa fa-search" style="margin-right: 5px;"></i>Full View</button>
                 <div class="modal fade" id="myModal" role="dialog">
                   <div class="modal-dialog">
                     <!-- Modal content-->
@@ -20,7 +22,7 @@
                       <div class="modal-header">
                         <button class="close" type="button" data-dismiss="modal">×</button>
                       </div>
-                      <div class="modal-body"><img class="model-img" :src="document.image.url"></div>
+                      <div class="modal-body"><img class="model-img" src="http://www.agentlegal.com/images/company-img.jpg"></div>
                     </div>
                   </div>
                 </div>
@@ -49,13 +51,9 @@
               </div>
               <div class="col-xs-12 col-sm-4 col-md-3">
                 <div class="doc-box">
-                  <h6 style="text-transform: uppercase;">Price<span>{{value}}{{document.price * rate | fixPrice}}</span></h6>
-                  <form id="formundefined" method="post">
-                    <input name="action" value="addToCart" type="hidden">
-                    <button class="add-to-cart" type="submit" name="button_id" value="5999d9973a95f667e18126a0">Add to
-                      Cart
-                    </button>
-                  </form>
+                  <h6 style="text-transform: uppercase;">Price<span>{{value}}{{document.price * rate | fixPrice}}</span>
+                  </h6>
+                  <button class="add-to-cart addToCart" name="button_id" value="5999d9973a95f667e18126a0">Add to Cart</button>
                 </div>
               </div>
             </div>
@@ -78,6 +76,13 @@
     },
     mounted() {
       var vm = this;
+      axios.post('https://milosrest.herokuapp.com/api/document/' + this.$route.params.documentId)
+        .then(function (response) {
+          vm.document = response.data;
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
       $(document).ready(function () {
         if (localStorage.getItem('currency') == 'USD') {
           vm.value = '$';
@@ -92,15 +97,29 @@
           vm.value = '¥';
           vm.rate = localStorage.getItem('cnyValue');
         }
+
+        $("#payment").on("click", ".addToCart", function () {
+          var ceoBroj = $("#product_id").val();
+          var pageTitle = $("#pageTitle").attr('name');
+          var productPrice = $("#amount_product").val();
+          var celaLista = {
+            _id: ceoBroj,
+            qty: 1,
+            title: pageTitle,
+            price: Number(productPrice),
+            type: 'documents'
+          };
+          if (!localStorage.getItem('cartItems')) {
+            localStorage.setItem('cartItems', '[]');
+          }
+          var a = [];
+          a = JSON.parse(localStorage.getItem('cartItems'));
+          a.push(celaLista);
+          localStorage.setItem('cartItems', JSON.stringify(a));
+          location.reload();
+        })
       });
-      axios.post('https://milosrest.herokuapp.com/api/document/' + this.$route.params.documentId)
-        .then(function (response) {
-          vm.document = response.data;
-          console.log(vm.document);
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
+
     },
     filters: {
       fixPrice: function (value) {

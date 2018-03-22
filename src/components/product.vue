@@ -293,9 +293,11 @@
         var dataPrice = $(this).attr('data-price');
         var testBroj = {
           _id: dataId,
+          qty: 1,
           title: dataTitle,
           service: dataService,
-          price: dataPrice
+          price: Number(dataPrice),
+          type: 'services'
         };
         testLista.push(testBroj)
       });
@@ -306,9 +308,11 @@
         var productPrice = $("#amount_product").val();
         var celaLista = {
           _id: ceoBroj,
+          qty: 1,
           title: pageTitle,
           list: testLista,
-          price: productPrice
+          price: Number(productPrice),
+          type: 'products'
         };
         if (!localStorage.getItem('cartItems')) {
           localStorage.setItem('cartItems', '[]');
