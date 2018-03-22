@@ -380,6 +380,7 @@
                   inventory[i].list = findChild;
                   localStorage.setItem('cartItems', JSON.stringify(inventory));
                   console.log(inventory);
+                  location.reload();
                   break;
                 }
               }
