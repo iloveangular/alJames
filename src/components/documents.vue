@@ -102,8 +102,8 @@
       $.typeahead({
         input: '.js-typeahead-hockey_v1',
         minLength: 2,
-        maxItem: 8,
-        maxItemPerGroup: 8,
+        maxItem: 6,
+        maxItemPerGroup: 6,
         order: "asc",
         hint: true,
         cache: true,

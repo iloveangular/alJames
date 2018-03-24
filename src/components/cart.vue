@@ -7,7 +7,7 @@
             <div class="sprite2 step1"></div>
           </div>
         </div>
-        <div class="row your-shopping" v-if="items">
+        <div class="row your-shopping" v-if="items.length > 0">
           <div class="col-xs-12">
             <h6 class="title">Your Shopping Cart</h6>
             <table class="table table-bordered table-items">
@@ -264,7 +264,7 @@
           <!--</div>-->
           <!--<div class="here" style="height: 40px;"></div>-->
         </div>
-        <div class="row" v-if="!items">
+        <div class="row" v-else>
           <div class="col-lg-12"><h2>Your Cart is Empty.</h2></div>
           <div class="here" style="height: 40px;"></div>
         </div>
@@ -336,6 +336,7 @@
           });
           for (var i = 0; i < inventory.length; i++) {
             if (inventory[i]._id == deleteProductById) {
+              localStorage.setItem('cartItems', JSON.stringify(updatedList));
               vm.items.splice(i, 1);
               break;
             }
@@ -343,8 +344,8 @@
 
           // find and remove vanila js
           function findAndRemove(data, id) {
-            data.forEach(function (obj) {                    // Loop through each object in outer array
-              obj.list = obj.list.filter(function (o) {// Filter out the object with unwanted id, in inner array
+            data.forEach(function (obj) {
+              obj.list = obj.list.filter(function (o) {
                 return o._id != id;
               });
             });

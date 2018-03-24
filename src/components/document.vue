@@ -12,7 +12,7 @@
           <div class="document-content">
             <div class="row">
               <div class="col-xs-12 col-sm-4 col-md-2">
-                <img src="http://www.agentlegal.com/images/company-img.jpg">
+                <img src="src/assets/img/company-img.jpg">
                 <button class="button-grey" data-toggle="modal" data-target="#myModal">
                   <i class="fa fa-search" style="margin-right: 5px;"></i>Full View</button>
                 <div class="modal fade" id="myModal" role="dialog">
@@ -20,9 +20,9 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                       <div class="modal-header">
-                        <button class="close" type="button" data-dismiss="modal">×</button>
+                        <button class="close" type="button" data-dismiss="modal" style="float:right;"></button>
                       </div>
-                      <div class="modal-body"><img class="model-img" src="http://www.agentlegal.com/images/company-img.jpg"></div>
+                      <div class="modal-body"><img class="model-img" src="src/assets/img/company-img.jpg" style="margin: 20px auto;"></div>
                     </div>
                   </div>
                 </div>
