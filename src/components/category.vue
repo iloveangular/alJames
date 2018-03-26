@@ -151,6 +151,8 @@
           console.log(error);
         }
       });
+      var bigUrl = config.url + "documents/" + this.$route.params.documentId;
+      console.log(bigUrl);
       $.typeahead({
         input: '.js-typeahead-hockey_v1',
         minLength: 2,
@@ -166,7 +168,7 @@
         template: '<span class="division">' + '<a href="/#/document/{{slug}}">({{title}}</a></span>)',
         correlativeTemplate: true,
         source: {
-          url: config.url + "documents/" + this.$route.params.documentId,
+          url: bigUrl,
         }
       });
     },
