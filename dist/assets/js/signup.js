@@ -46,31 +46,6 @@ $(document).ready(function () {
             }
         });
     });
-    $(".submit-affiliate").click(function () {
-        $.ajax({
-            type: "GET",
-            url: 'https://milosrest.herokuapp.com/api/affiliates',
-            data: {
-                "name": $("#name").val(),
-                "email": $("#email").val(),
-                "phone": $("#phone").val(),
-                "linkedInUrl": $("#linkedInUrl").val(),
-                "twitterUrl": $("#twitterUrl").val(),
-                "facebookUrl": $("#facebookUrl").val(),
-                "companyWebsite": $("#companyWebsite").val(),
-                "services": $("#services").val(),
-                "packages": $("#packages").val(),
-                "documents": $("#documents").val(),
-                "speciality": $("#speciality").val()
-            },
-            success: function (data) {
-                console.log(data);
-            },
-            error: function (data) {
-                console.log(data);
-            }
-        })
-    });
 
     $(".margin").click(function () {
         $(this).children(".a").toggle()
@@ -83,7 +58,6 @@ $(document).ready(function () {
         $(this).removeClass('testiramo');
         $(this).children('.expanded_info').removeClass('expanded_info');
     });
-
 
 
 });
