@@ -43,8 +43,14 @@ import exclusiveCreditCard from '@/components/exclusivecc'
 
 
 /* Directives */
-Vue.component("my-fancy-component", {
-  template: "<div>My Fancy Stuff:</div>"
+Vue.mixin({
+  data: function() {
+    return {
+      get globalReadOnlyProperty() {
+        return "Can't change me!";
+      }
+    }
+  }
 })
 Vue.use(Router);
 export default new Router({

@@ -110,6 +110,7 @@
 </template>
 <script>
   import axios from 'axios'
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -137,7 +138,7 @@
           vm.rate = localStorage.getItem('cnyValue');
         }
       });
-      axios.post('https://milosrest.herokuapp.com/api/package/' + this.$route.params.packageId)
+      axios.post(config.url + 'package/' + this.$route.params.packageId)
         .then(function (response) {
           vm.packages = response.data.product[0];
           vm.documents = response.data.file;

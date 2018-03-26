@@ -208,6 +208,7 @@
 </template>
 <script>
   import axios from 'axios'
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -234,7 +235,7 @@
           vm.rate = localStorage.getItem('cnyValue');
         }
       });
-      axios.post('https://milosrest.herokuapp.com/api/exclusive-cc/' + this.$route.params.cardId)
+      axios.post(config.url + 'exclusive-cc/' + this.$route.params.cardId)
         .then(function (response) {
           vm.product = response.data[0];
           console.log(vm.product);

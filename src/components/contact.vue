@@ -407,6 +407,7 @@
 </template>
 <script>
     import axios from 'axios'
+    import * as config from '@/scripts/main'
 
     export default {
         data() {
@@ -428,7 +429,7 @@
             function submitForm() {
                 $.ajax({
                     type: "GET",
-                    url: 'https://milosrest.herokuapp.com/api/contact',
+                    url: config.url + 'contact',
                     data: {
                         "title": $("#title").val(),
                         "name": $("#name").val(),

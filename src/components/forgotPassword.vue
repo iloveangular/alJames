@@ -28,6 +28,7 @@
     </main>
 </template>
 <script>
+  import * as config from '@/scripts/main'
 
     export default {
         data() {
@@ -40,7 +41,7 @@
             $(".login").on("click", ".resetCode", function () {
                 console.log('hello');
                 $.ajax({
-                    url: 'https://milosrest.herokuapp.com/api/forgot-password',
+                    url: config.url + 'forgot-password',
                     type: 'POST',
                     data: {
                         'email': $("#email").val()
@@ -61,7 +62,7 @@
             });
             if (localStorage.getItem('token')) {
                 $.ajax({
-                    url: 'https://milosrest.herokuapp.com/api/token',
+                    url: config.url + 'token',
                     type: 'POST',
                     data: {
                         'token': localStorage.getItem('token'),

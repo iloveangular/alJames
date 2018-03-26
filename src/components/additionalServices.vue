@@ -28,6 +28,7 @@
 </template>
 <script>
     import axios from 'axios'
+    import * as config from '@/scripts/main'
 
     export default {
         data() {
@@ -37,7 +38,7 @@
         },
         mounted() {
             var vm = this;
-            axios.get('https://milosrest.herokuapp.com/api/niche-services')
+            axios.get(config.url + 'niche-services')
                 .then(function (response) {
                     vm.services = response.data;
                     console.log(vm.services);

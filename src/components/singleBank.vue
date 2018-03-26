@@ -227,6 +227,7 @@
 </template>
 <script>
   import axios from 'axios'
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -255,7 +256,7 @@
           vm.rate = localStorage.getItem('cnyValue');
         }
       });
-      axios.post('https://milosrest.herokuapp.com/api/banks/' + this.$route.params.bankId)
+      axios.post(config.url + 'banks/' + this.$route.params.bankId)
         .then(function (response) {
           vm.product = response.data.product[0];
           vm.services = response.data.file;

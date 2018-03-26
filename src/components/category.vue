@@ -87,6 +87,7 @@
 </template>
 <script>
   import axios from 'axios'
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -94,7 +95,8 @@
         document: [],
         title: '',
         value: '',
-        rate: ''
+        rate: '',
+
       }
     },
     mounted() {
@@ -136,15 +138,19 @@
           location.reload();
         })
       });
-      axios.post('https://milosrest.herokuapp.com/api/documents/' + this.$route.params.documentId)
-        .then(function (response) {
-          vm.document = response.data.documents;
-          vm.title = response.data.title;
+      $.ajax({
+        type: 'GET',
+        url: config.url + 'documents/' + this.$route.params.documentId,
+        data: {},
+        success: function(response) {
           console.log(response);
-        })
-        .catch(function (error) {
+          vm.document = response;
+          vm.title = response[0].title;
+        },
+        error: function(error) {
           console.log(error);
-        });
+        }
+      });
       $.typeahead({
         input: '.js-typeahead-hockey_v1',
         minLength: 2,
@@ -160,7 +166,7 @@
         template: '<span class="division">' + '<a href="/#/document/{{slug}}">({{title}}</a></span>)',
         correlativeTemplate: true,
         source: {
-          url: "https://milosrest.herokuapp.com/api/documents/" + this.$route.params.documentId
+          url: config.url + "documents/" + this.$route.params.documentId
         }
       });
     },

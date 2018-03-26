@@ -160,6 +160,7 @@
 </template>
 <script>
     import axios from 'axios'
+    import * as config from '@/scripts/main'
 
     export default {
         data() {
@@ -178,7 +179,7 @@
                     console.log('hey there');
                     $.ajax({
                         type: "GET",
-                        url: 'https://milosrest.herokuapp.com/api/partners',
+                        url: config.url + 'partners',
                         data: {
                             "name": $(".partnerName").val(),
                             "companyName": $(".partnerCompany").val(),

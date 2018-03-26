@@ -799,6 +799,7 @@
 </template>
 <script>
   import axios from 'axios'
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -812,7 +813,7 @@
     mounted() {
       var vm = this;
       vm.companyFormation = 560;
-      axios.get('https://milosrest.herokuapp.com/api/companies')
+      axios.get(config.url + 'companies')
         .then(function (response) {
           console.log(response.data);
           vm.companies = response.data;

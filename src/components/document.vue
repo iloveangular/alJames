@@ -65,6 +65,7 @@
 </template>
 <script>
   import axios from 'axios'
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -76,7 +77,7 @@
     },
     mounted() {
       var vm = this;
-      axios.post('https://milosrest.herokuapp.com/api/document/' + this.$route.params.documentId)
+      axios.post(config.url + 'document/' + this.$route.params.documentId)
         .then(function (response) {
           vm.document = response.data;
         })

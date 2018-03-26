@@ -459,6 +459,7 @@
 </template>
 <script>
   import axios from 'axios'
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -469,7 +470,7 @@
     },
     mounted() {
       var vm = this;
-      axios.post('https://milosrest.herokuapp.com/api/niche-service/' + this.$route.params.nicheId)
+      axios.post(config.url + 'niche-service/' + this.$route.params.nicheId)
         .then(function (response) {
           vm.niche = response.data[0];
 
@@ -488,7 +489,7 @@
         function submitForm() {
           $.ajax({
             type: "GET",
-            url: 'https://milosrest.herokuapp.com/api/quote',
+            url: config.url + 'quote',
             data: {
               'service': $('.serviceVal').val(),
               'name': {

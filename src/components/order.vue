@@ -75,6 +75,7 @@
   </main>
 </template>
 <script>
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -91,7 +92,7 @@
       console.log(this.$route.params.orderID);
       if (localStorage.getItem('token')) {
         $.ajax({
-          url: 'https://milosrest.herokuapp.com/api/token',
+          url: config.url + 'token',
           type: 'POST',
           data: {
             'token': localStorage.getItem('token'),
@@ -111,7 +112,7 @@
         location.href = '/#/';
       }
       $.ajax({
-        url: 'https://milosrest.herokuapp.com/api/order',
+        url: config.url + 'order',
         type: 'POST',
         data: {
           'token': this.$route.params.orderID,

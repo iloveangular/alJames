@@ -9,6 +9,7 @@
   </main>
 </template>
 <script>
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -19,7 +20,7 @@
     mounted() {
       var vm = this;
       $.ajax({
-        url: 'https://milosrest.herokuapp.com/api/confirmation',
+        url: config.url + 'confirmation',
         type: 'GET',
         data: {
           'code': this.$route.params.confirmationCode,

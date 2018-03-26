@@ -33,6 +33,7 @@
     </main>
 </template>
 <script>
+  import * as config from '@/scripts/main'
 
     export default {
         data() {
@@ -45,7 +46,7 @@
             $(".login").on("click", ".loginButton", function () {
                 console.log('hello');
                 $.ajax({
-                    url: 'https://milosrest.herokuapp.com/api/login',
+                    url: config.url + 'login',
                     type: 'POST',
                     data: {
                         'email': $("#email").val(),
@@ -68,7 +69,7 @@
             });
             if (localStorage.getItem('token')) {
                 $.ajax({
-                    url: 'https://milosrest.herokuapp.com/api/token',
+                    url: config.url + 'token',
                     type: 'POST',
                     data: {
                         'token': localStorage.getItem('token'),

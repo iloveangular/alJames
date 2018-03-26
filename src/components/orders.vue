@@ -60,6 +60,7 @@
     </main>
 </template>
 <script>
+  import * as config from '@/scripts/main'
 
     export default {
         data() {
@@ -75,7 +76,7 @@
             var vm = this;
             if (localStorage.getItem('token')) {
                 $.ajax({
-                    url: 'https://milosrest.herokuapp.com/api/token',
+                    url: config.url + 'token',
                     type: 'POST',
                     data: {
                         'token': localStorage.getItem('token'),
@@ -94,7 +95,7 @@
                 location.href = '/#/';
             }
             $.ajax({
-                url: 'https://milosrest.herokuapp.com/api/orders',
+                url: config.url + 'orders',
                 type: 'POST',
                 data: {
                     'userid': localStorage.getItem('userid'),

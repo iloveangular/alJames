@@ -81,6 +81,7 @@
 </template>
 <script>
   import axios from 'axios';
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -90,7 +91,7 @@
     },
     mounted() {
       var vm = this;
-      axios.get('https://milosrest.herokuapp.com/api/documents')
+      axios.get(config.url + 'documents')
         .then(function (response) {
           vm.documents = response.data;
           console.log(vm.documents);
@@ -114,7 +115,7 @@
         template: '<span class="division">' + '<a href="/#/document/{{slug}}">({{title}}</a></span>)',
         correlativeTemplate: true,
         source: {
-          url: "https://milosrest.herokuapp.com/api/allDocuments"
+          url: config.url + "allDocuments"
         }
       });
     },

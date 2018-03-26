@@ -116,6 +116,7 @@
   </main>
 </template>
 <script>
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -153,7 +154,7 @@
         // Check if logged and keep username
         if (localStorage.getItem('token')) {
           $.ajax({
-            url: 'https://milosrest.herokuapp.com/api/token',
+            url: config.url + 'token',
             type: 'POST',
             data: {
               'token': localStorage.getItem('token'),
@@ -218,7 +219,7 @@
             successElement.querySelector('.token').textContent = result.token.id;
             successElement.classList.add('visible');
             $.ajax({
-              url: 'https://milosrest.herokuapp.com/api/cart',
+              url: config.url + 'cart',
               type: 'POST',
               data: {
                 amount: Math.trunc($("#the-total").attr('data-price') * vm.rate),

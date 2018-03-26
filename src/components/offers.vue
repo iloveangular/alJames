@@ -98,6 +98,7 @@
 </template>
 <script>
   import axios from 'axios'
+  import * as config from '@/scripts/main'
 
   export default {
     data() {
@@ -124,7 +125,7 @@
           vm.rate = localStorage.getItem('cnyValue');
         }
       });
-      axios.get('https://milosrest.herokuapp.com/api/special-offers')
+      axios.get(config.url + 'special-offers')
         .then(function (response) {
           vm.documents = response.data;
         })

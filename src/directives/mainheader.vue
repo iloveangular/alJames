@@ -103,6 +103,7 @@
   </div>
 </template>
 <script>
+  import * as config from '@/scripts/main'
   export default {
     data() {
       return {
@@ -192,7 +193,7 @@
       });
       if (localStorage.getItem('token')) {
         $.ajax({
-          url: 'https://milosrest.herokuapp.com/api/token',
+          url: config.url + 'token',
           type: 'POST',
           data: {
             'token': localStorage.getItem('token'),
