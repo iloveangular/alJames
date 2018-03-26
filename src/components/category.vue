@@ -166,7 +166,7 @@
         template: '<span class="division">' + '<a href="/#/document/{{slug}}">({{title}}</a></span>)',
         correlativeTemplate: true,
         source: {
-          url: config.url + "documents/" + this.$route.params.documentId
+          url: config.url + "documents/" + this.$route.params.documentId,
         }
       });
     },
