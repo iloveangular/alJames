@@ -206,8 +206,6 @@
             }
           }
         })
-      } else {
-        console.log('nije logovan');
       }
     }
   }

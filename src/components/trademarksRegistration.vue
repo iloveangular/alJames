@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main id="territory">
         <div class="registration-body">
             <main class="registration-page">
                 <section class="informations">
@@ -141,608 +141,15 @@
                             <div class="trademark-dynemic">
                                 <div class="col-md-5">
                                     <p>Select from below</p>
-                                    <ul>
-                                        <li>
-                                            <label for="chk1">
-                                                <input class="terr" id="chk1" name="territories" value="Albania"
-                                                       data-price="499" data-class-price="90"
-                                                       type="checkbox">Albania</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk2">
-                                                <input class="terr" id="chk2" name="territories" value="Andorra"
-                                                       data-price="875" data-class-price="120"
-                                                       type="checkbox">Andorra</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk3">
-                                                <input class="terr" id="chk3" name="territories" value="Anguilla"
-                                                       data-price="975" data-class-price="400" type="checkbox">Anguilla</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk4">
-                                                <input class="terr" id="chk4" name="territories"
-                                                       value="Antigua and Barbuda" data-price="1272"
-                                                       data-class-price="150"
-                                                       type="checkbox">Antigua and Barbuda</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk5">
-                                                <input class="terr" id="chk5" name="territories" value="Argentina"
-                                                       data-price="700" data-class-price="490" type="checkbox">Argentina</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk6">
-                                                <input class="terr" id="chk6" name="territories" value="Armenia"
-                                                       data-price="587" data-class-price="150"
-                                                       type="checkbox">Armenia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk7">
-                                                <input class="terr" id="chk7" name="territories" value="Aruba"
-                                                       data-price="1200" data-class-price="100"
-                                                       type="checkbox">Aruba</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk8">
-                                                <input class="terr" id="chk8" name="territories" value="Australia"
-                                                       data-price="1425" data-class-price="861" type="checkbox">Australia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk9">
-                                                <input class="terr" id="chk9" name="territories" value="Austria"
-                                                       data-price="1672" data-class-price="217" type="checkbox">Austria</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk10">
-                                                <input class="terr" id="chk10" name="territories" value="BES islands"
-                                                       data-price="975" data-class-price="150" type="checkbox">BES islands</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk11">
-                                                <input class="terr" id="chk11" name="territories" value="BVI"
-                                                       data-price="1145" data-class-price="200"
-                                                       type="checkbox">BVI</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk12">
-                                                <input class="terr" id="chk12" name="territories" value="Bahamas"
-                                                       data-price="600" data-class-price="400"
-                                                       type="checkbox">Bahamas</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk13">
-                                                <input class="terr" id="chk13" name="territories" value="Bahrain"
-                                                       data-price="870" data-class-price="870"
-                                                       type="checkbox">Bahrain</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk14">
-                                                <input class="terr" id="chk14" name="territories" value="Barbados"
-                                                       data-price="1500" data-class-price="1500" type="checkbox">Barbados</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk15">
-                                                <input class="terr" id="chk15" name="territories" value="Belarus"
-                                                       data-price="1072" data-class-price="140" type="checkbox">Belarus</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk16">
-                                                <input class="terr" id="chk16" name="territories" value="Belize"
-                                                       data-price="636" data-class-price="150"
-                                                       type="checkbox">Belize</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk17">
-                                                <input class="terr" id="chk17" name="territories" value="Benelux"
-                                                       data-price="681" data-class-price="140"
-                                                       type="checkbox">Benelux</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk18">
-                                                <input class="terr" id="chk18" name="territories" value="Bermuda"
-                                                       data-price="1574" data-class-price="200" type="checkbox">Bermuda</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk19">
-                                                <input class="terr" id="chk19" name="territories" value="Bolivia"
-                                                       data-price="928" data-class-price="800"
-                                                       type="checkbox">Bolivia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk20">
-                                                <input class="terr" id="chk20" name="territories" value="Brazil"
-                                                       data-price="825" data-class-price="650"
-                                                       type="checkbox">Brazil</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk21">
-                                                <input class="terr" id="chk21" name="territories" value="Brunei"
-                                                       data-price="1424" data-class-price="250"
-                                                       type="checkbox">Brunei</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk22">
-                                                <input class="terr" id="chk22" name="territories" value="Bulgaria"
-                                                       data-price="1495" data-class-price="256" type="checkbox">Bulgaria</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk23">
-                                                <input class="terr" id="chk23" name="territories" value="Cambodia"
-                                                       data-price="500" data-class-price="500" type="checkbox">Cambodia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk24">
-                                                <input class="terr" id="chk24" name="territories" value="Canada"
-                                                       data-price="993" data-class-price="100"
-                                                       type="checkbox">Canada</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk25">
-                                                <input class="terr" id="chk25" name="territories" value="Cayman Islands"
-                                                       data-price="1272" data-class-price="250" type="checkbox">Cayman Islands</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk26">
-                                                <input class="terr" id="chk26" name="territories" value="Chile"
-                                                       data-price="720" data-class-price="560"
-                                                       type="checkbox">Chile</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk27">
-                                                <input class="terr" id="chk27" name="territories" value="China"
-                                                       data-price="510" data-class-price="510"
-                                                       type="checkbox">China</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk28">
-                                                <input class="terr" id="chk28" name="territories" value="Colombia"
-                                                       data-price="1185" data-class-price="780" type="checkbox">Colombia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk29">
-                                                <input class="terr" id="chk29" name="territories" value="Croatia"
-                                                       data-price="720" data-class-price="100"
-                                                       type="checkbox">Croatia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk30">
-                                                <input class="terr" id="chk30" name="territories" value="Curacao"
-                                                       data-price="1392" data-class-price="170" type="checkbox">Curacao</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk31">
-                                                <input class="terr" id="chk31" name="territories" value="Cyprus"
-                                                       data-price="645" data-class-price="85"
-                                                       type="checkbox">Cyprus</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk32">
-                                                <input class="terr" id="chk32" name="territories" value="Czech Republic"
-                                                       data-price="996" data-class-price="200" type="checkbox">Czech Republic</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk33">
-                                                <input class="terr" id="chk33" name="territories" value="Denmark"
-                                                       data-price="1380" data-class-price="200" type="checkbox">Denmark</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk34">
-                                                <input class="terr" id="chk34" name="territories" value="Ecuador"
-                                                       data-price="895" data-class-price="895"
-                                                       type="checkbox">Ecuador</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk35">
-                                                <input class="terr" id="chk35" name="territories" value="Egypt"
-                                                       data-price="595" data-class-price="595"
-                                                       type="checkbox">Egypt</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk36">
-                                                <input class="terr" id="chk36" name="territories" value="Estonia"
-                                                       data-price="752" data-class-price="200"
-                                                       type="checkbox">Estonia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk37">
-                                                <input class="terr" id="chk37" name="territories" value="Finland"
-                                                       data-price="1005" data-class-price="250" type="checkbox">Finland</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk38">
-                                                <input class="terr" id="chk38" name="territories" value="France"
-                                                       data-price="914" data-class-price="162"
-                                                       type="checkbox">France</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk39">
-                                                <input class="terr" id="chk39" name="territories" value="Georgia"
-                                                       data-price="1248" data-class-price="180" type="checkbox">Georgia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk40">
-                                                <input class="terr" id="chk40" name="territories" value="Germany"
-                                                       data-price="1104" data-class-price="200" type="checkbox">Germany</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk41">
-                                                <input class="terr" id="chk41" name="territories" value="Gibraltar"
-                                                       data-price="680" data-class-price="680" type="checkbox">Gibraltar</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk42">
-                                                <input class="terr" id="chk42" name="territories" value="Greece"
-                                                       data-price="1456" data-class-price="50"
-                                                       type="checkbox">Greece</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk43">
-                                                <input class="terr" id="chk43" name="territories" value="Grenada"
-                                                       data-price="1566" data-class-price="200" type="checkbox">Grenada</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk44">
-                                                <input class="terr" id="chk44" name="territories" value="Guyana"
-                                                       data-price="600" data-class-price="500"
-                                                       type="checkbox">Guyana</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk45">
-                                                <input class="terr" id="chk45" name="territories" value="Hong Kong"
-                                                       data-price="1065" data-class-price="495" type="checkbox">Hong Kong</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk46">
-                                                <input class="terr" id="chk46" name="territories" value="Hungary"
-                                                       data-price="1053" data-class-price="412" type="checkbox">Hungary</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk47">
-                                                <input class="terr" id="chk47" name="territories" value="Iceland"
-                                                       data-price="1122" data-class-price="250" type="checkbox">Iceland</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk48">
-                                                <input class="terr" id="chk48" name="territories" value="India"
-                                                       data-price="500" data-class-price="500"
-                                                       type="checkbox">India</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk49">
-                                                <input class="terr" id="chk49" name="territories" value="Indonesia"
-                                                       data-price="825" data-class-price="825" type="checkbox">Indonesia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk50">
-                                                <input class="terr" id="chk50" name="territories" value="Ireland"
-                                                       data-price="795" data-class-price="95"
-                                                       type="checkbox">Ireland</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk51">
-                                                <input class="terr" id="chk51" name="territories" value="Israel"
-                                                       data-price="1400" data-class-price="710"
-                                                       type="checkbox">Israel</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk52">
-                                                <input class="terr" id="chk52" name="territories" value="Italy"
-                                                       data-price="804" data-class-price="140"
-                                                       type="checkbox">Italy</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk53">
-                                                <input class="terr" id="chk53" name="territories" value="Japan"
-                                                       data-price="804" data-class-price="250"
-                                                       type="checkbox">Japan</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk54">
-                                                <input class="terr" id="chk54" name="territories" value="Jordan"
-                                                       data-price="1350" data-class-price="1350" type="checkbox">Jordan</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk55">
-                                                <input class="terr" id="chk55" name="territories" value="Kazakhstan"
-                                                       data-price="832" data-class-price="100" type="checkbox">Kazakhstan</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk56">
-                                                <input class="terr" id="chk56" name="territories" value="Kuwait"
-                                                       data-price="586" data-class-price="586"
-                                                       type="checkbox">Kuwait</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk57">
-                                                <input class="terr" id="chk57" name="territories" value="Kyrgyzstan"
-                                                       data-price="875" data-class-price="300" type="checkbox">Kyrgyzstan</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk58">
-                                                <input class="terr" id="chk58" name="territories" value="Laos"
-                                                       data-price="695" data-class-price="695"
-                                                       type="checkbox">Laos</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk59">
-                                                <input class="terr" id="chk59" name="territories" value="Latvia"
-                                                       data-price="495" data-class-price="100"
-                                                       type="checkbox">Latvia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk60">
-                                                <input class="terr" id="chk60" name="territories" value="Lebanon"
-                                                       data-price="1145" data-class-price="200" type="checkbox">Lebanon</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk61">
-                                                <input class="terr" id="chk61" name="territories" value="Liechtenstein"
-                                                       data-price="1926" data-class-price="191" type="checkbox">Liechtenstein</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk62">
-                                                <input class="terr" id="chk62" name="territories" value="Lithuania"
-                                                       data-price="625" data-class-price="100" type="checkbox">Lithuania</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk63">
-                                                <input class="terr" id="chk63" name="territories" value="Malaysia"
-                                                       data-price="918" data-class-price="918" type="checkbox">Malaysia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk64">
-                                                <input class="terr" id="chk64" name="territories" value="Malta"
-                                                       data-price="576" data-class-price="475"
-                                                       type="checkbox">Malta</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk65">
-                                                <input class="terr" id="chk65" name="territories" value="Mauritius"
-                                                       data-price="776" data-class-price="200" type="checkbox">Mauritius</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk66">
-                                                <input class="terr" id="chk66" name="territories" value="Mexico"
-                                                       data-price="920" data-class-price="920"
-                                                       type="checkbox">Mexico</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk67">
-                                                <input class="terr" id="chk67" name="territories" value="Moldova"
-                                                       data-price="765" data-class-price="130"
-                                                       type="checkbox">Moldova</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk68">
-                                                <input class="terr" id="chk68" name="territories" value="Myanmar"
-                                                       data-price="770" data-class-price="750"
-                                                       type="checkbox">Myanmar</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk69">
-                                                <input class="terr" id="chk69" name="territories" value="Nepal"
-                                                       data-price="500" data-class-price="475"
-                                                       type="checkbox">Nepal</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk70">
-                                                <input class="terr" id="chk70" name="territories" value="New Zealand"
-                                                       data-price="653" data-class-price="300" type="checkbox">New Zealand</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk71">
-                                                <input class="terr" id="chk71" name="territories" value="Norway"
-                                                       data-price="1059" data-class-price="250"
-                                                       type="checkbox">Norway</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk72">
-                                                <input class="terr" id="chk72" name="territories" value="OHIM"
-                                                       data-price="1600" data-class-price="305"
-                                                       type="checkbox">OHIM</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk73">
-                                                <input class="terr" id="chk73" name="territories" value="Oman"
-                                                       data-price="1470" data-class-price="1470"
-                                                       type="checkbox">Oman</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk74">
-                                                <input class="terr" id="chk74" name="territories" value="Pakistan"
-                                                       data-price="580" data-class-price="495" type="checkbox">Pakistan</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk75">
-                                                <input class="terr" id="chk75" name="territories" value="Panama"
-                                                       data-price="747" data-class-price="473"
-                                                       type="checkbox">Panama</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk76">
-                                                <input class="terr" id="chk76" name="territories" value="Paraguay"
-                                                       data-price="450" data-class-price="400" type="checkbox">Paraguay</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk77">
-                                                <input class="terr" id="chk77" name="territories" value="Peru"
-                                                       data-price="880" data-class-price="735"
-                                                       type="checkbox">Peru</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk78">
-                                                <input class="terr" id="chk78" name="territories" value="Philippines"
-                                                       data-price="840" data-class-price="120" type="checkbox">Philippines</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk79">
-                                                <input class="terr" id="chk79" name="territories" value="Portugal"
-                                                       data-price="408" data-class-price="155" type="checkbox">Portugal</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk80">
-                                                <input class="terr" id="chk80" name="territories" value="Qatar"
-                                                       data-price="1920" data-class-price="1920"
-                                                       type="checkbox">Qatar</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk81">
-                                                <input class="terr" id="chk81" name="territories" value="Romania"
-                                                       data-price="960" data-class-price="200"
-                                                       type="checkbox">Romania</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk82">
-                                                <input class="terr" id="chk82" name="territories" value="Russia"
-                                                       data-price="1365" data-class-price="103"
-                                                       type="checkbox">Russia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk83">
-                                                <input class="terr" id="chk83" name="territories" value="Saudi Arabia"
-                                                       data-price="3405" data-class-price="3405" type="checkbox">Saudi Arabia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk84">
-                                                <input class="terr" id="chk84" name="territories" value="Serbia"
-                                                       data-price="416" data-class-price="100"
-                                                       type="checkbox">Serbia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk85">
-                                                <input class="terr" id="chk85" name="territories" value="Seychelles"
-                                                       data-price="1050" data-class-price="770" type="checkbox">Seychelles</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk86">
-                                                <input class="terr" id="chk86" name="territories" value="Singapore"
-                                                       data-price="672" data-class-price="672" type="checkbox">Singapore</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk87">
-                                                <input class="terr" id="chk87" name="territories" value="Slovakia"
-                                                       data-price="885" data-class-price="150" type="checkbox">Slovakia</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk88">
-                                                <input class="terr" id="chk88" name="territories" value="South Africa"
-                                                       data-price="716" data-class-price="660" type="checkbox">South Africa</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk89">
-                                                <input class="terr" id="chk89" name="territories" value="South Korea"
-                                                       data-price="931" data-class-price="650" type="checkbox">South Korea</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk90">
-                                                <input class="terr" id="chk90" name="territories" value="Spain"
-                                                       data-price="877" data-class-price="337"
-                                                       type="checkbox">Spain</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk91">
-                                                <input class="terr" id="chk91" name="territories" value="Sri Lanka"
-                                                       data-price="700" data-class-price="100" type="checkbox">Sri Lanka</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk92">
-                                                <input class="terr" id="chk92" name="territories"
-                                                       value="St. Kitts&amp;Nevis" data-price="984"
-                                                       data-class-price="250"
-                                                       type="checkbox">St. Kitts&amp;Nevis</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk93">
-                                                <input class="terr" id="chk93" name="territories" value="St. Maarten"
-                                                       data-price="970" data-class-price="100" type="checkbox">St. Maarten</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk94">
-                                                <input class="terr" id="chk94" name="territories" value="Sudan"
-                                                       data-price="900" data-class-price="900"
-                                                       type="checkbox">Sudan</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk95">
-                                                <input class="terr" id="chk95" name="territories" value="Suriname"
-                                                       data-price="832" data-class-price="100" type="checkbox">Suriname</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk96">
-                                                <input class="terr" id="chk96" name="territories" value="Sweden"
-                                                       data-price="980" data-class-price="100"
-                                                       type="checkbox">Sweden</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk97">
-                                                <input class="terr" id="chk97" name="territories" value="Taiwan"
-                                                       data-price="910" data-class-price="890"
-                                                       type="checkbox">Taiwan</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk98">
-                                                <input class="terr" id="chk98" name="territories" value="Tajikistan"
-                                                       data-price="647" data-class-price="200" type="checkbox">Tajikistan</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk99">
-                                                <input class="terr" id="chk99" name="territories" value="Thailand"
-                                                       data-price="672" data-class-price="200" type="checkbox">Thailand</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk100">
-                                                <input class="terr" id="chk100" name="territories" value="Turkey"
-                                                       data-price="679" data-class-price="100"
-                                                       type="checkbox">Turkey</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk101">
-                                                <input class="terr" id="chk101" name="territories" value="Turkmenistan"
-                                                       data-price="750" data-class-price="250" type="checkbox">Turkmenistan</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk102">
-                                                <input class="terr" id="chk102" name="territories" value="UAE"
-                                                       data-price="3675" data-class-price="3675"
-                                                       type="checkbox">UAE</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk103">
-                                                <input class="terr" id="chk103" name="territories" value="USA"
-                                                       data-price="1237" data-class-price="713"
-                                                       type="checkbox">USA</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk104">
-                                                <input class="terr" id="chk104" name="territories" value="Ukraine"
-                                                       data-price="800" data-class-price="263"
-                                                       type="checkbox">Ukraine</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk105">
-                                                <input class="terr" id="chk105" name="territories"
-                                                       value="United Kingdom" data-price="500" data-class-price="140"
-                                                       type="checkbox">United Kingdom</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk106">
-                                                <input class="terr" id="chk106" name="territories" value="Uruguay"
-                                                       data-price="870" data-class-price="450"
-                                                       type="checkbox">Uruguay</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk107">
-                                                <input class="terr" id="chk107" name="territories" value="Venezuela"
-                                                       data-price="720" data-class-price="720" type="checkbox">Venezuela</label>
-                                        </li>
-                                        <li>
-                                            <label for="chk108">
-                                                <input class="terr" id="chk108" name="territories" value="Vietnam"
-                                                       data-price="575" data-class-price="375"
-                                                       type="checkbox">Vietnam</label>
-                                        </li>
-                                    </ul>
+                                   <ul>
+                                     <li v-for="(country, index) in countries">
+                                       <label :for="'chk' + (index + 1)">
+                                         <input :id="'chk' + (index + 1)" class="terr" name="territories" :value="country.name"
+                                                :data-price="country.price" :data-class-price="country.classPrice"
+                                                type="checkbox">{{country.name}}
+                                       </label>
+                                     </li>
+                                   </ul>
                                 </div>
                                 <div class="col-md-7">
                                     <p>Select territories</p>
@@ -758,287 +165,16 @@
                                                                               href="#">Class Search</a>.</p>
                                 <div class="trademark-dynemic">
                                     <div class="col-md-12">
-                                        <ul>
-                                            <li>
-                                                <label for="cls1">
-                                                    <input class="cls" id="1" name="classes"
-                                                           value="Chemicals used in industry, science and photography, as well as in agriculture, horticulture and forestry; unprocessed artificial resins, unprocessed plastics; manures; fire extinguishing compositions; tempering and soldering preparations"
-                                                           data-id="5993407a040e0184a2d1f92e"
-                                                           type="checkbox"><span><b>1</b></span><span> Chemicals used in industry, science and photography, as well as in agriculture, horticulture and forestry; unprocessed artificial resins, unprocessed plastics; manures; fire extinguishing compositions; tempering and soldering preparations</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls2">
-                                                    <input class="cls" id="2" name="classes"
-                                                           value="Paints, varnishes, lacquers; preservatives against rust and against deterioration of wood; colorants; mordants; raw natural resins; metals in foil and powder form for painters, decorators, printers and artists."
-                                                           data-id="59934090040e0184a2d1f92f"
-                                                           type="checkbox"><span><b>2</b></span><span> Paints, varnishes, lacquers; preservatives against rust and against deterioration of wood; colorants; mordants; raw natural resins; metals in foil and powder form for painters, decorators, printers and artists.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls3">
-                                                    <input class="cls" id="3" name="classes"
-                                                           value="Bleaching preparations and other substances for laundry use; cleaning, polishing, scouring and abrasive preparations; soaps; perfumery, essential oils, cosmetics, hair lotions; dentifrices."
-                                                           data-id="5999d0df671f0165bf22869a"
-                                                           type="checkbox"><span><b>3</b></span><span> Bleaching preparations and other substances for laundry use; cleaning, polishing, scouring and abrasive preparations; soaps; perfumery, essential oils, cosmetics, hair lotions; dentifrices.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls4">
-                                                    <input class="cls" id="4" name="classes"
-                                                           value="Industrial oils and greases; lubricants; dust absorbing, wetting and binding compositions; fuels (including motor spirit) and illuminants; candles and wicks for lighting."
-                                                           data-id="5999d0df671f0165bf22869b"
-                                                           type="checkbox"><span><b>4</b></span><span> Industrial oils and greases; lubricants; dust absorbing, wetting and binding compositions; fuels (including motor spirit) and illuminants; candles and wicks for lighting.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls5">
-                                                    <input class="cls" id="5" name="classes"
-                                                           value="Pharmaceutical and veterinary preparations; sanitary preparations for medical purposes; dietetic food and substances adapted for medical or veterinary use, food for babies; dietary supplements for humans and animals; plasters, materials for dressings"
-                                                           data-id="5999d0e0671f0165bf22869c"
-                                                           type="checkbox"><span><b>5</b></span><span> Pharmaceutical and veterinary preparations; sanitary preparations for medical purposes; dietetic food and substances adapted for medical or veterinary use, food for babies; dietary supplements for humans and animals; plasters, materials for dressings</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls6">
-                                                    <input class="cls" id="6" name="classes"
-                                                           value="Common metals and their alloys; metal building materials; transportable buildings of metal; materials of metal for railway tracks; non-electric cables and wires of common metal; ironmongery, small items of metal hardware; pipes and tubes of metal; sa"
-                                                           data-id="5999d0e0671f0165bf22869d"
-                                                           type="checkbox"><span><b>6</b></span><span> Common metals and their alloys; metal building materials; transportable buildings of metal; materials of metal for railway tracks; non-electric cables and wires of common metal; ironmongery, small items of metal hardware; pipes and tubes of metal; sa</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls7">
-                                                    <input class="cls" id="7" name="classes"
-                                                           value="Machines and machine tools; motors and engines (except for land vehicles); machine coupling and transmission components (except for land vehicles); agricultural implements other than hand-operated; incubators for eggs; automatic vending machines."
-                                                           data-id="5999d0e0671f0165bf22869e"
-                                                           type="checkbox"><span><b>7</b></span><span> Machines and machine tools; motors and engines (except for land vehicles); machine coupling and transmission components (except for land vehicles); agricultural implements other than hand-operated; incubators for eggs; automatic vending machines.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls8">
-                                                    <input class="cls" id="8" name="classes"
-                                                           value="Hand tools and implements (hand-operated); cutlery; side arms; razors."
-                                                           data-id="5999d0e1671f0165bf22869f"
-                                                           type="checkbox"><span><b>8</b></span><span> Hand tools and implements (hand-operated); cutlery; side arms; razors.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls9">
-                                                    <input class="cls" id="9" name="classes"
-                                                           value="Scientific, nautical, surveying, photographic, cinematographic, optical, weighing, measuring, signalling, checking (supervision), life-saving and teaching apparatus and instruments; apparatus and instruments for conducting, switching, transforming, a"
-                                                           data-id="5999d0e1671f0165bf2286a0"
-                                                           type="checkbox"><span><b>9</b></span><span> Scientific, nautical, surveying, photographic, cinematographic, optical, weighing, measuring, signalling, checking (supervision), life-saving and teaching apparatus and instruments; apparatus and instruments for conducting, switching, transforming, a</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls10">
-                                                    <input class="cls" id="10" name="classes"
-                                                           value="Surgical, medical, dental and veterinary apparatus and instruments, artificial limbs, eyes and teeth; orthopedic articles; suture materials."
-                                                           data-id="5999d0e1671f0165bf2286a1" type="checkbox"><span><b>10</b></span><span> Surgical, medical, dental and veterinary apparatus and instruments, artificial limbs, eyes and teeth; orthopedic articles; suture materials.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls11">
-                                                    <input class="cls" id="11" name="classes"
-                                                           value="Apparatus for lighting, heating, steam generating, cooking, refrigerating, drying, ventilating, water supply and sanitary purposes."
-                                                           data-id="5999d0e2671f0165bf2286a2" type="checkbox"><span><b>11</b></span><span> Apparatus for lighting, heating, steam generating, cooking, refrigerating, drying, ventilating, water supply and sanitary purposes.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls12">
-                                                    <input class="cls" id="12" name="classes"
-                                                           value="Vehicles; apparatus for locomotion by land, air or water."
-                                                           data-id="5999d0e2671f0165bf2286a3" type="checkbox"><span><b>12</b></span><span> Vehicles; apparatus for locomotion by land, air or water.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls13">
-                                                    <input class="cls" id="13" name="classes"
-                                                           value="Firearms; ammunition and projectiles; explosives; fireworks."
-                                                           data-id="5999d0e2671f0165bf2286a4" type="checkbox"><span><b>13</b></span><span> Firearms; ammunition and projectiles; explosives; fireworks.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls14">
-                                                    <input class="cls" id="14" name="classes"
-                                                           value="Precious metals and their alloys and goods in precious metals or coated therewith, not included in other classes; jewellery, precious stones; horological and chronometric instruments."
-                                                           data-id="5999d0e3671f0165bf2286a5" type="checkbox"><span><b>14</b></span><span> Precious metals and their alloys and goods in precious metals or coated therewith, not included in other classes; jewellery, precious stones; horological and chronometric instruments.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls15">
-                                                    <input class="cls" id="15" name="classes"
-                                                           value="Musical instruments."
-                                                           data-id="5999d0e3671f0165bf2286a6" type="checkbox"><span><b>15</b></span><span> Musical instruments.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls16">
-                                                    <input class="cls" id="16" name="classes"
-                                                           value="Paper, cardboard and goods made from these materials, not included in other classes; printed matter; bookbinding material; photographs; stationery; adhesives for stationery or household purposes; artists materials; paint brushes; typewriters and offi"
-                                                           data-id="5999d0e3671f0165bf2286a7" type="checkbox"><span><b>16</b></span><span> Paper, cardboard and goods made from these materials, not included in other classes; printed matter; bookbinding material; photographs; stationery; adhesives for stationery or household purposes; artists materials; paint brushes; typewriters and offi</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls17">
-                                                    <input class="cls" id="17" name="classes"
-                                                           value="Rubber, gutta-percha, gum, asbestos, mica and goods made from these materials and not included in other classes; plastics in extruded form for use in manufacture; packing, stopping and insulating materials; flexible pipes, not of metal."
-                                                           data-id="5999d0e3671f0165bf2286a8" type="checkbox"><span><b>17</b></span><span> Rubber, gutta-percha, gum, asbestos, mica and goods made from these materials and not included in other classes; plastics in extruded form for use in manufacture; packing, stopping and insulating materials; flexible pipes, not of metal.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls18">
-                                                    <input class="cls" id="18" name="classes"
-                                                           value="Yarns and threads, for textile use."
-                                                           data-id="5999d0e5671f0165bf2286ae" type="checkbox"><span><b>18</b></span><span> Yarns and threads, for textile use.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls19">
-                                                    <input class="cls" id="19" name="classes"
-                                                           value="Leather and imitations of leather, and goods made of these materials and not included in other classes; animal skins, hides; trunks and travelling bags; umbrellas and parasols; walking sticks; whips, harness and saddlery."
-                                                           data-id="5999d0e4671f0165bf2286a9" type="checkbox"><span><b>19</b></span><span> Leather and imitations of leather, and goods made of these materials and not included in other classes; animal skins, hides; trunks and travelling bags; umbrellas and parasols; walking sticks; whips, harness and saddlery.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls20">
-                                                    <input class="cls" id="20" name="classes"
-                                                           value="Building materials (non-metallic); non-metallic rigid pipes for building; asphalt, pitch and bitumen; non-metallic transportable buildings; monuments, not of metal."
-                                                           data-id="5999d0e4671f0165bf2286aa" type="checkbox"><span><b>20</b></span><span> Building materials (non-metallic); non-metallic rigid pipes for building; asphalt, pitch and bitumen; non-metallic transportable buildings; monuments, not of metal.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls21">
-                                                    <input class="cls" id="21" name="classes"
-                                                           value="Furniture, mirrors, picture frames; goods (not included in other classes) of wood, cork, reed, cane, wicker, horn, bone, ivory, whalebone, shell, amber, mother-of-pearl, meerschaum and substitutes for all these materials, or of plastics."
-                                                           data-id="5999d0e4671f0165bf2286ab" type="checkbox"><span><b>21</b></span><span> Furniture, mirrors, picture frames; goods (not included in other classes) of wood, cork, reed, cane, wicker, horn, bone, ivory, whalebone, shell, amber, mother-of-pearl, meerschaum and substitutes for all these materials, or of plastics.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls22">
-                                                    <input class="cls" id="22" name="classes"
-                                                           value="Household or kitchen utensils and containers; combs and sponges; brushes (except paintbrushes); brush-making materials; articles for cleaning purposes; steelwool; unworked or semi-worked glass (except glass used in building); glassware, porcelain and"
-                                                           data-id="5999d0e5671f0165bf2286ac" type="checkbox"><span><b>22</b></span><span> Household or kitchen utensils and containers; combs and sponges; brushes (except paintbrushes); brush-making materials; articles for cleaning purposes; steelwool; unworked or semi-worked glass (except glass used in building); glassware, porcelain and</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls23">
-                                                    <input class="cls" id="23" name="classes"
-                                                           value="Ropes, string, nets, tents, awnings, tarpaulins, sails, sacks and bags (not included in other classes); padding and stuffing materials (except of rubber or plastics); raw fibrous textile materials."
-                                                           data-id="5999d0e5671f0165bf2286ad" type="checkbox"><span><b>23</b></span><span> Ropes, string, nets, tents, awnings, tarpaulins, sails, sacks and bags (not included in other classes); padding and stuffing materials (except of rubber or plastics); raw fibrous textile materials.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls24">
-                                                    <input class="cls" id="24" name="classes"
-                                                           value="Textiles and textile goods, not included in other classes; bed covers; table covers."
-                                                           data-id="5999d0e6671f0165bf2286af" type="checkbox"><span><b>24</b></span><span> Textiles and textile goods, not included in other classes; bed covers; table covers.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls25">
-                                                    <input class="cls" id="25" name="classes"
-                                                           value="Clothing, footwear, headgear."
-                                                           data-id="5999d0e6671f0165bf2286b0" type="checkbox"><span><b>25</b></span><span> Clothing, footwear, headgear.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls26">
-                                                    <input class="cls" id="26" name="classes"
-                                                           value="Lace and embroidery, ribbons and braid; buttons, hooks and eyes, pins and needles; artificial flowers."
-                                                           data-id="5999d0e6671f0165bf2286b1" type="checkbox"><span><b>26</b></span><span> Lace and embroidery, ribbons and braid; buttons, hooks and eyes, pins and needles; artificial flowers.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls27">
-                                                    <input class="cls" id="27" name="classes"
-                                                           value="Carpets, rugs, mats and matting, linoleum and other materials for covering existing floors; wall hangings (non-textile)."
-                                                           data-id="5999d0e7671f0165bf2286b2" type="checkbox"><span><b>27</b></span><span> Carpets, rugs, mats and matting, linoleum and other materials for covering existing floors; wall hangings (non-textile).</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls28">
-                                                    <input class="cls" id="28" name="classes"
-                                                           value="Games and playthings; gymnastic and sporting articles not included in other classes; decorations for Christmas trees."
-                                                           data-id="5999d0e7671f0165bf2286b3" type="checkbox"><span><b>28</b></span><span> Games and playthings; gymnastic and sporting articles not included in other classes; decorations for Christmas trees.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls29">
-                                                    <input class="cls" id="29" name="classes"
-                                                           value="Meat, fish, poultry and game; meat extracts; preserved, frozen, dried and cooked fruits and vegetables; jellies, jams, compotes; eggs; milk and milk products; edible oils and fats."
-                                                           data-id="5999d0e7671f0165bf2286b4" type="checkbox"><span><b>29</b></span><span> Meat, fish, poultry and game; meat extracts; preserved, frozen, dried and cooked fruits and vegetables; jellies, jams, compotes; eggs; milk and milk products; edible oils and fats.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls30">
-                                                    <input class="cls" id="30" name="classes"
-                                                           value="Coffee, tea, cocoa and artificial coffee; rice; tapioca and sago; flour and preparations made from cereals; bread, pastry and confectionery; edible ices; sugar, honey, treacle; yeast, baking-powder; salt; mustard; vinegar, sauces (condiments); spices"
-                                                           data-id="5999d0e8671f0165bf2286b5" type="checkbox"><span><b>30</b></span><span> Coffee, tea, cocoa and artificial coffee; rice; tapioca and sago; flour and preparations made from cereals; bread, pastry and confectionery; edible ices; sugar, honey, treacle; yeast, baking-powder; salt; mustard; vinegar, sauces (condiments); spices</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls31">
-                                                    <input class="cls" id="31" name="classes"
-                                                           value="Grains and agricultural, horticultural and forestry products not included in other classes; live animals; fresh fruits and vegetables; seeds; natural plants and flowers; foodstuffs for animals; malt."
-                                                           data-id="5999d0e8671f0165bf2286b6" type="checkbox"><span><b>31</b></span><span> Grains and agricultural, horticultural and forestry products not included in other classes; live animals; fresh fruits and vegetables; seeds; natural plants and flowers; foodstuffs for animals; malt.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls32">
-                                                    <input class="cls" id="32" name="classes"
-                                                           value="Beers; mineral and aerated waters and other non-alcoholic beverages; fruit beverages and fruit juices; syrups and other preparations for making beverages."
-                                                           data-id="5999d0e8671f0165bf2286b7" type="checkbox"><span><b>32</b></span><span> Beers; mineral and aerated waters and other non-alcoholic beverages; fruit beverages and fruit juices; syrups and other preparations for making beverages.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls33">
-                                                    <input class="cls" id="33" name="classes"
-                                                           value="Alcoholic beverages (except beers)."
-                                                           data-id="5999d0e9671f0165bf2286b8" type="checkbox"><span><b>33</b></span><span> Alcoholic beverages (except beers).</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls34">
-                                                    <input class="cls" id="34" name="classes"
-                                                           value="Tobacco; smokers articles; matches."
-                                                           data-id="5999d0e9671f0165bf2286b9" type="checkbox"><span><b>34</b></span><span> Tobacco; smokers articles; matches.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls35">
-                                                    <input class="cls" id="35" name="classes"
-                                                           value="Advertising; business management; business administration; office functions."
-                                                           data-id="5999d0e9671f0165bf2286ba" type="checkbox"><span><b>35</b></span><span> Advertising; business management; business administration; office functions.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls36">
-                                                    <input class="cls" id="36" name="classes"
-                                                           value="Insurance; financial affairs; monetary affairs; real estate affairs."
-                                                           data-id="5999d0e9671f0165bf2286bb" type="checkbox"><span><b>36</b></span><span> Insurance; financial affairs; monetary affairs; real estate affairs.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls37">
-                                                    <input class="cls" id="37" name="classes"
-                                                           value="Building construction; repair; installation services."
-                                                           data-id="5999d0ea671f0165bf2286bc" type="checkbox"><span><b>37</b></span><span> Building construction; repair; installation services.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls38">
-                                                    <input class="cls" id="38" name="classes"
-                                                           value="Telecommunications."
-                                                           data-id="5999d0ea671f0165bf2286bd" type="checkbox"><span><b>38</b></span><span> Telecommunications.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls39">
-                                                    <input class="cls" id="39" name="classes"
-                                                           value="Transport; packaging and storage of goods; travel arrangement."
-                                                           data-id="5999d0eb671f0165bf2286be" type="checkbox"><span><b>39</b></span><span> Transport; packaging and storage of goods; travel arrangement.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls40">
-                                                    <input class="cls" id="40" name="classes"
-                                                           value="Treatment of materials."
-                                                           data-id="5999d0eb671f0165bf2286bf" type="checkbox"><span><b>40</b></span><span> Treatment of materials.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls41">
-                                                    <input class="cls" id="41" name="classes"
-                                                           value="Education; providing of training; entertainment; sporting and cultural activities."
-                                                           data-id="5999d0eb671f0165bf2286c0" type="checkbox"><span><b>41</b></span><span> Education; providing of training; entertainment; sporting and cultural activities.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls42">
-                                                    <input class="cls" id="42" name="classes"
-                                                           value="Scientific and technological services and research and design relating thereto; industrial analysis and research services; design and development of computer hardware and software."
-                                                           data-id="5999d0ec671f0165bf2286c1" type="checkbox"><span><b>42</b></span><span> Scientific and technological services and research and design relating thereto; industrial analysis and research services; design and development of computer hardware and software.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls43">
-                                                    <input class="cls" id="43" name="classes"
-                                                           value="Services for providing food and drink; temporary accommodation."
-                                                           data-id="5999d0ec671f0165bf2286c2" type="checkbox"><span><b>43</b></span><span> Services for providing food and drink; temporary accommodation.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls44">
-                                                    <input class="cls" id="44" name="classes"
-                                                           value="Medical services; veterinary services; hygienic and beauty care for human beings or animals; agriculture, horticulture and forestry services."
-                                                           data-id="5999d0ec671f0165bf2286c3" type="checkbox"><span><b>44</b></span><span> Medical services; veterinary services; hygienic and beauty care for human beings or animals; agriculture, horticulture and forestry services.</span></label>
-                                            </li>
-                                            <li>
-                                                <label for="cls45">
-                                                    <input class="cls" id="45" name="classes"
-                                                           value="Legal services; security services for the protection of property and individuals; personal and social services rendered by others to meet the needs of individuals."
-                                                           data-id="5999d0ed671f0165bf2286c4" type="checkbox"><span><b>45</b></span><span> Legal services; security services for the protection of property and individuals; personal and social services rendered by others to meet the needs of individuals.</span></label>
-                                            </li>
-                                        </ul>
+                                       <ul>
+                                         <li v-for="(klasa, index) in classes" :class="index + 1">
+                                           <label :for="'cls' + (index + 1)">
+                                             <input class="cls" :id="index + 1" name="classes"
+                                                    :value="klasa.text"
+                                                    :data-id="klasa._id"
+                                                    :data-name="klasa.name"
+                                                    type="checkbox"><span><b>{{ index + 1 }}</b></span><span> {{klasa.text}}</span></label>
+                                         </li>
+                                       </ul>
                                     </div>
                                     <div class="col-md-12">
                                         <p>Selected classes:</p>
@@ -1880,3 +1016,189 @@
         </div>
     </main>
 </template>
+<script>
+  import * as config from '@/scripts/main'
+
+  export default {
+    data() {
+      return {
+        username: '',
+        countries: [],
+        classes: []
+      }
+    },
+    mounted() {
+      var vm = this;
+      $(document).ready(function () {
+        //Select Territories
+        var arr = [];
+        $("#territory").on("click", ".terr", function() {
+          console.log('hi');
+          var id = $(this).attr("id");
+          if ($(this).prop("checked")) {
+            if (jQuery.inArray(this.id, arr) == -1) {
+              arr.push({value: this.id});
+            }
+            DisplayResult();
+          }
+          else {
+            arr.sort(SortByName);
+            var index = arr.findIndex(x => x.value == id);
+            arr.splice(index, 1);
+            $("#r_" + id).remove();
+          }
+        });
+
+        window.RemoveValue = function (data) {
+          $("#" + data.id).prop('checked', false);
+          arr.sort(SortByName);
+          var index = arr.findIndex(x => x.value == data.id);
+          arr.splice(index, 1);
+          $("#r_" + data.id).remove();
+        }
+        function DisplayResult() {
+          arr.sort(SortByName);
+          var htmlData = "";
+          for (var i = 0; i < arr.length; i++) {
+            htmlData += "<span class='closespan' id='r_" + arr[i].value + "'><label>" + $('#' + arr[i].value).attr('value') + "</label><i class='fa fa-close' aria-hidden='true' onclick='RemoveValue(" + arr[i].value + ")'></i></span>";
+          }
+          $("#result").html(htmlData);
+        }
+
+        // End Select territories
+        //Select Classes
+        var arrClass = [];
+        $("#territory").on("click", ".cls", function() {
+          console.log('hisdas');
+          var id = $(this).attr("id");
+          console.log(arrClass);
+          if ($(this).prop("checked")) {
+            if (jQuery.inArray(this.id, arr) == -1) {
+              arrClass.push({value: this.id});
+            }
+            DisplayClassResult();
+          }
+          else {
+            arrClass.sort(SortByName);
+            var index = arrClass.findIndex(x => x.value == id);
+            arrClass.splice(index, 1);
+            $("#clsr_" + id).remove();
+          }
+        });
+
+        window.RemoveClassValue = function (data) {
+          $("#" + data).prop('checked', false);
+          arrClass.sort(SortByName);
+          var index = arrClass.findIndex(x => x.value == data);
+          arrClass.splice(index, 1);
+          $("#clsr_" + data).remove();
+        }
+
+        function DisplayClassResult() {
+          arrClass.sort(SortByName);
+          var htmlclsData = "";
+          for (var i = 0; i < arrClass.length; i++) {
+            htmlclsData += "<div id='clsr_" + arrClass[i].value + "'><div class='closespan'><label>" + 'Class ' + arrClass[i].value + "</label><a onclick='RemoveClassValue(" + arrClass[i].value + ")'>remove [<i class='fa fa-close' aria-hidden='true'></i>]</a></div><div class='add-p'>" + $('#' + arrClass[i].value).attr('value') + "</div></div>";
+          }
+          $("#clsresult").html(htmlclsData);
+        }
+
+        //End - Select Classes
+        // Sort By Name
+        function SortByName(a, b) {
+          var aName = a.value.toLowerCase();
+          var bName = b.value.toLowerCase();
+          return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+        }
+        var territories = [];
+        var classes = [];
+
+        $("#territory").on("click", ".terr", function() {
+          var total = Number($('#total').text());
+          var name = $(this).val();
+          var price = Number($(this).data("price"));
+          var classPrice = Number($(this).data("class-price"));
+          var index = classes.indexOf({
+            name: name,
+            price: price,
+            classPrice: classPrice
+          });
+
+          if (this.checked) {
+            var finalTotal = total + (price + (classPrice * classes.length));
+            territories.push({
+              name: name,
+              price: price,
+              classPrice: classPrice
+            });
+            var index = classes.indexOf(name);
+
+            $('#territories_count').html(territories.length);
+            $('#total').html(finalTotal);
+          };
+          if (!this.checked) {
+            var workingTotal = 0;
+            var workingList = territories.filter(function(rm) {
+              return rm.name !== name;
+            });
+            territories.splice(index, 1);
+            for (var i = 0; i < territories.length; i++) {
+              var price = Number(territories[i].price);
+              var classPrice = Number(territories[i].classPrice);
+              workingTotal += price + (classPrice * classes.length);
+            };
+
+            $('#territories_count').html(territories.length);
+            $('#total').html(workingTotal);
+          };
+        });
+
+        $("#territory").on("click", ".cls", function() {
+          var total = 0;
+          var name = $(this).val();
+
+          if (this.checked) {
+
+            classes.push(name);
+            for (var i = 0; i < territories.length; i++) {
+              var price = Number(territories[i].price);
+              var classPrice = Number(territories[i].classPrice);
+              total += price + (classPrice * classes.length);
+            };
+
+            $('#classes_count').html(classes.length);
+            $('#total').html(total);
+          };
+          if (!this.checked) {
+            var index = classes.indexOf(name);
+            classes.splice(index, 1);
+
+            for (var i = 0; i < territories.length; i++) {
+              var price = Number(territories[i].price);
+              var classPrice = Number(territories[i].classPrice);
+              total += price + (classPrice * classes.length);
+            };
+
+            $('#classes_count').html(classes.length);
+            $('#total').html(total);
+          };
+        });
+
+        function checkLogin() {
+          $.ajax({
+            url: config.url + 'countries',
+            type: 'GET',
+            success: function (data) {
+              vm.countries = data.countries;
+              vm.classes = data.classes;
+            }
+          })
+        }
+
+        checkLogin();
+        ////
+      });
+
+    }
+  }
+</script>

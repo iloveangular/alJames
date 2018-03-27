@@ -48,7 +48,7 @@
             </tr>
             </tbody>
           </table>
-          <div class="button-panel"><a class="doc-btn loadMore" data-page="1">Load More</a></div>
+          <div class="button-panel"><a class="doc-btn loadMore" data-page="1" style="cursor:pointer;">Load More</a></div>
           <div class="button-panel">
             <div class="col-xs-6 payment-div">
               <p>Payment methods</p>
