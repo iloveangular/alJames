@@ -35,6 +35,7 @@ import disclaimer from '@/components/disclaimer'
 import login from '@/components/login'
 import order from '@/components/order'
 import orders from '@/components/orders'
+import trademarkOrder from '@/components/trademarkOrder'
 import cart from '@/components/cart'
 import checkout from '@/components/checkout'
 import forgotPassword from '@/components/forgotPassword'
@@ -144,6 +145,11 @@ export default new Router({
       path: '/order/:orderID',
       name: 'order',
       component: order
+    },
+    {
+      path: '/trademarkOrder',
+      name: 'trademarkOrder',
+      component: trademarkOrder
     },
     {
       path: '/orders',
