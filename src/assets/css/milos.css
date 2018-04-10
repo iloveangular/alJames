@@ -7242,7 +7242,7 @@ body.view-cart-body {
     }
 
     .banks-body .browse-companies .flg-mdl {
-        display: none;
+        display: block;
     }
 
     .banks-body .browse-companies .show-for-small-only a.clr-green {

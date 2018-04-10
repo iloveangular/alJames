@@ -21,11 +21,24 @@
               </thead>
               <tbody v-for="item in items" :class="item.title" :data-product="item._id">
               <tr :value="item._id">
-                <td>
+                <td v-if="item.type == 'trademark-registration'">
                   <button class="delete-product" name="button_id" :value="item._id" :data-price="item.price">
                     <i class="fa fa-times" aria-hidden="true"></i></button>
-                  <a class="product-name" href="#" style="font-weight: bold;">{{item.title}}</a></td>
-                <td>
+                  <a class="product-name" href="#" style="font-weight: bold;">{{item.title}}</a>
+                  <p class="territories">Territories: {{item.territories.length}}, Classes: {{item.classes.length}}</p>
+                </td>
+                <td v-else>
+                  <button class="delete-product" name="button_id" :value="item._id" :data-price="item.price">
+                    <i class="fa fa-times" aria-hidden="true"></i></button>
+                  <a class="product-name" href="#" style="font-weight: bold;">{{item.title}}</a>
+                </td>
+
+                <td v-if="item.type == 'trademark-registration'">
+                  <select disabled class="quantityUpdate num-items updateItem its working" :data-id="item._id">
+                    <option selected value="1" name="quantity-change">1</option>
+                  </select>
+                </td>
+                <td v-else>
                   <select class="quantityUpdate num-items updateItem" :data-id="item._id">
                     <option :value="item.qty" name="quantity-change" :selected="item.qty" disabled>{{item.qty}}</option>
                     <option value="1" name="quantity-change">1</option>
@@ -40,8 +53,11 @@
                     <option value="10" name="quantity-change">10</option>
                   </select>
                 </td>
-                <td>{{value}} <span class="price" :value="item.price" style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span>
+
+                <td v-if="item.type == 'trademark-registration'"></td>
+                <td v-else>{{value}} <span class="price" :value="item.price" style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span>
                 </td>
+
                 <td>{{value}} <span class="total" style="font-size:21px !important;">{{item.price * item.qty * rate | fixPrice}}</span></td>
                 <input type="hidden" class="itemPrice" :value="item.price * item.qty">
               </tr>
@@ -401,3 +417,9 @@
 
   }
 </script>
+<style>
+  .territories {
+    margin-left: 33px;
+    font-size: 15px;
+  }
+</style>

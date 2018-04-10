@@ -15,14 +15,14 @@ import singleCategory from '@/components/category'
 import singleDocument from '@/components/document'
 import affiliates from '@/components/affiliates'
 import affiliatesSignup from '@/components/affiliatesSignup'
-import faqs from '@/components/faqs'
+// import faqs from '@/components/faqs'
 import partners from '@/components/partners'
 import confirmation from '@/components/confirmation'
 /* Trademarks */
 import trademarks from '@/components/trademarks'
 import trademarksRegistration from '@/components/trademarksRegistration'
-import trademarksSearch from '@/components/trademarksSearch'
-import trademarksWatch from '@/components/trademarksWatch'
+// import trademarksSearch from '@/components/trademarksSearch'
+// import trademarksWatch from '@/components/trademarksWatch'
 /* Niche Services */
 import nicheServices from '@/components/additionalServices'
 import nicheSingle from '@/components/nicheSingle'
@@ -131,11 +131,11 @@ export default new Router({
       name: 'affiliatesSignup',
       component: affiliatesSignup
     },
-    {
-      path: '/faqs',
-      name: 'faqs',
-      component: faqs
-    },
+    // {
+    //   path: '/faqs',
+    //   name: 'faqs',
+    //   component: faqs
+    // },
     {
       path: '/login',
       name: 'login',
@@ -231,16 +231,16 @@ export default new Router({
       name: trademarksRegistration,
       component: trademarksRegistration
     },
-    {
-      path: '/trademarks/search/',
-      name: trademarksSearch,
-      component: trademarksSearch
-    },
-    {
-      path: '/trademarks/watch/',
-      name: trademarksWatch,
-      component: trademarksWatch
-    }
+    // {
+    //   path: '/trademarks/search/',
+    //   name: trademarksSearch,
+    //   component: trademarksSearch
+    // },
+    // {
+    //   path: '/trademarks/watch/',
+    //   name: trademarksWatch,
+    //   component: trademarksWatch
+    // }
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

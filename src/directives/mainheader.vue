@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content-overflow">
+  <div class="main-content-overflow mobile-menu">
     <aside class="left-menu left-menu-block" style="display: none;">
       <div class="nav-menu no-border">
         <ul>
@@ -8,14 +8,14 @@
             <li>
               <label>Account</label>
             </li>
-            <li><a href="/#/login">Login</a></li>
+            <li v-on:click="hideMenu"><a href="/#/login">Login</a></li>
             <li class="brd-bottom-menu" style="padding:10px 8px 5px 10px;">
               <div class="inl-block width-100"><span class="left mar-top-5">Currency</span>
               <select class="changeCurrency2">
-                <option class="usd" value="USD" name="$">USD</option>
-                <option class="eur" value="EUR" name="€">EUR</option>
-                <option class="gbp" value="GBP" name="£">GBP</option>
-                <option class="cny" value="CNY" name="¥">CNY</option>
+                <option v-on:click="hideMenu" class="usd" value="USD" name="$">USD</option>
+                <option v-on:click="hideMenu" class="eur" value="EUR" name="€">EUR</option>
+                <option v-on:click="hideMenu" class="gbp" value="GBP" name="£">GBP</option>
+                <option v-on:click="hideMenu" class="cny" value="CNY" name="¥">CNY</option>
               </select>
               </div>
             </li>
@@ -23,23 +23,23 @@
           <li class="left-menu-title">Navigate</li>
           <li class="cursor-point"><a href="#">Services</a>
             <ul class="list-with-ticks">
-              <li>
+              <li v-on:click="hideMenu">
                 <a href="/#/companies">
                   <span class="mar-rgh-10"> > </span><span>Company Formation</span>
                 </a>
               </li>
-              <li><a href="/#/banks"><span class="mar-rgh-10"> > </span><span>Bank Account Opening</span></a>
+              <li v-on:click="hideMenu"><a href="/#/banks"><span class="mar-rgh-10"> > </span><span>Bank Account Opening</span></a>
               </li>
-              <li><a href="/#/trademarks"><span class="mar-rgh-10"> > </span><span>Trademarks</span></a>
+              <li v-on:click="hideMenu"><a href="/#/trademarks"><span class="mar-rgh-10"> > </span><span>Trademarks</span></a>
               </li>
-              <li><a href="/#/niche-services"><span
+              <li v-on:click="hideMenu"><a href="/#/niche-services"><span
                 class="mar-rgh-10"> > </span><span>Niche Services</span></a>
               </li>
             </ul>
           </li>
-          <li class="cursor-point"><a href="/#/packages">Start Up Packs</a></li>
-          <li class="cursor-point"><a href="/#/documents">Templates</a></li>
-          <li class="cursor-point"><a href="/#/offers">Offers</a></li>
+          <li v-on:click="hideMenu" class="cursor-point"><a href="/#/packages">Start Up Packs</a></li>
+          <li v-on:click="hideMenu" class="cursor-point"><a href="/#/documents">Templates</a></li>
+          <li v-on:click="hideMenu" class="cursor-point"><a href="/#/offers">Offers</a></li>
         </ul>
       </div>
     </aside>
@@ -114,7 +114,12 @@
           localStorage.removeItem('token');
           location.reload();
           location.href('/#/');
+        },
+        hideMenu: function () {
+          $(".left-menu-block").removeClass('left-menu-left');
+          $(".main-content-right").removeClass('main-content-right');
         }
+
       }
     },
     mounted() {

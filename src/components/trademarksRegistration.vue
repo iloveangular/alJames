@@ -1134,7 +1134,8 @@
                 value: this.id,
                 _id: $(this).data('id'),
                 name: $(this).val(),
-                price: $(this).data('price')
+                price: $(this).data('price'),
+                classPrice: Number($(this).data('class-price'))
               });
               console.log(arr);
             }
@@ -1227,7 +1228,7 @@
           var index = classes.indexOf({
             name: name,
             price: price,
-            classPrice: classPrice
+            classPrice: Number(classPrice)
           });
 
           if (this.checked) {
@@ -1235,7 +1236,7 @@
             territories.push({
               name: name,
               price: price,
-              classPrice: classPrice
+              classPrice: Number(classPrice)
             })
             var index = classes.indexOf(name);
 
@@ -1253,6 +1254,7 @@
               var price = Number(territories[i].price);
               var classPrice = Number(territories[i].classPrice);
               workingTotal += price + (classPrice * classes.length);
+              console.log(workingTotal);
             }
             $('#territories_count').html(territories.length);
             $('#total').html(workingTotal);

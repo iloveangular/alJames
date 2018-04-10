@@ -99,13 +99,13 @@
                 <div class="cart-info">
                   <div class="row">
                     <div class="col-md-4">
-                      <button class="addToCartTrademark"><span class="text">Add to Cart</span> <span class="cartIcon"></span></button>
+                      <button v-on:click="addToCart" class="addToCartTrademark"><span class="text">Add to Cart</span> <span class="cartIcon"></span></button>
                     </div>
                     <div class="col-md-6">
                       <div class="sprite-payment-system"></div>
                     </div>
                     <div class="col-md-2 pull-right addToCartInfo">
-                      <h3>Total $ <span id="total" data-price="1290">911</span></h3>
+                      <h3>Total {{value}} <span class="totalPrice" id="total" :data-price="price">{{price * rate | fixPrice}}</span></h3>
                       <span id="territories" data-qty="">Territories {{item.territories.length}},</span>
                       <span id="classes" data-qty="">Classes {{item.classes.length}}</span>
                     </div>
@@ -125,19 +125,73 @@
   export default {
     data() {
       return {
-        item: '',
+        item: [],
+        price: '',
+        rate: '',
+        value: '',
       }
     },
     mounted() {
       var vm = this;
       $(document).ready(function () {
-       if(localStorage.getItem('trademarkDetails')) {
+        // currency change //
+        if (localStorage.getItem('currency') == 'USD') {
+          vm.value = '$';
+          vm.rate = 1;
+        } else if (localStorage.getItem('currency') == 'EUR') {
+          vm.value = '€';
+          vm.rate = localStorage.getItem('euroValue');
+        } else if (localStorage.getItem('currency') == 'GBP') {
+          vm.value = '£';
+          vm.rate = localStorage.getItem('gbpValue');
+        } else if (localStorage.getItem('currency') == 'CNY') {
+          vm.value = '¥';
+          vm.rate = localStorage.getItem('cnyValue');
+        }
+        //
+        if(localStorage.getItem('trademarkDetails')) {
          vm.item = JSON.parse(localStorage.getItem('trademarkDetails'));
          console.log(vm.item);
        }
+
+       var workingTotal = '';
+       var territories = vm.item.territories;
+       var classes = vm.item.classes;
+       var allPrices = [];
+        for (var i = 0; i < territories.length; i++) {
+          var price = territories[i].price;
+          var classPrice = Number(territories[i].classPrice);
+          workingTotal = price + (classPrice * classes.length);
+          allPrices.push(workingTotal);
+        }
+        var sum = allPrices.reduce(function(a, b) {
+          var val = a + b;
+          return a + b;
+          }, 0);
+        vm.price = sum;
       })
     },
     methods: {
+      addToCart: function() {
+        var trademark = JSON.parse(localStorage.getItem('trademarkDetails'));
+        var celaLista = {
+          title: 'Trademark Registration',
+          main: trademark.main,
+          details: trademark.details,
+          requestType: trademark.requestType,
+          territories: trademark.territories,
+          classes: trademark.classes,
+          price: Number($("#total").attr("data-price")),
+          type: 'trademark-registration',
+          qty: 1
+        }
+        var items = [];
+        var items = JSON.parse(localStorage.getItem('cartItems'));
+        items.push(celaLista);
+        localStorage.setItem('cartItems', JSON.stringify(items));
+        localStorage.removeItem('trademarkDetails');
+        window.location.href = '/#/cart';
+      }
     },
     beforeMount(){
     },
