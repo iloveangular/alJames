@@ -7,7 +7,7 @@
             <h1 style="text-transform:capitalize;">{{title}} Documents</h1><a style="margin: 30px 0 0 !important;float: right !important;" class="back-link" href="/#/documents">&lt;
             Back to Documents</a></div>
           <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 mobileSearch">
               <div class="search-div">
                 <!--<form>-->
                 <!--<input class="no-margin" id="query" name="search" value="" autocomplete="off"-->
