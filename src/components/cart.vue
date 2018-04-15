@@ -58,7 +58,8 @@
                 <td v-else>{{value}} <span class="price" :value="item.price" style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span>
                 </td>
 
-                <td>{{value}} <span class="total" style="font-size:21px !important;">{{item.price * item.qty * rate | fixPrice}}</span></td>
+                <td>{{value}} <span class="total" style="font-size:21px !important;">{{item.price * item.qty * rate | fixPrice}}</span>
+                </td>
                 <input type="hidden" class="itemPrice" :value="item.price * item.qty">
               </tr>
               <tr v-for="subItem in item.list" :data-product="subItem._id" :data-price="subItem.price">
@@ -68,7 +69,9 @@
                   <a class="service-name" href="#">{{subItem.title}}</a></td>
                 <td>
                   <select class="quantityUpdate num-items updateChild" :data-parrent="item._id" :data-id="subItem._id">
-                    <option :value="subItem.qty" :selected="subItem.qty" name="quantity-change" disabled>{{subItem.qty}}</option>
+                    <option :value="subItem.qty" :selected="subItem.qty" name="quantity-change" disabled>
+                      {{subItem.qty}}
+                    </option>
                     <option value="1" name="quantity-change">1</option>
                     <option value="2" name="quantity-change">2</option>
                     <option value="3" name="quantity-change">3</option>
@@ -361,9 +364,22 @@
           // find and remove vanila js
           function findAndRemove(data, id) {
             data.forEach(function (obj) {
-              obj.list = obj.list.filter(function (o) {
-                return o._id != id;
-              });
+              if (obj.list) {
+                obj.list = obj.list.filter(function (o) {
+                  return o._id != id;
+                });
+              } else {
+                var updatedList = data.filter(function (el) {
+                  return el._id !== id;
+                });
+                for (var i = 0; i < data.length; i++) {
+                  if (data[i]._id == id) {
+                    localStorage.setItem('cartItems', JSON.stringify(updatedList));
+                    vm.items.splice(i, 1);
+                    break;
+                  }
+                }
+              }
             });
           };
 
@@ -377,7 +393,7 @@
         });
 
         // update value //
-        $(".updateItem").click(function() {
+        $(".updateItem").click(function () {
           for (var i = 0; i < inventory.length; i++) {
             if (inventory[i]['_id'] === $(this).attr('data-id')) {
               inventory[i]['qty'] = Number($(this).val());
@@ -387,9 +403,9 @@
           }
         });
 
-        $(".updateChild").click(function() {
+        $(".updateChild").click(function () {
           for (var i = 0; i < inventory.length; i++) {
-            if(inventory[i]['_id'] === $(this).attr('data-parrent')) {
+            if (inventory[i]['_id'] === $(this).attr('data-parrent')) {
               var findChild = inventory[i].list;
               for (var j = 0; j < findChild.length; j++) {
                 if (findChild[j]['_id'] === $(this).attr('data-id')) {

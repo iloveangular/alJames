@@ -56,7 +56,8 @@
                   </div>
                   <div class="col-md-2 input-text">
                     <label>
-                      <input class="tablinks" name="trmark_type" value="logo" v-on:click="openForm('form-2')" type="radio"> Logo</label>
+                      <input class="tablinks" name="trmark_type" value="logo" v-on:click="openForm('form-2')"
+                             type="radio"> Logo</label>
                   </div>
                   <div class="col-md-2 input-text">
                     <label>
@@ -68,11 +69,13 @@
                   <div class="col-xs-12" style="padding: 0;">
                     <div class="row col-md-6">
                       <div class="inupt-name">
-                        <input id="wordmark_name" name="wordmark" class="form1-wordmark" placeholder="Type your Wordmark Name" type="text">
+                        <input id="wordmark_name" name="wordmark" class="form1-wordmark"
+                               placeholder="Type your Wordmark Name" type="text">
                         <small class="error">Name is required and must be a string.</small>
                       </div>
                       <div class="text-area">
-                                                <textarea id="wordmark_descr" class="form1-desc" rows="10" name="description"
+                                                <textarea id="wordmark_descr" class="form1-desc" rows="10"
+                                                          name="description"
                                                           placeholder="Describe the mark you want to register"></textarea>
                         <small class="error">A description address is required.</small>
                       </div>
@@ -83,7 +86,8 @@
                   <div class="col-xs-12" style="padding: 0;">
                     <div class="row col-md-6">
                       <div class="text-area">
-                        <textarea id="wordmark_descr" class="form2-desc" rows="10" name="description" placeholder="Describe the mark you want to register"></textarea>
+                        <textarea id="wordmark_descr" class="form2-desc" rows="10" name="description"
+                                  placeholder="Describe the mark you want to register"></textarea>
                         <small class="error">A description address is required.</small>
                       </div>
                     </div>
@@ -103,11 +107,13 @@
                   <div class="col-xs-12" style="padding: 0;">
                     <div class="row col-md-6">
                       <div class="inupt-name">
-                        <input id="wordmark_name" name="wordmark" class="form3-wordmark" placeholder="Type your Wordmark Name" type="text">
+                        <input id="wordmark_name" name="wordmark" class="form3-wordmark"
+                               placeholder="Type your Wordmark Name" type="text">
                         <small class="error">Name is required and must be a string.</small>
                       </div>
                       <div class="text-area">
-                        <textarea id="wordmark_descr" class="form3-desc" rows="10" name="description" placeholder="Describe the mark you want to register"></textarea>
+                        <textarea id="wordmark_descr" class="form3-desc" rows="10" name="description"
+                                  placeholder="Describe the mark you want to register"></textarea>
                         <small class="error">A description address is required.</small>
                       </div>
                     </div>
@@ -192,13 +198,13 @@
                   <div class="col-md-2 input-text">
                     <label>
                       <input class="tablinks" id="individual" name=" ownerType" value="individual"
-                             checked="" v-on:click="openSecondForm('form-1')" type="radio">
+                             checked="" v-on:click="openSecondForm('form-4')" type="radio">
                       Individual</label>
                   </div>
                   <div class="col-md-2 input-text">
                     <label>
                       <input class="tablinks" id="company1" name=" ownerType" value="company"
-                             v-on:click="openSecondForm('form-2')" type="radio"> Company</label>
+                             v-on:click="openSecondForm('form-5')" type="radio"> Company</label>
                   </div>
                   <!-- Tab panes-->
                   <div class="tab-content" id="form-4" style="display:block;">
@@ -548,7 +554,8 @@
                     <div class="large-12 column form-group">
                       <label class="mar-btm-5" for="company" role="alert">Nationality<span
                         class="star">*</span></label>
-                      <input id="comp_name" name="company" value="" class="form2-nationality" placeholder="" data-invalid=""
+                      <input id="comp_name" name="company" value="" class="form2-nationality" placeholder=""
+                             data-invalid=""
                              aria-invalid="true" type="text">
                       <small class="error">Company name is required</small>
                     </div>
@@ -840,7 +847,7 @@
                     <div class="large-12 column form-group">
                       <label class="mar-btm-5" for="email">Email<span
                         class="star">*</span></label>
-                      <input id="ind_email" name="email" placeholder="" class="form2-phone" type="email">
+                      <input id="ind_email" name="email" placeholder="" class="form2-email" type="email">
                       <small class="error">Email is required</small>
                     </div>
                   </div>
@@ -855,7 +862,7 @@
                   <h4>TOTAL PRICE <span class="fnt-oswald-medium" id="currency">{{value}}</span><span
                     class="fnt-oswald-medium" id="total">0</span></h4>
                   <div class="form-actions">
-                    <button class="price-green button green continue">Continue</button>
+                    <button id="continueButton" class="price-green button green continue">Continue</button>
                   </div>
                   <input type="hidden" id="total_price">
                 </div>
@@ -1102,325 +1109,326 @@
     mounted() {
       var vm = this;
       $(document).ready(function () {
-        // currencies
-        if (localStorage.getItem('currency') == 'USD') {
-          vm.value = '$';
-          vm.rate = 1;
-        } else if (localStorage.getItem('currency') == 'EUR') {
-          vm.value = '€';
-          vm.rate = localStorage.getItem('euroValue');
-        } else if (localStorage.getItem('currency') == 'GBP') {
-          vm.value = '£';
-          vm.rate = localStorage.getItem('gbpValue');
-        } else if (localStorage.getItem('currency') == 'CNY') {
-          vm.value = '¥';
-          vm.rate = localStorage.getItem('cnyValue');
-        }
-        // currencies done
-        $('.panel-collapse').on('shown.bs.collapse', function (e) {
-          var $panel = $(this).closest('.panel');
-          $('html, body').animate({
-            scrollTop: $panel.offset().top - 60
-          }, 600);
-        });
-        //Select Territories
-        var arr = [];
-        $("#territory").on("click", ".terr", function () {
-          console.log('hi');
-          var id = $(this).attr("id");
-          if ($(this).prop("checked")) {
-            if (jQuery.inArray(this.id, arr) == -1) {
-              arr.push({
-                value: this.id,
-                _id: $(this).data('id'),
-                name: $(this).val(),
-                price: $(this).data('price'),
-                classPrice: Number($(this).data('class-price'))
-              });
-              console.log(arr);
+          // currencies
+          if (localStorage.getItem('currency') == 'USD') {
+            vm.value = '$';
+            vm.rate = 1;
+          } else if (localStorage.getItem('currency') == 'EUR') {
+            vm.value = '€';
+            vm.rate = localStorage.getItem('euroValue');
+          } else if (localStorage.getItem('currency') == 'GBP') {
+            vm.value = '£';
+            vm.rate = localStorage.getItem('gbpValue');
+          } else if (localStorage.getItem('currency') == 'CNY') {
+            vm.value = '¥';
+            vm.rate = localStorage.getItem('cnyValue');
+          }
+          // currencies done
+          $('.panel-collapse').on('shown.bs.collapse', function (e) {
+            var $panel = $(this).closest('.panel');
+            $('html, body').animate({
+              scrollTop: $panel.offset().top - 60
+            }, 600);
+          });
+          //Select Territories
+          var arr = [];
+          $("#territory").on("click", ".terr", function () {
+            console.log('hi');
+            var id = $(this).attr("id");
+            if ($(this).prop("checked")) {
+              if (jQuery.inArray(this.id, arr) == -1) {
+                arr.push({
+                  value: this.id,
+                  _id: $(this).data('id'),
+                  name: $(this).val(),
+                  price: $(this).data('price'),
+                  classPrice: Number($(this).data('class-price'))
+                });
+                console.log(arr);
+              }
+              DisplayResult();
             }
-            DisplayResult();
-          }
-          else {
-            arr.sort(SortByName);
-            var index = arr.findIndex(x => x.value == id);
-            arr.splice(index, 1);
-            $("#r_" + id).remove();
-          }
-        });
-
-        window.RemoveValue = function (data) {
-          $("#" + data.id).prop('checked', false);
-          arr.sort(SortByName);
-          var index = arr.findIndex(x => x.value == data.id);
-          arr.splice(index, 1);
-          $("#r_" + data.id).remove();
-        }
-
-        function DisplayResult() {
-          arr.sort(SortByName);
-          var htmlData = "";
-          for (var i = 0; i < arr.length; i++) {
-            htmlData += "<span class='closespan' id='r_" + arr[i].value + "'><label>" + $('#' + arr[i].value).attr('value') + "</label><i class='fa fa-close' aria-hidden='true' onclick='RemoveValue(" + arr[i].value + ")'></i></span>";
-          }
-          $("#result").html(htmlData);
-        }
-
-        // End Select territories
-        //Select Classes
-        var arrClass = [];
-        $("#territory").on("click", ".cls", function () {
-          console.log('hisdas');
-          var id = $(this).attr("id");
-          console.log(arrClass);
-          if ($(this).prop("checked")) {
-            if (jQuery.inArray(this.id, arr) == -1) {
-              arrClass.push({
-                value: this.id,
-                _id: $(this).data('id'),
-                name: $(this).data('name')
-              });
-              console.log(arrClass);
+            else {
+              arr.sort(SortByName);
+              var index = arr.findIndex(x => x.value == id);
+              arr.splice(index, 1);
+              $("#r_" + id).remove();
             }
-            DisplayClassResult();
-          }
-          else {
-            arrClass.sort(SortByName);
-            var index = arrClass.findIndex(x => x.value == id);
-            arrClass.splice(index, 1);
-            $("#clsr_" + id).remove();
-          }
-        });
-
-        window.RemoveClassValue = function (data) {
-          $("#" + data).prop('checked', false);
-          arrClass.sort(SortByName);
-          var index = arrClass.findIndex(x => x.value == data);
-          arrClass.splice(index, 1);
-          $("#clsr_" + data).remove();
-        }
-
-        function DisplayClassResult() {
-          arrClass.sort(SortByName);
-          var htmlclsData = "";
-          for (var i = 0; i < arrClass.length; i++) {
-            htmlclsData += "<div id='clsr_" + arrClass[i].value + "'><div class='closespan'><label>" + 'Class ' + arrClass[i].value + "</label><a onclick='RemoveClassValue(" + arrClass[i].value + ")'>remove [<i class='fa fa-close' aria-hidden='true'></i>]</a></div><div class='add-p'>" + $('#' + arrClass[i].value).attr('value') + "</div></div>";
-          }
-          $("#clsresult").html(htmlclsData);
-        }
-
-        //End - Select Classes
-        // Sort By Name
-        function SortByName(a, b) {
-          var aName = a.value.toLowerCase();
-          var bName = b.value.toLowerCase();
-          return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
-        }
-
-        var territories = [];
-        var classes = [];
-
-        $("#territory").on("click", ".terr", function () {
-          var total = Number($('#total').text());
-          var name = $(this).val();
-          var price = Number($(this).data("price"));
-          var classPrice = Number($(this).data("class-price"));
-          var index = classes.indexOf({
-            name: name,
-            price: price,
-            classPrice: Number(classPrice)
           });
 
-          if (this.checked) {
-            var finalTotal = total + (price + (classPrice * classes.length));
-            territories.push({
+          window.RemoveValue = function (data) {
+            $("#" + data.id).prop('checked', false);
+            arr.sort(SortByName);
+            var index = arr.findIndex(x => x.value == data.id);
+            arr.splice(index, 1);
+            $("#r_" + data.id).remove();
+          }
+
+          function DisplayResult() {
+            arr.sort(SortByName);
+            var htmlData = "";
+            for (var i = 0; i < arr.length; i++) {
+              htmlData += "<span class='closespan' id='r_" + arr[i].value + "'><label>" + $('#' + arr[i].value).attr('value') + "</label><i class='fa fa-close' aria-hidden='true' onclick='RemoveValue(" + arr[i].value + ")'></i></span>";
+            }
+            $("#result").html(htmlData);
+          }
+
+          // End Select territories
+          //Select Classes
+          var arrClass = [];
+          $("#territory").on("click", ".cls", function () {
+            console.log('hisdas');
+            var id = $(this).attr("id");
+            console.log(arrClass);
+            if ($(this).prop("checked")) {
+              if (jQuery.inArray(this.id, arr) == -1) {
+                arrClass.push({
+                  value: this.id,
+                  _id: $(this).data('id'),
+                  name: $(this).data('name')
+                });
+                console.log(arrClass);
+              }
+              DisplayClassResult();
+            }
+            else {
+              arrClass.sort(SortByName);
+              var index = arrClass.findIndex(x => x.value == id);
+              arrClass.splice(index, 1);
+              $("#clsr_" + id).remove();
+            }
+          });
+
+          window.RemoveClassValue = function (data) {
+            $("#" + data).prop('checked', false);
+            arrClass.sort(SortByName);
+            var index = arrClass.findIndex(x => x.value == data);
+            arrClass.splice(index, 1);
+            $("#clsr_" + data).remove();
+          }
+
+          function DisplayClassResult() {
+            arrClass.sort(SortByName);
+            var htmlclsData = "";
+            for (var i = 0; i < arrClass.length; i++) {
+              htmlclsData += "<div id='clsr_" + arrClass[i].value + "'><div class='closespan'><label>" + 'Class ' + arrClass[i].value + "</label><a onclick='RemoveClassValue(" + arrClass[i].value + ")'>remove [<i class='fa fa-close' aria-hidden='true'></i>]</a></div><div class='add-p'>" + $('#' + arrClass[i].value).attr('value') + "</div></div>";
+            }
+            $("#clsresult").html(htmlclsData);
+          }
+
+          //End - Select Classes
+          // Sort By Name
+          function SortByName(a, b) {
+            var aName = a.value.toLowerCase();
+            var bName = b.value.toLowerCase();
+            return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+          }
+
+          var territories = [];
+          var classes = [];
+
+          $("#territory").on("click", ".terr", function () {
+            var total = Number($('#total').text());
+            var name = $(this).val();
+            var price = Number($(this).data("price"));
+            var classPrice = Number($(this).data("class-price"));
+            var index = classes.indexOf({
               name: name,
               price: price,
               classPrice: Number(classPrice)
-            })
-            var index = classes.indexOf(name);
-
-            $('#territories_count').html(territories.length);
-            $('#total').html(Math.trunc(finalTotal * vm.rate));
-            $('#total_price').val(finalTotal);
-          }
-          if (!this.checked) {
-            var workingTotal = 0;
-            var workingList = territories.filter(function (rm) {
-              return rm.name !== name;
             });
-            territories.splice(index, 1);
-            for (var i = 0; i < territories.length; i++) {
-              var price = Number(territories[i].price);
-              var classPrice = Number(territories[i].classPrice);
-              workingTotal += price + (classPrice * classes.length);
-              console.log(workingTotal);
+
+            if (this.checked) {
+              var finalTotal = total + (price + (classPrice * classes.length));
+              territories.push({
+                name: name,
+                price: price,
+                classPrice: Number(classPrice)
+              })
+              var index = classes.indexOf(name);
+
+              $('#territories_count').html(territories.length);
+              $('#total').html(Math.trunc(finalTotal * vm.rate));
+              $('#total_price').val(finalTotal);
             }
-            $('#territories_count').html(territories.length);
-            $('#total').html(workingTotal);
+            if (!this.checked) {
+              var workingTotal = 0;
+              var workingList = territories.filter(function (rm) {
+                return rm.name !== name;
+              });
+              territories.splice(index, 1);
+              for (var i = 0; i < territories.length; i++) {
+                var price = Number(territories[i].price);
+                var classPrice = Number(territories[i].classPrice);
+                workingTotal += price + (classPrice * classes.length);
+                console.log(workingTotal);
+              }
+              $('#territories_count').html(territories.length);
+              $('#total').html(workingTotal);
+            }
+          });
+
+          $("#territory").on("click", ".cls", function () {
+            var total = 0;
+            var name = $(this).val();
+
+            if (this.checked) {
+
+              classes.push(name);
+              for (var i = 0; i < territories.length; i++) {
+                var price = Number(territories[i].price);
+                var classPrice = Number(territories[i].classPrice);
+                total += price + (classPrice * classes.length);
+              }
+
+              $('#classes_count').html(classes.length);
+              $('#total').html(total);
+            }
+            if (!this.checked) {
+              var index = classes.indexOf(name);
+              classes.splice(index, 1);
+
+              for (var i = 0; i < territories.length; i++) {
+                var price = Number(territories[i].price);
+                var classPrice = Number(territories[i].classPrice);
+                total += price + (classPrice * classes.length);
+              }
+
+              $('#classes_count').html(classes.length);
+              $('#total').html(total);
+            }
+          });
+
+          var territoriesList = [];
+          $(".continue").click(function () {
+
+            if ($("#form-1").css('display') === 'block') {
+              var wordmarkType = {
+                trademarkType: 'wordmark',
+                wordmark: $(".form1-wordmark").val(),
+                description: $(".form1-desc").val(),
+              }
+            }
+            else if ($("#form-2").css('display') === 'block') {
+              var wordmarkType = {
+                trademarkType: 'logo',
+                logo: 'imageurlpath',
+                description: $(".form2-desc").val(),
+              }
+            }
+            else if ($("#form-3").css('display') === 'block') {
+              var wordmarkType = {
+                trademarkType: 'wordmark-and-logo',
+                wordmark: $(".form3-wordmark").val(),
+                description: $(".form3-desc").val(),
+                logo: 'imageurlpathasdasds'
+              }
+            }
+
+            // Second Forms
+            if ($('#form-4').css('display') === 'block') {
+              var details = {
+                title: $(".form1-title").val(),
+                firstName: $(".form1-firstName").val(),
+                lastName: $(".form1-lastName").val(),
+                nationality: $(".form1-nationality").val(),
+                ownerType: 'individual',
+                address: $(".form1-address").val(),
+                postalCode: $(".form1-zip").val(),
+                city: $(".form1-city").val(),
+                country: $(".form1-country").val(),
+                phone: $(".form1-phone").val(),
+                email: $(".form1-email").val(),
+              };
+            }
+            else if ($('#form-5').css('display') === 'block') {
+              var details = {
+                title: $(".form2-title").val(),
+                firstName: $(".form2-firstName").val(),
+                lastName: $(".form2-lastName").val(),
+                companyName: $(".form2-nationality").val(),
+                ownerType: 'company',
+                address: $(".form2-address").val(),
+                postalCode: $(".form2-zip").val(),
+                city: $(".form2-city").val(),
+                country: $(".form2-country").val(),
+                phone: $(".form2-phone").val(),
+                email: $(".form2-email").val(),
+              };
+            }
+            var entireList = {
+              main: wordmarkType,
+              details: details,
+              _id: 'trademark registration',
+              qty: 1,
+              requestType: 'registration',
+              territories: arr,
+              classes: arrClass
+            };
+            console.log(entireList);
+            localStorage.setItem('trademarkDetails', JSON.stringify(entireList));
+            window.location.href = '/#/trademarkOrder/';
+
+          });
+
+
+          function checkLogin() {
+            $.ajax({
+              url: config.url + 'countries',
+              type: 'GET',
+              success: function (data) {
+                vm.countries = data.countries;
+                vm.classes = data.classes;
+              }
+            })
           }
-        });
 
-        $("#territory").on("click", ".cls", function () {
-          var total = 0;
-          var name = $(this).val();
-
-          if (this.checked) {
-
-            classes.push(name);
-            for (var i = 0; i < territories.length; i++) {
-              var price = Number(territories[i].price);
-              var classPrice = Number(territories[i].classPrice);
-              total += price + (classPrice * classes.length);
-            }
-
-            $('#classes_count').html(classes.length);
-            $('#total').html(total);
-          }
-          if (!this.checked) {
-            var index = classes.indexOf(name);
-            classes.splice(index, 1);
-
-            for (var i = 0; i < territories.length; i++) {
-              var price = Number(territories[i].price);
-              var classPrice = Number(territories[i].classPrice);
-              total += price + (classPrice * classes.length);
-            }
-
-            $('#classes_count').html(classes.length);
-            $('#total').html(total);
-          }
-        });
-
-        var territoriesList = [];
-        $(".continue").click(function () {
-          var wordmarkType = JSON.parse(localStorage.getItem('wordmarkType'));
-          var details = JSON.parse(localStorage.getItem('details'));
-          var entireList = {
-            main: wordmarkType,
-            details: details,
-            _id: 'trademark registration',
-            qty: 1,
-            requestType: 'registration',
-            territories: arr,
-            classes: arrClass
-          };
-          console.log(entireList);
-          localStorage.setItem('trademarkDetails', JSON.stringify(entireList));
-          window.location.href = '/#/trademarkOrder/';
-
-        });
-
-
-        function checkLogin() {
-          $.ajax({
-            url: config.url + 'countries',
-            type: 'GET',
-            success: function (data) {
-              vm.countries = data.countries;
-              vm.classes = data.classes;
-            }
-          })
+          checkLogin();
+          ////
         }
-
-        checkLogin();
-        ////
-      });
+      )
+      ;
 
     },
     methods: {
-      openForm: function(message) {
+      openForm: function (message) {
         var vm = this;
-        if(!localStorage.getItem('wordmarkType')) {
-          localStorage.setItem('wordmarkType', '[]');
-        }
-        if(message == 'form-1') {
-          localStorage.removeItem('wordmarkType');
+        if (message == 'form-1') {
           $("#form-2").hide();
           $("#form-3").hide();
           $("#form-1").show();
-          var details = {
-            trademarkType: 'wordmark',
-            wordmark: $(".form1-wordmark").val(),
-            description: $(".form1-desc").val(),
-          }
-          localStorage.setItem('wordmarkType', JSON.stringify(details));
         }
         else if (message == 'form-2') {
-          localStorage.removeItem('wordmarkType');
           $("#form-1").hide();
           $("#form-3").hide();
           $("#form-2").show();
-          var details = {
-            trademarkType: 'logo',
-            logo: 'imageurlpath',
-            description: $(".form2-desc").val(),
-          }
-          localStorage.setItem('wordmarkType', JSON.stringify(details));
         }
         else if (message == 'form-3') {
-          localStorage.removeItem('wordmarkType');
           $("#form-1").hide();
           $("#form-2").hide();
           $("#form-3").show();
-          var details = {
-            trademarkType: 'wordmark-and-logo',
-            wordmark: $(".form3-wordmark").val(),
-            description: $(".form3-desc").val(),
-            logo: 'imageurlpathasdasds'
-          }
-          localStorage.setItem('wordmarkType', JSON.stringify(details));
         }
         return message
-      },
+      }
+      ,
       openSecondForm(message) {
-        if(message == 'form-1') {
+        if (message == 'form-4') {
           $("#form-5").hide();
           $("#form-4").show();
-          var details = {
-            title: $(".form1-title").val(),
-            firstName: $(".form1-firstName").val(),
-            lastName: $(".form1-lastName").val(),
-            nationality: $(".form1-nationality").val(),
-            ownerType: 'individual',
-            address: $(".form1-address").val(),
-            postalCode: $(".form1-zip").val(),
-            city: $(".form1-city").val(),
-            country: $(".form1-country").val(),
-            phone: $(".form1-phone").val(),
-            email: $(".form1-email").val(),
-          };
-          localStorage.setItem('details', JSON.stringify(details));
         }
-        else if(message == 'form-2') {
+        else if (message == 'form-5') {
           $("#form-4").hide();
           $("#form-5").show();
-          var details = {
-            title: $(".form2-title").val(),
-            firstName: $(".form2-firstName").val(),
-            lastName: $(".form2-lastName").val(),
-            companyName: $(".form2-nationality").val(),
-            ownerType: 'company',
-            address: $(".form2-address").val(),
-            postalCode: $(".form2-zip").val(),
-            city: $(".form2-city").val(),
-            country: $(".form2-country").val(),
-            phone: $(".form2-phone").val(),
-            email: $(".form2-email").val(),
-          };
-          localStorage.setItem('details', JSON.stringify(details));
         }
       }
-    },
-    beforeMount(){
-      this.openForm('form-1');
-      this.openSecondForm('form-1');
-    },
+    }
+    ,
     filters: {
       fixPrice: function (value) {
         var price = Math.trunc(value);
         return price
-      },
+      }
+      ,
     }
   }
 </script>
