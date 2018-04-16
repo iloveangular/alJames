@@ -10934,12 +10934,12 @@ p.p-solve-affilates {
 
   .payment-table .payment-item {
     padding: 14px 10px;
-    width: 71%;
+    width: 70%;
   }
 
   .payment-table .payment-price {
     padding: 14px 5px 14px 0;
-    width: 29%;
+    width: 30%;
     font-size: 15px;
   }
 
@@ -10953,9 +10953,9 @@ p.p-solve-affilates {
   }
 
   td.payment-price input[type="checkbox"] {
-    transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
+    transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
     padding: 6px;
   }
 
