@@ -10934,18 +10934,18 @@ p.p-solve-affilates {
 
   .payment-table .payment-item {
     padding: 14px 10px;
-    width: 70%;
+    width: 67%;
   }
 
   .payment-table .payment-price {
     padding: 14px 5px 14px 0;
-    width: 30%;
-    font-size: 15px;
+    width: 33%;
+    font-size: 14px;
   }
 
   .payment-table .payment-price span {
     margin-right: 0;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .payment-table .payment-item .payment-item-title {
