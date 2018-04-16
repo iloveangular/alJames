@@ -368,17 +368,6 @@
                 obj.list = obj.list.filter(function (o) {
                   return o._id != id;
                 });
-              } else {
-                var updatedList = data.filter(function (el) {
-                  return el._id !== id;
-                });
-                for (var i = 0; i < data.length; i++) {
-                  if (data[i]._id == id) {
-                    localStorage.setItem('cartItems', JSON.stringify(updatedList));
-                    vm.items.splice(i, 1);
-                    break;
-                  }
-                }
               }
             });
           };

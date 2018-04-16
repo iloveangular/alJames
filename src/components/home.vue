@@ -220,7 +220,7 @@
                 <div class="col-lg-6 col-md-6">
                   <div class="bg-grey-gradient brd-grey pad-20 radius-4 group-1">
                     <div class="row align-center">
-                      <div class="col-md-7">
+                      <div class="col-md-7 col-sm-6 col-xs-12">
                         <h3>Partner Program</h3>
                         <p>
                           We offer global partnership opportunities across a wide range of corporate services</p>
@@ -229,7 +229,7 @@
                         </router-link>
 
                       </div>
-                      <div class="col-md-5"><img src="/src/assets/images/partner-program1.png"
+                      <div class="col-md-5 col-sm-6 col-xs-12"><img src="/src/assets/images/partner-program1.png"
                                                  alt="Agent Legal Partners" class="img-part">
                       </div>
                     </div>

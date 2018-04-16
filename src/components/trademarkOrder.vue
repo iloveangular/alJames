@@ -183,10 +183,13 @@
           classes: trademark.classes,
           price: Number($("#total").attr("data-price")),
           type: 'trademark-registration',
-          qty: 1
+          qty: 1,
+          _id: '12412512sadss'
         }
         var items = [];
-        var items = JSON.parse(localStorage.getItem('cartItems'));
+        if (localStorage.getItem('cartItems')) {
+          var items = JSON.parse(localStorage.getItem('cartItems'));
+        }
         items.push(celaLista);
         localStorage.setItem('cartItems', JSON.stringify(items));
         localStorage.removeItem('trademarkDetails');

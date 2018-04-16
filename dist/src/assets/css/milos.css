@@ -2659,6 +2659,7 @@ div#Tokyo2 {
 
   .locations .small-panel {
     overflow: hidden;
+    width: 100% !important;
   }
 
   .remove-space {
@@ -9907,7 +9908,7 @@ h4.sign {
   }
 
   .panel-group {
-    width: 473px;
+    width: 100%;
   }
 }
 
@@ -10915,6 +10916,47 @@ p.p-solve-affilates {
 @media (max-width: 768px) {
   .solve-conflict-register {
     text-align: center;
+  }
+
+  #payment .col-lg-12 {
+    padding: 0;
+  }
+
+  .payment-table .payment-item {
+    padding: 14px 10px;
+    width: 75%;
+  }
+
+  .payment-table .payment-price {
+    padding: 14px 5px 14px 0;
+    width: 25%;
+    font-size: 15px;
+  }
+
+  .payment-table .payment-price span {
+    margin-right: 0;
+    font-size: 15px;
+  }
+
+  .payment-table .payment-item .payment-item-title {
+    font-size: 16px;
+  }
+
+  td.payment-price input[type="checkbox"] {
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    padding: 6px;
+
+  }
+}
+
+@media (max-width: 991px) {
+  .last-in-row .group-1 {
+    margin-bottom: 15px;
+  }
+  .payment-table .payment-item {
+    width: 83%;
   }
 }
 

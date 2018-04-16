@@ -1359,7 +1359,7 @@
             var entireList = {
               main: wordmarkType,
               details: details,
-              _id: 'trademark registration',
+              type: 'trademark registration',
               qty: 1,
               requestType: 'registration',
               territories: arr,
