@@ -10922,6 +10922,16 @@ p.p-solve-affilates {
     padding: 0;
   }
 
+  #payment .container {
+    padding: 0 7.5px;
+  }
+
+  #payment .btn-add-to-cart {
+    float: none;
+    margin: 0 auto;
+    display: block;
+  }
+
   .payment-table .payment-item {
     padding: 14px 10px;
     width: 75%;
@@ -10947,7 +10957,26 @@ p.p-solve-affilates {
     -ms-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     padding: 6px;
+  }
 
+  .total-table td.total-price {
+    padding: 20px 5px;
+  }
+
+  .more_info {
+    margin-right: 5px;
+  }
+
+  #accordion-about h3 a .panel-title {
+    font-size: 21px;
+  }
+
+  .product-information .col-lg-12 {
+    padding: 0;
+  }
+
+  .about_prod .col-lg-12 {
+    padding: 0;
   }
 }
 
