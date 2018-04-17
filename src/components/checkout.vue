@@ -256,9 +256,12 @@
                 services: services,
                 packages: packages,
                 documents: documents,
+                trademarks: trademarks
               },
               success: function (data) {
                 console.log(data[0]._id);
+                localStorage.removeItem('cartItems');
+                $("#count").html(0);
                 if(data[0]._id) {
                   window.location.href = '/#/order/' + data[0]._id;
                 }
@@ -321,6 +324,9 @@
         var products = [];
         var packages = [];
         var documents = [];
+        var trademarks = [];
+
+
         // Find Products //
         for (var i = 0; i < inventory.length; i++) {
           if (inventory[i]['type'] === 'products') {
@@ -337,6 +343,12 @@
         for (var i = 0; i < inventory.length; i++) {
           if (inventory[i]['type'] === 'documents') {
             documents.push(inventory[i]._id);
+          }
+        }
+        // Find Trademarks //
+        for (var i = 0; i < inventory.length; i++) {
+          if (inventory[i]['type'] === 'trademark-registration') {
+            trademarks.push(inventory[i]._id);
           }
         }
         // Find Services

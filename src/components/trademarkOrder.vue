@@ -184,7 +184,7 @@
           price: Number($("#total").attr("data-price")),
           type: 'trademark-registration',
           qty: 1,
-          _id: '12412512sadss'
+          _id: trademark._id
         }
         var items = [];
         if (localStorage.getItem('cartItems')) {

@@ -24,7 +24,9 @@
                 <td v-if="item.type == 'trademark-registration'">
                   <button class="delete-product" name="button_id" :value="item._id" :data-price="item.price">
                     <i class="fa fa-times" aria-hidden="true"></i></button>
-                  <a class="product-name" href="#" style="font-weight: bold;">{{item.title}}</a>
+                  <a class="product-name" v-if="item.requestType == 'watch'" href="#" style="font-weight: bold;">Trademark Watch</a>
+                  <a class="product-name" v-if="item.requestType == 'register'" href="#" style="font-weight: bold;">Trademark Registration</a>
+                  <a class="product-name" v-if="item.requestType == 'search'" href="#" style="font-weight: bold;">Trademark Search</a>
                   <p class="territories">Territories: {{item.territories.length}}, Classes: {{item.classes.length}}</p>
                 </td>
                 <td v-else>

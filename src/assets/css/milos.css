@@ -10914,6 +10914,9 @@ p.p-solve-affilates {
 }
 
 @media (max-width: 768px) {
+  .banner img {
+    height: auto !important;
+  }
   .solve-conflict-register {
     text-align: center;
   }
@@ -10938,14 +10941,14 @@ p.p-solve-affilates {
   }
 
   .payment-table .payment-price {
-    padding: 14px 2px 14px 0;
+    padding: 14px 10px 14px 0;
     width: 35%;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .payment-table .payment-price span {
     margin-right: 0;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .payment-table .payment-item .payment-item-title {
@@ -10960,7 +10963,7 @@ p.p-solve-affilates {
   }
 
   .total-table td.total-price {
-    padding: 20px 5px;
+    padding: 20px 10px;
   }
 
   .more_info {
