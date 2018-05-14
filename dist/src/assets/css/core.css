@@ -3288,6 +3288,9 @@ footer {
         .product .payment-table .payment-price span {
           margin-right: 0;
           font-size: 14px; }
+        .product .payment-table .payment-price input {
+          margin-top: -16px;
+          padding: 0; }
       .product .total-table p {
         display: none; }
       .product .total-table .payment-methods {
