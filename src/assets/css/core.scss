@@ -423,9 +423,21 @@ footer {
       color: #fff;
     }
   }
+  #myCarousel {
+    display: none;
+  }
   @media screen and (max-width: 767px) {
     padding: 100px 0 0;
     background-size: cover;
+    #myCarousel {
+      display: block;
+    }
+    .home-slides {
+      display: none;
+    }
+    .block {
+      margin-bottom: 50px;
+    }
   }
 }
 

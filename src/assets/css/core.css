@@ -303,10 +303,18 @@ footer {
     color: #fff; }
     .home-banner a:hover {
       color: #fff; }
+  .home-banner #myCarousel {
+    display: none; }
   @media screen and (max-width: 767px) {
     .home-banner {
       padding: 100px 0 0;
-      background-size: cover; } }
+      background-size: cover; }
+      .home-banner #myCarousel {
+        display: block; }
+      .home-banner .home-slides {
+        display: none; }
+      .home-banner .block {
+        margin-bottom: 50px; } }
 
 .home-informations .home-informations-block {
   padding: 50px 0;
