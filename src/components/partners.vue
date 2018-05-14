@@ -1,7 +1,6 @@
 <template>
-    <main>
-        <main class="partner-solve">
-            <div class="partners-cover">
+        <main class="partners">
+            <div class="cover">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 image"><img src="src/assets/images/starting-business-partners.png"></div>
@@ -156,7 +155,6 @@
                 </div>
             </section>
         </main>
-    </main>
 </template>
 <script>
     import axios from 'axios'

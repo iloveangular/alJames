@@ -1,5 +1,5 @@
 <template>
-  <main class="cyprus-ltd-page page-content">
+  <main class="product">
     <section class="product-information">
       <div class="container">
         <div class="row">

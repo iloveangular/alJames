@@ -2,7 +2,7 @@
     <section class="call-us">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-sm-12">
+                <div class="col-md-8 col-sm-12 first">
                     <h4>Sign up to our Newsletters</h4>
                     <div class="block">
                         <div class="image"><img src="/src/assets/images/ccash.png"></div>

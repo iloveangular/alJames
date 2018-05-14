@@ -1,16 +1,19 @@
 <template>
-  <main class="financial-services-licensing-page page-content">
+  <main class="niche-single">
     <section class="informations">
       <div class="block">
         <div class="container">
           <div class="row">
-            <div class="col-md-3 col-xs-4 informations-block"><img
+            <div class="col-md-3 col-xs-12 informations-block"><img
               src="http://res.cloudinary.com/agentlegal/image/upload/c_limit,f_auto,h_250,w_250/v1503764429/twujsubkchwqlegtslpv.png">
             </div>
-            <div class="col-md-6 col-xs-8 informations-block">
+            <div class="col-md-6 col-xs-12 informations-block">
               <h2 v-html="niche.name"></h2>
               <h4 v-html="niche.tagline"></h4>
-              <div v-html="niche.description"></div>
+              <div class="desc-text" v-html="niche.description"></div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <hr>
             </div>
           </div>
         </div>
@@ -123,9 +126,8 @@
         </div>
       </div>
     </section>
-    <section class="tabbing-verticallay">
+    <section class="vertical-tabs">
       <div class="container">
-        <div class="row">
           <h1>Everything you need to know</h1>
           <div class="tab">
             <button class="tablinks active" id="defaultOpen" onclick="openCity(event, 'London')">Our Services</button>
@@ -276,7 +278,7 @@
         </div>
       </div>
     </section>
-    <section class="tabbing-verticallay tabbing-verticallay-mobile" style="display: none;">
+    <section class="vertical-tabs mobile" style="display: none;">
       <div class="container">
         <h1>Everything you need to know</h1>
         <div class="panel-group" id="accordion1">

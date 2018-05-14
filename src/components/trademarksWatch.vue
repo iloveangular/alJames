@@ -1,33 +1,22 @@
 <template>
-  <main id="territory">
-    <div class="registration-body">
-      <main class="registration-page">
+      <main class="single-trademark">
         <section class="informations">
-          <div class="block">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-3 col-xs-4 informations-block"><img
-                  src="src/assets/images/trademark-mark.png"></div>
-                <div class="col-md-6 col-xs-8 informations-block">
-                  <h2>Trademark Registration &amp; Expert Assistance</h2>
-                  <ul>
-                    <li>Available across 5 continents, in 70+ countries</li>
-                    <li>Global trademark search, registration, monitoring and maintenance</li>
-                    <li>Brand &amp; intellectual property expert support</li>
-                  </ul>
-                </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-xs-12"><img src="src/assets/images/trademark-mark.png"></div>
+              <div class="col-md-9 col-xs-12">
+                <h2>Trademark Registration & Expert Assistance</h2>
+                <ul>
+                  <li>Available across 5 continents, in 70+ countries</li>
+                  <li>Global trademark search, registration, monitoring and maintenance</li>
+                  <li>Brand & intellectual property expert support</li>
+                </ul>
               </div>
-            </div>
-            <div class="container solve-container-register">
-              <div class="row">
-                <div class="col-sm-12 col-md-4">
-                  <p class="step-text pull-right"></p>
-                </div>
-                <div class="col-sm-12 col-md-8">
-                  <div class="solve-conflict-register">
-                    Agent Legal is an official member of the International Trademark Association
-                  </div>
-                </div>
+              <div class="col-md-12 col-xs-12 trademarks-step">
+                <hr>
+                <div class="step-text"></div>
+                <p>Agent Legal is an official member of the International Trademark Association</p>
+                <hr>
               </div>
             </div>
           </div>
@@ -866,8 +855,10 @@
         <section class="browse-companies">
           <div class="container">
             <div class="panel-two">
-              <div style="padding: 0;" class="col-md-12 col-sm-12">
-                <h6 class="fnt-size-24 mob-fnt-size-21">Everything you need to know</h6>
+              <div class="row">
+              <div class="col-md-12 col-sm-12">
+                <h6>Everything you need to know</h6>
+              </div>
               </div>
             </div>
             <div id="accordion" class="panel-group">
@@ -1011,8 +1002,6 @@
           </div>
         </section>
       </main>
-    </div>
-  </main>
 </template>
 <script>
   import * as config from '@/scripts/main'

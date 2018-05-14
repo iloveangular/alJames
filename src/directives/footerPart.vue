@@ -12,13 +12,13 @@
                             <p>On your next purchase once subscribed</p>
                         </div>
                         <div class="button">
-                            <button class="btn btn-green" type="button" data-toggle="modal" data-target="#exampleModal">
+                            <button class="btn btn-green btn-large" type="button" data-toggle="modal" data-target="#exampleModal">
                                 Subscribe
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 first">
                     <h4>Need Assistance?</h4>
                     <div class="info">
                         <div class="image"><img src="/src/assets/images/cphone.png"></div>
@@ -35,7 +35,7 @@
         </div>
     </div>
         <footer>
-            <div class="container"><img src="/src/assets/images/logo.png" style="width: 200px;" class="footer-logo">
+            <div class="container"><img src="/src/assets/images/logo.png" class="footer-logo">
                 <ul>
                     <li><a href="/#/about">About</a></li>
                     <li><a href="/#/affiliates">Affiliates</a></li>
@@ -61,7 +61,7 @@
                         <a href="#"><img src="/src/assets/images/mastercard.png"></a>
                         <a href="#" class="card-dekatop"><img src="/src/assets/images/cards.png"></a>
                     </div>
-                    <div style="display: none;" class="other-logos-samll">
+                    <div style="display: none;" class="other-logos-small">
                         <a href="#"><img src="/src/assets/images/verified.png"></a>
                         <a href="#"><img src="/src/assets/images/paypal.png"></a>
                         <a href="#"><img src="/src/assets/images/mastercard.png"></a>

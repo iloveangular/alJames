@@ -1,5 +1,5 @@
 <template>
-  <main class="cyprus-ltd-page page-content">
+  <main class="product">
     <section class="product-information">
       <div class="container">
         <div class="row">
@@ -170,11 +170,10 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="text-right" colspan="2">
-                    <div class="form-actions">
-                      <button class="btn btn-default btn-add-to-cart addToCart" id="add-to-cart">Add to Cart
+                  <td class="form-actions" colspan="2">
+                      <button class="btn btn-default btn-add-to-cart btn-green addToCart" id="add-to-cart">Add to Cart
                       </button>
-                      <span class="cart-icon"></span></div>
+                      <span class="cart-icon"></span>
                   </td>
                 </tr>
                 </tbody>

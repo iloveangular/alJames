@@ -1,23 +1,21 @@
 <template>
-  <main class="cyprus-ltd-page page-content">
+  <main class="product">
     <section class="product-information">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 hidden-xs product-steps text-center">
+          <div class="col-lg-12">
             <div class="step-img"></div>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <div class="product-head clearfix">
-              <div class="pull-left product-logo"><img :src="product.flagImageUrl"></div>
-              <div class="pull-left">
+            <div class="product-head">
+              <div class="product-logo"><img :src="product.flagImageUrl"></div>
                 <input type="hidden" id="pageTitle" :name="product.title">
                 <h1>{{product.title}}<span class="description" v-html="product.description"></span></h1>
                 <input name="category_id" value="22" type="hidden">
-              </div>
             </div>
-            <div v-html="product.content"></div>
+            <div class="content-text" v-html="product.content"></div>
             <p><a class="target-link" id="scroll" href="#about_prod">About this Product &gt;</a></p>
           </div>
         </div>
@@ -160,20 +158,19 @@
             <table class="table total-table">
               <tbody>
               <tr>
-                <td class="no-pad-right hidden-xs">
+                <td>
                   <p>Payment methods</p>
                   <div class="payment-methods"></div>
                 </td>
-                <td class="no-pad-left total-price">TOTAL: {{value}}<span id="total" :data-price="product.price">{{product.price * rate | fixPrice}}</span>
+                <td class="total-price">TOTAL: {{value}}<span id="total" :data-price="product.price">{{product.price * rate | fixPrice}}</span>
                   <input id="product_id" name="id" value="599a1344bf50847b0972a465" type="hidden">
                   <input id="total_input" name="total" v-model="product.price" type="hidden">
                 </td>
               </tr>
               <tr>
-                <td class="text-right" colspan="2">
-                  <div class="form-actions">
-                    <button class="btn btn-default btn-add-to-cart addToCart" id="add-to-cart">Add to Cart</button>
-                    <span class="cart-icon"></span></div>
+                <td colspan="2" class="form-actions">
+                    <button class="btn btn-default btn-add-to-cart btn-green addToCart" id="add-to-cart">Add to Cart</button>
+                    <span class="cart-icon"></span>
                 </td>
               </tr>
               </tbody>

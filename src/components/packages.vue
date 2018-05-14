@@ -1,8 +1,8 @@
 <template>
-  <section class="packages first packages-page">
+  <section class="packages">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 col-xs-12">
           <div class="title">
             <h2><span>Start-Up Packs</span></h2>
             <p>
@@ -11,18 +11,19 @@
               your international business.
               Our Start-Up Packs have been tailored to specific business activities and include all the services that
               most businesses need to get up and running.</p>
+            <hr>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3 col-xs-6 packages-mobile" v-for="vm in packages">
+        <div class="col-md-3 col-xs-12 packages-mobile" v-for="vm in packages">
           <div class="package">
             <div class="img"><img src="src/assets/images/doc2.png"></div>
             <h6>{{vm.name}}</h6>
             <div v-html="vm.features">
             </div>
             <h5>{{value}}{{vm.price * rate | fixPrice}} <span>VALUE {{value}}{{vm.value * rate | fixPrice}}</span></h5>
-            <a class="btn btn-green" v-bind:href="'/#/package/' + vm.key">Learn More</a>
+            <a class="btn btn-green btn-medium" v-bind:href="'/#/package/' + vm.key">Learn More</a>
           </div>
         </div>
       </div>

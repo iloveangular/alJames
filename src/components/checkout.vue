@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="cart">
     <section class="view first">
       <div class="container">
         <div class="row hidden-xs">
@@ -55,9 +55,9 @@
                 </td>
 
                 <td v-if="item.type == 'trademark-registration'"></td>
-                <td v-else>{{value}} <span class="price" :value="item.price" style="font-size:21px !important;">{{item.price * rate | fixPrice}}</span>
+                <td v-else>{{value}} <span class="price" :value="item.price">{{item.price * rate | fixPrice}}</span>
                 </td>
-                <td>{{value}} <span class="total" style="font-size:21px !important;">{{item.price * item.qty * rate | fixPrice}}</span>
+                <td>{{value}} <span class="total">{{item.price * item.qty * rate | fixPrice}}</span>
                 </td>
                 <input type="hidden" class="itemPrice" :value="item.price * item.qty">
 
@@ -73,9 +73,9 @@
 
                   </select>
                 </td>
-                <td>{{value}} <span class="price" :value="subItem.price" style="font-size:21px !important;">{{subItem.price * rate | fixPrice}}</span>
+                <td>{{value}} <span class="price" :value="subItem.price">{{subItem.price * rate | fixPrice}}</span>
                 </td>
-                <td>{{value}} <span class="total" style="font-size:21px !important;">{{subItem.price * subItem.qty * rate | fixPrice}}</span>
+                <td>{{value}} <span class="total">{{subItem.price * subItem.qty * rate | fixPrice}}</span>
                   <input type="hidden" class="itemPrice" :value="subItem.price * subItem.qty">
 
                 </td>

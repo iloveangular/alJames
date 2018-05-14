@@ -21,7 +21,7 @@ import confirmation from '@/components/confirmation'
 /* Trademarks */
 import trademarks from '@/components/trademarks'
 import trademarksRegistration from '@/components/trademarksRegistration'
-// import trademarksSearch from '@/components/trademarksSearch'
+import trademarksSearch from '@/components/trademarksSearch'
 import trademarksWatch from '@/components/trademarksWatch'
 /* Niche Services */
 import nicheServices from '@/components/additionalServices'
@@ -231,11 +231,11 @@ export default new Router({
       name: trademarksRegistration,
       component: trademarksRegistration
     },
-    // {
-    //   path: '/trademarks/search/',
-    //   name: trademarksSearch,
-    //   component: trademarksSearch
-    // },
+    {
+      path: '/trademarks/search/',
+      name: trademarksSearch,
+      component: trademarksSearch
+    },
     {
       path: '/trademarks/watch/',
       name: trademarksWatch,

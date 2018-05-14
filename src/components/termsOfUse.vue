@@ -1,10 +1,11 @@
 <template>
     <main>
-        <section class="packages first privacy_policy">
+        <section class="privacy-policy">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title"><h2><span>Terms of Use</span></h2>
+                            <hr>
                             <p>
                                 This site is the property of Agent Legal, LLC. The term ‘Agent Legal’, ‘us’ or ‘we’ refers to the owner of this
                                 website.&nbsp; The term ‘you’ refers to the user or viewer of our website.</p>

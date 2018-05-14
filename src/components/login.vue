@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="packages login">
+    <section class="login">
       <div class="login-form" v-if="username">
         <h4>Customer Log In</h4>
         <div class="form-groups input col-xs-12">

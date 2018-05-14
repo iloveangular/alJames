@@ -1,11 +1,10 @@
 <template>
-  <div class="affidavits-verification-body">
-    <main class="affidavits-verification-page">
-      <section class="document-div">
+    <main class="single-category">
+      <section class="document">
         <div class="container">
           <div class="col-xs-12" style="padding: 0; border-bottom: 1px dashed #dddddd;">
-            <h1 style="text-transform:capitalize;">{{title}} Documents</h1><a style="margin: 30px 0 0 !important;float: right !important;" class="back-link" href="/#/documents">&lt;
-            Back to Documents</a></div>
+            <h1>{{title}} Documents</h1>
+            <a class="back-link" href="/#/documents">&lt; Back to Documents</a></div>
           <div class="row">
             <div class="col-xs-12 mobileSearch">
               <div class="search-div">
@@ -41,30 +40,30 @@
       <section class="cart-section" id="payment">
         <div class="container">
           <div class="col-xs-12 col-sm-12 remover-space" v-for="vm in document">
-            <div class="col-xs-8 col-sm-10 padding-zero">
+            <div class="col-xs-12 col-sm-10 padding-zero">
               <h6>{{vm.title}}</h6>
               <div class="description-cart">
-                <p class="description mar-top-10" v-html="vm.description"></p>
+                <p v-html="vm.description"></p>
               </div>
-              <div class="show-for-small-down">
-                <div class="inl-block width-100">
-                  <h6 class="clr-green docPrice left mar-rgh-10">PRICE {{value}}{{vm.price * rate | fixPrice}}</h6>
-                  <h5 class="left clr-l-grey"></h5></div>
+              <div class="show-for-mobile">
+                <div class="inl-block">
+                  <h6>PRICE {{value}}{{vm.price * rate | fixPrice}}</h6>
+                  <h5></h5></div>
               </div>
               <div class="inl-block-cart">
                 <div class="mob-float-none">
-                  <button class="button-cart green addToCart" name="button_id" :data-id="vm._id" :data-price="vm.price"
-                          :data-title="vm.title" style="float:left;">Add to Cart
+                  <button class="button-cart green btn-green addToCart" name="button_id" :data-id="vm._id" :data-price="vm.price"
+                          :data-title="vm.title">Add to Cart
                   </button>
-                  <a class="button-cart grey" :href="'/#/document/' + vm.slug">Learn More</a></div>
+                  <a class="button-cart gray" :href="'/#/document/' + vm.slug">Learn More</a></div>
                 <div class="hide-for-small-down">
-                  <div class="inl-block left">
-                    <h6 class="clr-green docPrice left mar-rgh-10 mar-top-7">PRICE {{value}}{{vm.price * rate |
-                      fixPrice}}</h6></div>
+                  <div class="inl-block">
+                    <h4>PRICE {{value}}{{vm.price * rate |
+                      fixPrice}}</h4></div>
                 </div>
               </div>
             </div>
-            <div class="col-xs-4 col-sm-2 padding-remove">
+            <div class="col-xs-12 col-sm-2 padding-remove">
               <img src="src/assets/img/company-img.jpg" data-toggle="modal" data-target="#myModal">
               <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
@@ -83,7 +82,6 @@
         </div>
       </section>
     </main>
-  </div>
 </template>
 <script>
   import axios from 'axios'
