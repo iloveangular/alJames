@@ -3321,6 +3321,26 @@ footer {
     color: #739140;
     font-size: 16px; }
 
+.showDesktop {
+  display: block; }
+  @media screen and (max-width: 767px) {
+    .showDesktop {
+      display: none; } }
+
+.showMobile {
+  display: none; }
+  @media screen and (max-width: 767px) {
+    .showMobile {
+      display: block; }
+      .showMobile a {
+        color: #333; }
+      .showMobile span.price {
+        margin: 0 !important; }
+      .showMobile span.countryName {
+        font-size: 20px !important; }
+      .showMobile .flag img {
+        margin-top: 0 !important; } }
+
 .mobile {
   display: none; }
   @media screen and (max-width: 767px) {

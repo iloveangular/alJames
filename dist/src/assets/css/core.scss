@@ -4300,6 +4300,34 @@ footer {
   }
 }
 
+.showDesktop {
+  display: block;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.showMobile {
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+    a {
+      color: #333;
+    }
+    span.price {
+      margin: 0 !important;
+    }
+    span.countryName {
+      font-size: 20px !important;
+    }
+    .flag {
+      img {
+        margin-top: 0 !important;
+      }
+    }
+  }
+}
+
 // Mobile Nav
 .mobile {
   display: none;
