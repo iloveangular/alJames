@@ -61,8 +61,10 @@ header nav.desktop {
           height: auto;
           padding: 0;
           width: 100%;
-          display: block; }
+          display: block;
+          background: #fff; }
           header nav.desktop ul li ul.dropdown-menu li a {
+            color: #000;
             padding: 0 15px;
             line-height: 2.8; }
       header nav.desktop ul li a {

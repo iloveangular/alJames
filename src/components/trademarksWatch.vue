@@ -844,7 +844,7 @@
                   <h4>TOTAL PRICE <span class="fnt-oswald-medium" id="currency">{{value}}</span><span
                     class="fnt-oswald-medium" id="total">0</span></h4>
                   <div class="form-actions">
-                    <button id="continueButton" class="price-green button green continue" style="width: auto !important;">Request a Quote</button>
+                    <button id="continueButton" class="price-green button green continue" style="width: 180px !important;">Request a Quote</button>
                   </div>
                   <input type="hidden" id="total_price">
                 </div>

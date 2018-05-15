@@ -65,7 +65,7 @@
                         <div class="tab-pane" id="profile" role="tabpanel">
                             <div class="content"><img src="src/assets/images/partner-discount.png">
                                 <h3>Partner Code</h3>
-                                <p>STARTING BUSINESS Partner Program allows you to use your partner code at www.startingbusiness.com. A partner code is a discount code which you can use to get a discount when making purchases online.</p>
+                                <p>AGENT LEGAL Partner Program allows you to use your partner code at www.agentlegal.com. A partner code is a discount code which you can use to get a discount when making purchases online.</p>
                                 <p>Discount rates apply for each purchase after the total spent threshold is crossed:</p>
                                 <ul>
                                     <li><strong>Over USD 5,000 =</strong><span class="green">5% discount</span></li>
@@ -73,7 +73,7 @@
                                     <li><strong>Over USD 15,000 =</strong><span class="green">10% discount</span></li>
                                     <li><strong>Over USD 20,000 =</strong><span class="green">15% discount</span></li>
                                 </ul>
-                                <p>The percentage of the discount code can be increased depending on the number of clients or high volumes of business you provide to STARTING BUSINESS.</p>
+                                <p>The percentage of the discount code can be increased depending on the number of clients or high volumes of business you provide to AGENT LEGAL.</p>
                                 <h4>Please note:</h4>
                                 <ul>
                                     <li>The discount code must be entered during checkout to receive the offer.</li>
@@ -90,7 +90,7 @@
                                     <li>receipt of payment for referred clients</li>
                                     <li>variety of revenue schemes</li>
                                     <li>signing of exclusive partnership agreement</li>
-                                    <li>offer services to your clients with STARTING BUSINESS as your silent provider</li>
+                                    <li>offer services to your clients with AGENT LEGAL as your silent provider</li>
                                     <li>other attractive conditions of cooperation.</li>
                                 </ul>
                             </div>
@@ -113,7 +113,7 @@
                                         <h3>Trade Associations</h3></div>
                                     <div class="col-md-1"></div>
                                 </div>
-                                <p>If you are a regular customer you might be eligible for discounts and benefits at Starting Business. <a href="/#/contact">Contact us</a> today to find out more.</p>
+                                <p>If you are a regular customer you might be eligible for discounts and benefits at Agent Legal. <a href="/#/contact">Contact us</a> today to find out more.</p>
                             </div>
                         </div>
                     </div>
