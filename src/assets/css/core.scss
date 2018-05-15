@@ -91,6 +91,8 @@ header {
               color: #000;
               padding: 0 15px;
               line-height: 2.8;
+              display: block;
+              width: 100%;
             }
           }
         }
@@ -189,7 +191,7 @@ header {
     display: block;
     clear: both;
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1024px) {
     nav {
       display: none;
     }
@@ -4308,14 +4310,14 @@ footer {
 
 .showDesktop {
   display: block;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 }
 
 .showMobile {
   display: none;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1024px) {
     display: block;
     a {
       color: #333;
@@ -4337,7 +4339,7 @@ footer {
 // Mobile Nav
 .mobile {
   display: none;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1024px) {
     position: fixed;
     top: 0;
     left: 0;
